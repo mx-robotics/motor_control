@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/fbc/projects/Teensy/tryout_1/src/blinky.cpp" "/home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles/tryout_1.dir/src/blinky.cpp.o"
+  "/home/fbc/projects/tuw_bldc/Software/1Motor/lib/DMASPI/DmaSpi.cpp" "/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o"
+  "/home/fbc/projects/tuw_bldc/Software/1Motor/src/FOC.cpp" "/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/tryout_1.dir/src/FOC.cpp.o"
+  "/home/fbc/projects/tuw_bldc/Software/1Motor/src/dma_spi.cpp" "/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

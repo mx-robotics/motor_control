@@ -43,10 +43,10 @@ RM = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fbc/projects/Teensy/tryout_1
+CMAKE_SOURCE_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tryout_1.dir/depend.make
@@ -57,30 +57,60 @@ include CMakeFiles/tryout_1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tryout_1.dir/flags.make
 
-CMakeFiles/tryout_1.dir/src/blinky.cpp.o: CMakeFiles/tryout_1.dir/flags.make
-CMakeFiles/tryout_1.dir/src/blinky.cpp.o: ../src/blinky.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tryout_1.dir/src/blinky.cpp.o"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tryout_1.dir/src/blinky.cpp.o -c /home/fbc/projects/Teensy/tryout_1/src/blinky.cpp
+CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o: CMakeFiles/tryout_1.dir/flags.make
+CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o: ../lib/DMASPI/DmaSpi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o -c /home/fbc/projects/tuw_bldc/Software/1Motor/lib/DMASPI/DmaSpi.cpp
 
-CMakeFiles/tryout_1.dir/src/blinky.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tryout_1.dir/src/blinky.cpp.i"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fbc/projects/Teensy/tryout_1/src/blinky.cpp > CMakeFiles/tryout_1.dir/src/blinky.cpp.i
+CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.i"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fbc/projects/tuw_bldc/Software/1Motor/lib/DMASPI/DmaSpi.cpp > CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.i
 
-CMakeFiles/tryout_1.dir/src/blinky.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tryout_1.dir/src/blinky.cpp.s"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fbc/projects/Teensy/tryout_1/src/blinky.cpp -o CMakeFiles/tryout_1.dir/src/blinky.cpp.s
+CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.s"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fbc/projects/tuw_bldc/Software/1Motor/lib/DMASPI/DmaSpi.cpp -o CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.s
+
+CMakeFiles/tryout_1.dir/src/FOC.cpp.o: CMakeFiles/tryout_1.dir/flags.make
+CMakeFiles/tryout_1.dir/src/FOC.cpp.o: ../src/FOC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tryout_1.dir/src/FOC.cpp.o"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tryout_1.dir/src/FOC.cpp.o -c /home/fbc/projects/tuw_bldc/Software/1Motor/src/FOC.cpp
+
+CMakeFiles/tryout_1.dir/src/FOC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tryout_1.dir/src/FOC.cpp.i"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fbc/projects/tuw_bldc/Software/1Motor/src/FOC.cpp > CMakeFiles/tryout_1.dir/src/FOC.cpp.i
+
+CMakeFiles/tryout_1.dir/src/FOC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tryout_1.dir/src/FOC.cpp.s"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fbc/projects/tuw_bldc/Software/1Motor/src/FOC.cpp -o CMakeFiles/tryout_1.dir/src/FOC.cpp.s
+
+CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o: CMakeFiles/tryout_1.dir/flags.make
+CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o: ../src/dma_spi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o -c /home/fbc/projects/tuw_bldc/Software/1Motor/src/dma_spi.cpp
+
+CMakeFiles/tryout_1.dir/src/dma_spi.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tryout_1.dir/src/dma_spi.cpp.i"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fbc/projects/tuw_bldc/Software/1Motor/src/dma_spi.cpp > CMakeFiles/tryout_1.dir/src/dma_spi.cpp.i
+
+CMakeFiles/tryout_1.dir/src/dma_spi.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tryout_1.dir/src/dma_spi.cpp.s"
+	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fbc/projects/tuw_bldc/Software/1Motor/src/dma_spi.cpp -o CMakeFiles/tryout_1.dir/src/dma_spi.cpp.s
 
 # Object files for target tryout_1
 tryout_1_OBJECTS = \
-"CMakeFiles/tryout_1.dir/src/blinky.cpp.o"
+"CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o" \
+"CMakeFiles/tryout_1.dir/src/FOC.cpp.o" \
+"CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o"
 
 # External object files for target tryout_1
 tryout_1_EXTERNAL_OBJECTS =
 
-tryout_1: CMakeFiles/tryout_1.dir/src/blinky.cpp.o
+tryout_1: CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o
+tryout_1: CMakeFiles/tryout_1.dir/src/FOC.cpp.o
+tryout_1: CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o
 tryout_1: CMakeFiles/tryout_1.dir/build.make
 tryout_1: CMakeFiles/tryout_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tryout_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tryout_1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tryout_1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -93,6 +123,6 @@ CMakeFiles/tryout_1.dir/clean:
 .PHONY : CMakeFiles/tryout_1.dir/clean
 
 CMakeFiles/tryout_1.dir/depend:
-	cd /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbc/projects/Teensy/tryout_1 /home/fbc/projects/Teensy/tryout_1 /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31 /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31 /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles/tryout_1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbc/projects/tuw_bldc/Software/1Motor /home/fbc/projects/tuw_bldc/Software/1Motor /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31 /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31 /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/tryout_1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tryout_1.dir/depend
 

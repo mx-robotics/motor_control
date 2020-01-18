@@ -1,1 +1,1 @@
-/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++    -rdynamic CMakeFiles/tryout_1.dir/src/blinky.cpp.o  -o tryout_1 
+/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++    -rdynamic CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o CMakeFiles/tryout_1.dir/src/FOC.cpp.o CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o  -o tryout_1 

@@ -1,0 +1,1 @@
+/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++    -rdynamic CMakeFiles/2MBoardController.dir/src/FOC.cpp.o CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o  -o 2MBoardController 

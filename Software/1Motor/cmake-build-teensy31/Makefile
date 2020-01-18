@@ -48,10 +48,10 @@ RM = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fbc/projects/Teensy/tryout_1
+CMAKE_SOURCE_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -266,32 +266,86 @@ PLATFORMIO_TEST/fast:
 	$(MAKE) -f CMakeFiles/PLATFORMIO_TEST.dir/build.make CMakeFiles/PLATFORMIO_TEST.dir/build
 .PHONY : PLATFORMIO_TEST/fast
 
-src/blinky.o: src/blinky.cpp.o
+lib/DMASPI/DmaSpi.o: lib/DMASPI/DmaSpi.cpp.o
 
-.PHONY : src/blinky.o
+.PHONY : lib/DMASPI/DmaSpi.o
 
 # target to build an object file
-src/blinky.cpp.o:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/blinky.cpp.o
-.PHONY : src/blinky.cpp.o
+lib/DMASPI/DmaSpi.cpp.o:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o
+.PHONY : lib/DMASPI/DmaSpi.cpp.o
 
-src/blinky.i: src/blinky.cpp.i
+lib/DMASPI/DmaSpi.i: lib/DMASPI/DmaSpi.cpp.i
 
-.PHONY : src/blinky.i
+.PHONY : lib/DMASPI/DmaSpi.i
 
 # target to preprocess a source file
-src/blinky.cpp.i:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/blinky.cpp.i
-.PHONY : src/blinky.cpp.i
+lib/DMASPI/DmaSpi.cpp.i:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.i
+.PHONY : lib/DMASPI/DmaSpi.cpp.i
 
-src/blinky.s: src/blinky.cpp.s
+lib/DMASPI/DmaSpi.s: lib/DMASPI/DmaSpi.cpp.s
 
-.PHONY : src/blinky.s
+.PHONY : lib/DMASPI/DmaSpi.s
 
 # target to generate assembly for a file
-src/blinky.cpp.s:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/blinky.cpp.s
-.PHONY : src/blinky.cpp.s
+lib/DMASPI/DmaSpi.cpp.s:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.s
+.PHONY : lib/DMASPI/DmaSpi.cpp.s
+
+src/FOC.o: src/FOC.cpp.o
+
+.PHONY : src/FOC.o
+
+# target to build an object file
+src/FOC.cpp.o:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/FOC.cpp.o
+.PHONY : src/FOC.cpp.o
+
+src/FOC.i: src/FOC.cpp.i
+
+.PHONY : src/FOC.i
+
+# target to preprocess a source file
+src/FOC.cpp.i:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/FOC.cpp.i
+.PHONY : src/FOC.cpp.i
+
+src/FOC.s: src/FOC.cpp.s
+
+.PHONY : src/FOC.s
+
+# target to generate assembly for a file
+src/FOC.cpp.s:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/FOC.cpp.s
+.PHONY : src/FOC.cpp.s
+
+src/dma_spi.o: src/dma_spi.cpp.o
+
+.PHONY : src/dma_spi.o
+
+# target to build an object file
+src/dma_spi.cpp.o:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o
+.PHONY : src/dma_spi.cpp.o
+
+src/dma_spi.i: src/dma_spi.cpp.i
+
+.PHONY : src/dma_spi.i
+
+# target to preprocess a source file
+src/dma_spi.cpp.i:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/dma_spi.cpp.i
+.PHONY : src/dma_spi.cpp.i
+
+src/dma_spi.s: src/dma_spi.cpp.s
+
+.PHONY : src/dma_spi.s
+
+# target to generate assembly for a file
+src/dma_spi.cpp.s:
+	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/dma_spi.cpp.s
+.PHONY : src/dma_spi.cpp.s
 
 # Help Target
 help:
@@ -313,9 +367,15 @@ help:
 	@echo "... PLATFORMIO_CLEAN"
 	@echo "... PLATFORMIO_DEVICE_LIST"
 	@echo "... PLATFORMIO_TEST"
-	@echo "... src/blinky.o"
-	@echo "... src/blinky.i"
-	@echo "... src/blinky.s"
+	@echo "... lib/DMASPI/DmaSpi.o"
+	@echo "... lib/DMASPI/DmaSpi.i"
+	@echo "... lib/DMASPI/DmaSpi.s"
+	@echo "... src/FOC.o"
+	@echo "... src/FOC.i"
+	@echo "... src/FOC.s"
+	@echo "... src/dma_spi.o"
+	@echo "... src/dma_spi.i"
+	@echo "... src/dma_spi.s"
 .PHONY : help
 
 

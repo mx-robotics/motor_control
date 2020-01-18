@@ -43,10 +43,10 @@ RM = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fbc/projects/Teensy/tryout_1
+CMAKE_SOURCE_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31
 
 # Utility rule file for PLATFORMIO_UPLOADFS.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31
 include CMakeFiles/PLATFORMIO_UPLOADFS.dir/progress.make
 
 CMakeFiles/PLATFORMIO_UPLOADFS:
-	cd /home/fbc/projects/Teensy/tryout_1 && /usr/local/bin/pio -f -c clion run --target uploadfs -eteensy31
+	cd /home/fbc/projects/tuw_bldc/Software/1Motor && /usr/local/bin/pio -f -c clion run --target uploadfs -eteensy31
 
 PLATFORMIO_UPLOADFS: CMakeFiles/PLATFORMIO_UPLOADFS
 PLATFORMIO_UPLOADFS: CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/PLATFORMIO_UPLOADFS.dir/clean:
 .PHONY : CMakeFiles/PLATFORMIO_UPLOADFS.dir/clean
 
 CMakeFiles/PLATFORMIO_UPLOADFS.dir/depend:
-	cd /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbc/projects/Teensy/tryout_1 /home/fbc/projects/Teensy/tryout_1 /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31 /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31 /home/fbc/projects/Teensy/tryout_1/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbc/projects/tuw_bldc/Software/1Motor /home/fbc/projects/tuw_bldc/Software/1Motor /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31 /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31 /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PLATFORMIO_UPLOADFS.dir/depend
 
