@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/99/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/99/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor
+CMAKE_SOURCE_DIR = /home/firat/projects/tuw_bldc/Software/1Motor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teens
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/99/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/99/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firat/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles /home/firat/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firat/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -109,6 +109,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named Z_DUMMY_TARGET
+
+# Build rule for target.
+Z_DUMMY_TARGET: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Z_DUMMY_TARGET
+.PHONY : Z_DUMMY_TARGET
+
+# fast build rule for target.
+Z_DUMMY_TARGET/fast:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/build
+.PHONY : Z_DUMMY_TARGET/fast
 
 #=============================================================================
 # Target rules for targets named PLATFORMIO_REBUILD_PROJECT_INDEX
@@ -150,6 +163,19 @@ PLATFORMIO_PROGRAM/fast:
 .PHONY : PLATFORMIO_PROGRAM/fast
 
 #=============================================================================
+# Target rules for targets named PLATFORMIO_BUILD_DEBUG
+
+# Build rule for target.
+PLATFORMIO_BUILD_DEBUG: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_BUILD_DEBUG
+.PHONY : PLATFORMIO_BUILD_DEBUG
+
+# fast build rule for target.
+PLATFORMIO_BUILD_DEBUG/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_BUILD_DEBUG.dir/build.make CMakeFiles/PLATFORMIO_BUILD_DEBUG.dir/build
+.PHONY : PLATFORMIO_BUILD_DEBUG/fast
+
+#=============================================================================
 # Target rules for targets named PLATFORMIO_BUILD_VERBOSE
 
 # Build rule for target.
@@ -187,19 +213,6 @@ PLATFORMIO_BUILD: cmake_check_build_system
 PLATFORMIO_BUILD/fast:
 	$(MAKE) -f CMakeFiles/PLATFORMIO_BUILD.dir/build.make CMakeFiles/PLATFORMIO_BUILD.dir/build
 .PHONY : PLATFORMIO_BUILD/fast
-
-#=============================================================================
-# Target rules for targets named tryout_1
-
-# Build rule for target.
-tryout_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tryout_1
-.PHONY : tryout_1
-
-# fast build rule for target.
-tryout_1/fast:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/build
-.PHONY : tryout_1/fast
 
 #=============================================================================
 # Target rules for targets named PLATFORMIO_MONITOR
@@ -266,86 +279,59 @@ PLATFORMIO_TEST/fast:
 	$(MAKE) -f CMakeFiles/PLATFORMIO_TEST.dir/build.make CMakeFiles/PLATFORMIO_TEST.dir/build
 .PHONY : PLATFORMIO_TEST/fast
 
-lib/DMASPI/DmaSpi.o: lib/DMASPI/DmaSpi.cpp.o
+src/Foc.o: src/Foc.cpp.o
 
-.PHONY : lib/DMASPI/DmaSpi.o
-
-# target to build an object file
-lib/DMASPI/DmaSpi.cpp.o:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.o
-.PHONY : lib/DMASPI/DmaSpi.cpp.o
-
-lib/DMASPI/DmaSpi.i: lib/DMASPI/DmaSpi.cpp.i
-
-.PHONY : lib/DMASPI/DmaSpi.i
-
-# target to preprocess a source file
-lib/DMASPI/DmaSpi.cpp.i:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.i
-.PHONY : lib/DMASPI/DmaSpi.cpp.i
-
-lib/DMASPI/DmaSpi.s: lib/DMASPI/DmaSpi.cpp.s
-
-.PHONY : lib/DMASPI/DmaSpi.s
-
-# target to generate assembly for a file
-lib/DMASPI/DmaSpi.cpp.s:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/lib/DMASPI/DmaSpi.cpp.s
-.PHONY : lib/DMASPI/DmaSpi.cpp.s
-
-src/FOC.o: src/FOC.cpp.o
-
-.PHONY : src/FOC.o
+.PHONY : src/Foc.o
 
 # target to build an object file
-src/FOC.cpp.o:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/FOC.cpp.o
-.PHONY : src/FOC.cpp.o
+src/Foc.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Foc.cpp.o
+.PHONY : src/Foc.cpp.o
 
-src/FOC.i: src/FOC.cpp.i
+src/Foc.i: src/Foc.cpp.i
 
-.PHONY : src/FOC.i
+.PHONY : src/Foc.i
 
 # target to preprocess a source file
-src/FOC.cpp.i:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/FOC.cpp.i
-.PHONY : src/FOC.cpp.i
+src/Foc.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Foc.cpp.i
+.PHONY : src/Foc.cpp.i
 
-src/FOC.s: src/FOC.cpp.s
+src/Foc.s: src/Foc.cpp.s
 
-.PHONY : src/FOC.s
+.PHONY : src/Foc.s
 
 # target to generate assembly for a file
-src/FOC.cpp.s:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/FOC.cpp.s
-.PHONY : src/FOC.cpp.s
+src/Foc.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Foc.cpp.s
+.PHONY : src/Foc.cpp.s
 
-src/dma_spi.o: src/dma_spi.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : src/dma_spi.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/dma_spi.cpp.o:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/dma_spi.cpp.o
-.PHONY : src/dma_spi.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/dma_spi.i: src/dma_spi.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : src/dma_spi.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/dma_spi.cpp.i:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/dma_spi.cpp.i
-.PHONY : src/dma_spi.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/dma_spi.s: src/dma_spi.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : src/dma_spi.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/dma_spi.cpp.s:
-	$(MAKE) -f CMakeFiles/tryout_1.dir/build.make CMakeFiles/tryout_1.dir/src/dma_spi.cpp.s
-.PHONY : src/dma_spi.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -354,28 +340,26 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... Z_DUMMY_TARGET"
 	@echo "... rebuild_cache"
 	@echo "... PLATFORMIO_REBUILD_PROJECT_INDEX"
 	@echo "... PLATFORMIO_UPLOADFS"
 	@echo "... PLATFORMIO_PROGRAM"
+	@echo "... PLATFORMIO_BUILD_DEBUG"
 	@echo "... PLATFORMIO_BUILD_VERBOSE"
 	@echo "... PLATFORMIO_UPDATE_ALL"
 	@echo "... PLATFORMIO_BUILD"
-	@echo "... tryout_1"
 	@echo "... PLATFORMIO_MONITOR"
 	@echo "... PLATFORMIO_UPLOAD"
 	@echo "... PLATFORMIO_CLEAN"
 	@echo "... PLATFORMIO_DEVICE_LIST"
 	@echo "... PLATFORMIO_TEST"
-	@echo "... lib/DMASPI/DmaSpi.o"
-	@echo "... lib/DMASPI/DmaSpi.i"
-	@echo "... lib/DMASPI/DmaSpi.s"
-	@echo "... src/FOC.o"
-	@echo "... src/FOC.i"
-	@echo "... src/FOC.s"
-	@echo "... src/dma_spi.o"
-	@echo "... src/dma_spi.i"
-	@echo "... src/dma_spi.s"
+	@echo "... src/Foc.o"
+	@echo "... src/Foc.i"
+	@echo "... src/Foc.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

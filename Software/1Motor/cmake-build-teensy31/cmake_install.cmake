@@ -1,4 +1,4 @@
-# Install script for directory: /home/fbc/projects/tuw_bldc/Software/1Motor
+# Install script for directory: /home/firat/projects/tuw_bldc/Software/1Motor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/fbc/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/firat/projects/tuw_bldc/Software/1Motor/cmake-build-teensy31/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

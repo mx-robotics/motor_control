@@ -1,8 +1,4 @@
-//
-// Created by firat on 13.05.19.
-//
-
-#include "FOC.h"
+#include "Foc.h"
 
 
 using namespace tuw;
@@ -476,7 +472,7 @@ void FOC::PID_controller(float rps_target, float rps_measured){
         wind_up = true;
         command = 99;}
     else{
-       wind_up = false;
+        wind_up = false;
     }
 
 
@@ -523,14 +519,14 @@ void FOC::P_controller(float rps_target, float rps_measured) {
     //else if(integral < 0.5f){
 
     //    integral = 0.5f;
-   // }
+    // }
     acc_error = error_sum;
 
     float command =  (proportional + integral - derivative) * (11.22f - 0.22f*fabs(rps_target));
     if(command > 0){
-    if (command > 99) { command = 99; }
-    direction = 1;
-    //if (command < 5) { command = 5; }
+        if (command > 99) { command = 99; }
+        direction = 1;
+        //if (command < 5) { command = 5; }
     }
     else{
         if(command < -99){ command = -99; }

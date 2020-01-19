@@ -9,6 +9,7 @@
 set(CMAKE_CONFIGURATION_TYPES "teensy31" CACHE STRING "" FORCE)
 
 set(PLATFORMIO_CMD "/usr/local/bin/pio")
+set(SVD_PATH "$ENV{HOME}/.platformio/platforms/teensy/misc/svd/MK20D5.svd")
 
 SET(CMAKE_C_COMPILER "$ENV{HOME}/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc")
 SET(CMAKE_CXX_COMPILER "$ENV{HOME}/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++")
@@ -18,12 +19,13 @@ SET(CMAKE_C_FLAGS_DISTRIBUTION "-Wall -ffunction-sections -fdata-sections -mthum
 set(CMAKE_CXX_STANDARD 14)
 
 if (CMAKE_BUILD_TYPE MATCHES "teensy31")
-    add_definitions(-D'PLATFORMIO=40003')
+    add_definitions(-D'PLATFORMIO=40100')
     add_definitions(-D'__MK20DX256__')
     add_definitions(-D'TEENSY31')
     add_definitions(-D'USB_SERIAL')
     add_definitions(-D'ARDUINO=10805')
-    add_definitions(-D'TEENSYDUINO=147')
+    add_definitions(-D'TEENSYDUINO=148')
+    add_definitions(-D'CORE_TEENSY')
     add_definitions(-D'F_CPU=72000000L')
     add_definitions(-D'LAYOUT_US_ENGLISH')
 

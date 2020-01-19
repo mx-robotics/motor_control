@@ -1,7 +1,6 @@
 //
-// Created by firat on 13.05.19.
+// Created by firat on 19.01.20.
 //
-
 #ifndef DMA_SPI_FOC_H
 #define DMA_SPI_FOC_H
 
@@ -156,8 +155,8 @@ namespace tuw {
         std::array<float , 100> move_average_list;
 
 
-         float target_speed= 60;
-         float target_rps= 7.5;
+        float target_speed= 60;
+        float target_rps= 7.5;
     public:
         volatile float getTargetRps() const;
 
@@ -168,7 +167,7 @@ namespace tuw {
 
         volatile uint16_t angle_now=0;
 
-         float my_speed=0.f;
+        float my_speed=0.f;
 
         const SPISettings spiSettings=SPISettings(10000000,MSBFIRST, SPI_MODE1);
 

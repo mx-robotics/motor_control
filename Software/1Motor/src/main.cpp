@@ -1,6 +1,5 @@
-
 #include <Arduino.h>
-#include <FOC.h>
+#include <Foc.h>
 
 #define INT_FIRAT 1
 
@@ -25,7 +24,7 @@ void setup() {
     Serial.begin(9600);
     while(!Serial);
 
-    #if INT_FIRAT
+#if INT_FIRAT
     cli(); //Disable global interrupts
     NVIC_SET_PRIORITY(IRQ_FTM0, 64);
     NVIC_ENABLE_IRQ(IRQ_FTM0);
@@ -42,3 +41,4 @@ void loop() {
 
 
 }
+
