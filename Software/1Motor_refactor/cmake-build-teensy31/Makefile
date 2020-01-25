@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/99/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/100/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/99/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/100/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/firat/projects/1Motor_refactor
+CMAKE_SOURCE_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/firat/projects/1Motor_refactor/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/1Motor_refactor/cmake-build-teensy31
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/99/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/100/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/99/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/100/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/firat/projects/1Motor_refactor/cmake-build-teensy31/CMakeFiles /home/firat/projects/1Motor_refactor/cmake-build-teensy31/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/firat/projects/1Motor_refactor/cmake-build-teensy31/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -495,6 +495,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/utils.o: src/utils.cpp.o
+
+.PHONY : src/utils.o
+
+# target to build an object file
+src/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.o
+.PHONY : src/utils.cpp.o
+
+src/utils.i: src/utils.cpp.i
+
+.PHONY : src/utils.i
+
+# target to preprocess a source file
+src/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
+
+src/utils.s: src/utils.cpp.s
+
+.PHONY : src/utils.s
+
+# target to generate assembly for a file
+src/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -540,6 +567,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/utils.o"
+	@echo "... src/utils.i"
+	@echo "... src/utils.s"
 .PHONY : help
 
 

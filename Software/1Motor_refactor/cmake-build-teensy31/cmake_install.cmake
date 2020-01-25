@@ -1,4 +1,4 @@
-# Install script for directory: /home/firat/projects/1Motor_refactor
+# Install script for directory: /home/firat/projects/tuw_bldc/Software/1Motor_refactor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/firat/projects/1Motor_refactor/cmake-build-teensy31/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

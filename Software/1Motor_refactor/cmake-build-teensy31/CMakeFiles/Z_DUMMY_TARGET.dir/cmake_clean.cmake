@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o"
+  "CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.o"
   "Z_DUMMY_TARGET"
   "Z_DUMMY_TARGET.pdb"
 )

@@ -12,33 +12,35 @@
 class VelocityCalculation {
     static constexpr float wheelDiameter{4.12f};
     static constexpr float wheelCircumference = wheelDiameter * M_PI * 2;
-    static constexpr uint16_t measurementPeriodinMs = 100;
+    static constexpr float measurementPeriodinMs = 100.0f;
     static constexpr float rotaryEncoderMaxValue = 16384.0f;
+    static constexpr uint8_t overflowTreshold = 100;
+    static float calculate_displacement(uint16_t prevRotEncValue, uint16_t newRotEncValue){
+        int16_t difference = newRotEncValue - prevRotEncValue;
+        if(abs(difference) > overflowTreshold){
+            if(difference > 0){
+                difference-=rotaryEncoderMaxValue; // CCW
+            } else{
+
+                difference+=rotaryEncoderMaxValue; // CW
+            }
+        }
+        return (difference/ rotaryEncoderMaxValue);
+
+    }
 
 
 
 public:
- /*   Direction determineDirection(Motor &motor) {  // @TODO implementation missing this is supposed be determine overflow -> might be redundant
-        if (abs(rotaryEncoderValueMemoriser - motor.rotaryEncoderPosition) > 30) {
-            rotaryEncoderOverflow = true;
-        }
-        if (rotaryEncoderOverflow == true) {
 
-        }
-    }
-*/
+
     static float getRotationsPerMinute(Motor &motor) {
         return getRotationsPerSecond(motor) * 60;
     }
 
     static float getRotationsPerSecond(Motor &motor) {
-        uint16_t tempEncoderValue = motor.rotaryEncoderPosition;
-        if (abs(motor.previousRotaryEncoderValue - tempEncoderValue) > 30) {
-            tempEncoderValue += rotaryEncoderMaxValue * motor.direction;
-        }
 
-        int16_t valueDifference = tempEncoderValue - motor.previousRotaryEncoderValue;
-        float rotationsPerSecond = valueDifference / rotaryEncoderMaxValue * (1000 / measurementPeriodinMs);
+        float rotationsPerSecond = calculate_displacement(motor.previousRotaryEncoderValue,motor.rotaryEncoderPosition) * (1000 / measurementPeriodinMs);
         return rotationsPerSecond;
     }
 
