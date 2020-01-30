@@ -8,12 +8,15 @@
 #include <Arduino.h>
 #include <SPI.h>
 #include "Motor.h"
+#include <initializer_list>
 
 
 class RotaryEncoderCommunication{
 private:
 
     static const SPISettings spiSettings; //i
+    static const uint16_t CLK = 14; //i
+
 
 public:
     static uint16_t SPITransfer(uint8_t CSPin) {
@@ -27,6 +30,7 @@ public:
         return rotaryEncoderValue;
     }
 
+    static void initSPI(const std::initializer_list<uint16_t> &list);
 
 };
 #endif //INC_1MOTOR_REFACTOR_ROTARYENCODERCOMMNUNICATION_H

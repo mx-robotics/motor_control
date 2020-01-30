@@ -4,6 +4,7 @@
 #include "Motor.h"
 #include <array>
 #include "SVPWMLookUpTable.h"
+#include "FOC.h"
 
 /*
 
@@ -17,6 +18,17 @@ constexpr auto generate()
     return res;
 }
 */
+
+void ftm0_isr(void)
+{
+    FTM0_SC &= ~FTM_SC_TOF;
+    //tuw::FOC::getInstance().doTheMagic();
+
+
+
+
+}
+
 std::array <uint16_t , 1000> kam;
 
 #define INT_FIRAT 1
@@ -38,7 +50,8 @@ void setup() {
     //const uint8_t * ptr1 = &vint;
    //const std::array <const uint8_t* ,inhibitPins_.InhibitPinU> y = {{ptr1}};
     //auto kk = table[12];
-
+    Serial.begin(9600);
+    RotaryEncoderCommunication::initSPI({10});
 
 #if INT_FIRAT
     cli(); //Disable global interrupts
@@ -47,14 +60,16 @@ void setup() {
     sei(); //Enable global interrupts
 
 #endif
+    while (!Serial);
 
 }
 
 
 void loop() {
     //int kam[10000]={0};
-    //kam[12] = 12;
-    // tuw::FOC::getInstance().setSpeedFromADC();
-
+    delay(200);
+    uint16_t rotorPos= RotaryEncoderCommunication::SPITransfer(10);
+    Serial.println(rotorPos);
+    Serial.println("POS");
 
 }
