@@ -51,8 +51,8 @@
       <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SVPWMLookUpTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWMLookUpTable.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" beforeDir="false" afterPath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" afterDir="false" />
     </list>
@@ -235,7 +235,7 @@
       <workItem from="1579599288836" duration="4589000" />
       <workItem from="1579611210609" duration="14695000" />
       <workItem from="1579945179537" duration="3241000" />
-      <workItem from="1580411308268" duration="5384000" />
+      <workItem from="1580411308268" duration="13741000" />
     </task>
     <servers />
   </component>
@@ -277,6 +277,10 @@
     </state>
     <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580411308990" />
     <state x="945" y="628" key="com.intellij.ide.util.TipDialog/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579611210951" />
+    <state x="2978" y="376" width="501" height="713" key="refactoring.ChangeSignatureDialog" timestamp="1580418309194">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2978" y="376" width="501" height="713" key="refactoring.ChangeSignatureDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580418309194" />
     <state x="952" y="520" width="672" height="678" key="search.everywhere.popup" timestamp="1579557652819">
       <screen x="67" y="27" width="2493" height="1413" />
     </state>

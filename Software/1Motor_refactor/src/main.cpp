@@ -29,17 +29,19 @@ void ftm0_isr(void)
 
 }
 
-std::array <uint16_t , 1000> kam;
+
+int i = 0;
+
+constexpr auto kam1=SVPWMLookUpTable::generate();
 
 #define INT_FIRAT 1
 void setup() {
-    constexpr auto kam1=SVPWMLookUpTable::generate();
 
     //constexpr auto table = generate();
 
-   for(int i =0;i<1000;i++){
-        kam[i]=kam1[i];
-    }
+   //for(int i =0;i<1000;i++){
+    //    kam[i]=kam1[i];
+   // }
     //constexpr InhibitPins inhibitPins_{23, 24, 25};
     //constexpr InitPins initPins{1,2,3};
     //constexpr SPIPins spiPins{1,2,3};
@@ -51,6 +53,8 @@ void setup() {
    //const std::array <const uint8_t* ,inhibitPins_.InhibitPinU> y = {{ptr1}};
     //auto kk = table[12];
     Serial.begin(9600);
+
+
     RotaryEncoderCommunication::initSPI({10});
 
 #if INT_FIRAT
@@ -61,15 +65,21 @@ void setup() {
 
 #endif
     while (!Serial);
+    for(int k=0;k<1489;k++){
+        delay(1);
+        Serial.println(kam1[k]);
+
+    }
 
 }
 
 
 void loop() {
     //int kam[10000]={0};
-    delay(200);
-    uint16_t rotorPos= RotaryEncoderCommunication::SPITransfer(10);
-    Serial.println(rotorPos);
-    Serial.println("POS");
+    delay(10);
+    //uint16_t rotorPos= RotaryEncoderCommunication::SPITransfer(10);
+    //Serial.println(rotorPos);
+    //Serial.println("POS");
+
 
 }

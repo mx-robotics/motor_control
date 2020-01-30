@@ -15,7 +15,7 @@ class FOC {
     Motor *motors;
     uint8_t numberOfMotors;
     //VelocityCalculation velocityCalculation;
-    static constexpr auto LUT = SVPWMLookUpTable::generate();
+    //static constexpr auto LUT = SVPWMLookUpTable::generate();
 
     void updatePWMPinsDutyCycle(Motor &motor){
 
