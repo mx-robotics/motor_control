@@ -3,20 +3,20 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="1Motor_refactor" targetName="PLATFORMIO" />
+      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOADFS" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_TEST" />
       <config projectName="1Motor_refactor" targetName="DEBUG" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOAD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_VERBOSE" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_DEVICE_LIST" />
       <config projectName="1Motor_refactor" targetName="1Motor_refactor" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_CLEAN" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_MONITOR" />
     </generated>
   </component>
@@ -52,7 +52,9 @@
       <change beforePath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/SVPWMLookUpTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWMLookUpTable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" beforeDir="false" afterPath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" afterDir="false" />
     </list>
@@ -112,7 +114,7 @@
       <recent name="$PROJECT_DIR$/include" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.PLATFORMIO_UPLOAD">
+  <component name="RunManager" selected="CMake Application.PLATFORMIO_BUILD_VERBOSE">
     <configuration name="PLATFORMIO_BUILD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="1Motor_refactor" TARGET_NAME="PLATFORMIO_BUILD" CONFIG_NAME="teensy31">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -235,7 +237,8 @@
       <workItem from="1579599288836" duration="4589000" />
       <workItem from="1579611210609" duration="14695000" />
       <workItem from="1579945179537" duration="3241000" />
-      <workItem from="1580411308268" duration="13741000" />
+      <workItem from="1580411308268" duration="15568000" />
+      <workItem from="1580458830249" duration="6530000" />
     </task>
     <servers />
   </component>

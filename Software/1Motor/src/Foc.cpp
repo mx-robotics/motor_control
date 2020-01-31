@@ -43,7 +43,7 @@ void FOC::SPITransfer() {
 
     //16 bit word received, but resolution is 14 bit -> mask out first 2 MSB -> angle & B00111111 11111111 = angle & 0x3FFF;
     rotor_position = fast_mod(angle, 1489) * 0.24169f;
-
+    Serial.println(rotor_position);
     /******* get the model according to 1489 instead f 360 *************************/
 
 
@@ -303,7 +303,7 @@ void FOC::calculate_offset_parameters() {
     uint16_t x1 = IN_W_duty_cycle;
 
     float_t k2 = 0.4f;
-    modulation_index = (2 / sqrt(3));
+    modulation_index = (2 / sqrt(3)); // max modul0 index again
     calculateInputPinsDutyCycle();
     uint16_t a2 = IN_W_duty_cycle * k2;
     modulation_index *= k2;

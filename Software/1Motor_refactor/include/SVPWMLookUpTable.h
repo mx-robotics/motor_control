@@ -13,11 +13,10 @@ private:
     static constexpr uint16_t maxSensorResolution = 16384;
     static constexpr uint8_t motorPoleCount = 11;
     static constexpr uint16_t LUTSize = maxSensorResolution / motorPoleCount;
-    static constexpr uint16_t Sixty_degree_equivelant = LUTSize / 6;
-    //static constexpr float calculation_const = sqrt(3/2.0f);
     static constexpr uint16_t PWM_FREQ = 20000;
     static constexpr uint16_t MAX_DUTY_CYCLE =  (F_BUS/PWM_FREQ)/2;
 public:
+
     constexpr static  std::array<uint16_t, LUTSize> generate() {
 
         std::array <uint16_t, LUTSize> temp_table{};

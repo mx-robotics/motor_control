@@ -3,7 +3,6 @@
 //
 #include "Motor.h"
 #include <array>
-#include "SVPWMLookUpTable.h"
 #include "FOC.h"
 
 /*
@@ -31,6 +30,7 @@ void ftm0_isr(void)
 
 
 int i = 0;
+
 
 constexpr auto kam1=SVPWMLookUpTable::generate();
 
