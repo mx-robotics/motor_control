@@ -20,7 +20,8 @@ private:
 
 public:
     static uint16_t SPITransfer(const uint8_t CSPin);
-    static void initSPI(const std::initializer_list<uint16_t> &list);
+    static void initSPI();
+    static void initMotorCSPins(const uint8_t CSPin);
 
 };
 #endif //INC_1MOTOR_REFACTOR_ROTARYENCODERCOMMNUNICATION_H

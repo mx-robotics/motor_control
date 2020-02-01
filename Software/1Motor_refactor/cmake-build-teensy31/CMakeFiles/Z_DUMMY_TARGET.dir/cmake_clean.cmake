@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.o"
-  "CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o"
+  "CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o"

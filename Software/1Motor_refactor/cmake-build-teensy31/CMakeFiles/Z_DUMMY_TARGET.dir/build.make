@@ -109,18 +109,18 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.s"
 	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/RotaryEncoderCommnunication.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.s
 
-CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
-CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o: ../src/SVPWMLookUpTable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o"
-	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o -c /home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWMLookUpTable.cpp
+CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o: ../src/SVPWM.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o -c /home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWM.cpp
 
-CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.i"
-	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWMLookUpTable.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.i
+CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.i"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWM.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.i
 
-CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.s"
-	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWMLookUpTable.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.s
+CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.s"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWM.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.s
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.o: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.o: ../src/SpeedCalculation.cpp
@@ -180,7 +180,7 @@ Z_DUMMY_TARGET_OBJECTS = \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.o" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.o" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.o" \
-"CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.o" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.o" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o" \
@@ -193,7 +193,7 @@ Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.o
-Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o

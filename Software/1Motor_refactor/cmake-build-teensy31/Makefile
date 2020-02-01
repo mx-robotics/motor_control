@@ -387,32 +387,32 @@ src/RotaryEncoderCommnunication.cpp.s:
 	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.s
 .PHONY : src/RotaryEncoderCommnunication.cpp.s
 
-src/SVPWMLookUpTable.o: src/SVPWMLookUpTable.cpp.o
+src/SVPWM.o: src/SVPWM.cpp.o
 
-.PHONY : src/SVPWMLookUpTable.o
+.PHONY : src/SVPWM.o
 
 # target to build an object file
-src/SVPWMLookUpTable.cpp.o:
-	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o
-.PHONY : src/SVPWMLookUpTable.cpp.o
+src/SVPWM.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o
+.PHONY : src/SVPWM.cpp.o
 
-src/SVPWMLookUpTable.i: src/SVPWMLookUpTable.cpp.i
+src/SVPWM.i: src/SVPWM.cpp.i
 
-.PHONY : src/SVPWMLookUpTable.i
+.PHONY : src/SVPWM.i
 
 # target to preprocess a source file
-src/SVPWMLookUpTable.cpp.i:
-	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.i
-.PHONY : src/SVPWMLookUpTable.cpp.i
+src/SVPWM.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.i
+.PHONY : src/SVPWM.cpp.i
 
-src/SVPWMLookUpTable.s: src/SVPWMLookUpTable.cpp.s
+src/SVPWM.s: src/SVPWM.cpp.s
 
-.PHONY : src/SVPWMLookUpTable.s
+.PHONY : src/SVPWM.s
 
 # target to generate assembly for a file
-src/SVPWMLookUpTable.cpp.s:
-	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.s
-.PHONY : src/SVPWMLookUpTable.cpp.s
+src/SVPWM.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.s
+.PHONY : src/SVPWM.cpp.s
 
 src/SpeedCalculation.o: src/SpeedCalculation.cpp.o
 
@@ -555,9 +555,9 @@ help:
 	@echo "... src/RotaryEncoderCommnunication.o"
 	@echo "... src/RotaryEncoderCommnunication.i"
 	@echo "... src/RotaryEncoderCommnunication.s"
-	@echo "... src/SVPWMLookUpTable.o"
-	@echo "... src/SVPWMLookUpTable.i"
-	@echo "... src/SVPWMLookUpTable.s"
+	@echo "... src/SVPWM.o"
+	@echo "... src/SVPWM.i"
+	@echo "... src/SVPWM.s"
 	@echo "... src/SpeedCalculation.o"
 	@echo "... src/SpeedCalculation.i"
 	@echo "... src/SpeedCalculation.s"

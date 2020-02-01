@@ -75,21 +75,23 @@ public:
     Direction direction;
     float speedRPM = 0;
     float torque = 0;
-    float modulationIndex=0;
+    float modulationIndex=0.5f;
+    uint16_t sensorOffset = 0;
 
-    uint16_t rotaryEncoderOffset=0; //to be determined for each
+    void setSensorOffset(uint16_t sensorOffset_) {
+        sensorOffset = sensorOffset_;
+    }
+
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
-    void setRotaryEncoderPosition(uint16_t rotPos){
+    void updateRotaryEncoderPosition(uint16_t rotPos){
         previousRotaryEncoderValue = rotaryEncoderPosition;
         rotaryEncoderPosition = rotPos;
     }
     void updateSpeedRPM(float_t rpm){
         speedRPM = rpm;
     }
-    void initRotaryEncoderOffset(uint16_t rotEnCOffset){
-        rotaryEncoderOffset = rotEnCOffset;
-    }
+
     void updateModulationIndex(float_t modIndex){
         modulationIndex=modIndex;
     };

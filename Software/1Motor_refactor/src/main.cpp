@@ -1,7 +1,6 @@
 //
 // Created by firat on 20.01.20.
 //
-#include "Motor.h"
 #include <array>
 #include "FOC.h"
 
@@ -32,7 +31,7 @@ void ftm0_isr(void)
 int i = 0;
 
 
-constexpr auto kam1=SVPWMLookUpTable::generate();
+constexpr auto kam1=LUTGenerator::generate();
 
 #define INT_FIRAT 1
 void setup() {
@@ -67,7 +66,7 @@ void setup() {
     while (!Serial);
     for(int k=0;k<1489;k++){
         delay(1);
-        Serial.println(kam1[k]);
+       Serial.println(kam1[k]);
 
     }
 

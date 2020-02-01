@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/Motor.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.o"
   "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/PID.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.o"
   "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/RotaryEncoderCommnunication.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.o"
-  "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWMLookUpTable.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWMLookUpTable.cpp.o"
+  "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWM.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.o"
   "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SpeedCalculation.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.o"
   "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SteeringServoController.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.o"
   "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/main.cpp" "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o"

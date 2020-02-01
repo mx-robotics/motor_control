@@ -8,59 +8,19 @@
 #include "Motor.h"
 #include "SpeedCalculation.h"
 #include "RotaryEncoderCommnunication.h"
-#include "SVPWMLookUpTable.h"
+#include "SVPWM.h"
 #include "PID.h"
 class FOC {
 
     Motor *motors;
     uint8_t numberOfMotors;
     //VelocityCalculation velocityCalculation;
-    static constexpr auto LUT = SVPWMLookUpTable::generate();
+    //static constexpr auto LUT = SVPWM::generate();
     static constexpr uint16_t PWM_FREQ = 20000;
-    static constexpr uint16_t LUTSize = 1489;
-    uint16_t IN_W_duty_cycle=0;
-    uint16_t IN_U_duty_cycle=0;
-    uint16_t IN_V_duty_cycle=0;
     uint16_t sensorOffset = 0; //@TODO to be calculated by this class
     uint16_t angleOffset = 0; // @TODO to be calculated by this class
-    float modulationIndexOffset = 0; // @TODO modulation index + offfset // this should be delegated to LUT Class, the const offset calculation, since a motor should know its sensor offset and maybe angle offset ? -> the whole index calculation can be pushed to LUTClass s
-    //@TODO Even the look up table itself can be pushed to the LUTClass which makes sense. Calculating the proper index and applying the proper offset should be hanndle by the LUTClass. This class should just fetch it. Anything that involves LUT should be in LUT
-
-/*
-    void calculate_offset_parameters() {
-
-        // max modulation index
-        uint16_t rotor_position = 1000;
-        float k1 = 0.2f;
-        calculateInputPinsDutyCycle();
-        uint16_t a1 = IN_W_duty_cycle * k1;
-        modulation_index *= (k1);
-        calculateInputPinsDutyCycle();
-        uint16_t x1 = IN_W_duty_cycle;
-
-        float_t k2 = 0.4f;
-        modulation_index = (2 / sqrt(3)); // max modul0 index again
-        calculateInputPinsDutyCycle();
-        uint16_t a2 = IN_W_duty_cycle * k2;
-        modulation_index *= k2;
-        calculateInputPinsDutyCycle();
-        uint16_t x2 = IN_W_duty_cycle;
 
 
-
-        uint16_t yy1 = x1 - a1;
-        uint16_t yy2 = x2 - a2;
-
-        uint16_t xx1 = k1 * 100;
-        uint16_t xx2 = k2 * 100;
-
-        offset_param_m = (yy2 - yy1) / (xx2 - xx1);
-
-        offset_param_c = yy2 - (offset_param_m * xx2);
-
-
-    }
-*/
     void initInhibitPins(Motor &x){
         pinMode(x.inhibitPins.InhibitPinW,OUTPUT);
         pinMode(x.inhibitPins.InhibitPinU,OUTPUT);
@@ -75,17 +35,14 @@ class FOC {
 
     }
 
-    void initHardware(){
-        initInhibitPins(motors[0]);
-        activateInhibitPins(motors[0]);
-    }
 
-    void updatePWMPinsDutyCycle(Motor &motor){
-        calculateDutyCycles(motor);
+
+
+    void updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor){
         if(motor.initPins.InitPinW == 21){
-            FTM0_C6V = IN_W_duty_cycle;
-            FTM0_C0V = IN_U_duty_cycle;
-            FTM0_C1V = IN_V_duty_cycle;
+            FTM0_C6V = x.inDutyCycleW;
+            FTM0_C0V = x.inDutyCycleU;
+            FTM0_C1V = x.inDutyCycleV;
         }
 
         // @TODO else for the other motor, other sets of pins
@@ -95,16 +52,24 @@ class FOC {
         // another idea would be updating the modulation index with PID everything then gets set according to it
 
     }
-    void calculateDutyCycles(Motor &x){
-        uint16_t base = (x.rotaryEncoderPosition + sensorOffset ) % LUTSize;
-        uint16_t WDutyCycleIndex = (base + angleOffset * x.direction);
-        uint16_t UDutyCycleIndex = ((base + angleOffset * x.direction) + LUTSize/3) % LUTSize;
-        uint16_t VDutyCycleIndex = ((base + angleOffset * x.direction) + (2*(LUTSize/3)) )% LUTSize;
-        IN_W_duty_cycle = LUT[WDutyCycleIndex] + modulationIndexOffset;
-        IN_U_duty_cycle = LUT[UDutyCycleIndex] + modulationIndexOffset;
-        IN_V_duty_cycle = LUT[VDutyCycleIndex] + modulationIndexOffset;
+    void initHardware(){
 
-    };
+        initPWMPins();
+        RotaryEncoderCommunication::initSPI();
+
+
+        initInhibitPins(motors[0]);
+        activateInhibitPins(motors[0]);
+        RotaryEncoderCommunication::initMotorCSPins(motors[0].SpiPins.CS);
+
+
+    }
+
+    void initMotorParams(){
+        uint16_t sensorOffset = calculateSensorOffset(motors[0],50); // this calculation can be done only once and then hardcoded until there is a motor change.
+        motors[0].setSensorOffset(sensorOffset);
+
+    }
 
     void initPWMPins(){
         FTM0_SC = 0;
@@ -131,7 +96,7 @@ class FOC {
         FTM0_C1V = 0; //50%
         PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
 
-
+        //@TODO all the other pins for the second motor
         FTM0_CNTIN = 0x00;
 
 
@@ -143,13 +108,42 @@ class FOC {
 
     void doTheMagic() {
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(motors[0].SpiPins.CS);
-        motors[0].setRotaryEncoderPosition(rotaryEncoderValue);
+        motors[0].updateRotaryEncoderPosition(rotaryEncoderValue);
         uint16_t rps = VelocityCalculation::getRotationsPerSecond(motors[0]);
         motors[0].updateSpeedRPM(rps);
         float_t targetSpeed = getSpeedFromSomewhere();
         float_t newModulationIndex = SpeedPIDController::getSpeedCommand(motors[0],targetSpeed);
         motors[0].updateModulationIndex(newModulationIndex);
-        updatePWMPinsDutyCycle(motors[0]);
+        SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(motors[0]);
+        updatePWMPinsDutyCycle(dutyCycles,motors[0]);
+        
+
+    }
+
+    uint16_t calculateSensorOffset(Motor &motor, const uint16_t LUTindex){ //the index is used as a parameter to maybe plot the sensor offset all over the motor range
+        uint16_t LUTSize = SVPWM::getLutSize();
+        uint16_t dutyCycleW=SVPWM::getLUT()[LUTindex];
+        uint16_t dutyCycleU=SVPWM::getLUT()[LUTindex + (LUTSize / 3)];
+        uint16_t dutyCycleV=SVPWM::getLUT()[LUTindex + (LUTSize / 3) * 2];
+        SPWMDutyCycles x{dutyCycleW, dutyCycleU, dutyCycleV};
+        updatePWMPinsDutyCycle(x,motor);
+        uint16_t encoderVal = RotaryEncoderCommunication::SPITransfer(motor.SpiPins.CS);
+        uint16_t encoderValScaled = encoderVal % LUTSize;
+        uint16_t expectedRotorFlux = (LUTindex + LUTSize/2) % LUTSize;
+        int16_t sensorOffset = expectedRotorFlux - encoderValScaled;
+        return sensorOffset;
+        /**
+         *If there was not a sensor offset, i.e. the rotary encoder directly gave the orientation of the rotor flux vector,
+         * energising 3 phases with the correct duty cycles (120° shifted relative to each other) should give
+         * a rotary encoder position that corresponds to the rotor flux vector. This is the "happy position of the motor
+         * ", rotator flux is alligned with stator flux, Permanent magnets south poles are alligened with the north poles of our created stator flux.
+         * So when lets say put 90 degrees as index to create a stator fluw, the rotor flux should 180* decrees ahead of it, so at 270.
+         * So when we apply 90 the motors locks itself at 270 but we dont want it to lock itself, we want it to keep moving so we either apply 90+90 or 90-90 so it will move in either direction
+         *
+         * If we know this position we would just create the
+         * corresponding stator flux vector that exerts a force perpendicular to it. This would be
+         * the corresponding duty cycle +90° or -°90 ( 1/4 of the LUT size, depending on the direction).
+         */
 
     }
 };

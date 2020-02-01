@@ -432,7 +432,7 @@
 		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/RotaryEncoderCommnunication.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/SVPWMLookUpTable.h">
+		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/SVPWM.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/SpeedCalculation.h">
@@ -456,7 +456,7 @@
 		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/RotaryEncoderCommnunication.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWMLookUpTable.cpp">
+		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SVPWM.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/SpeedCalculation.cpp">

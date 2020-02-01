@@ -6,11 +6,7 @@
 
 const SPISettings RotaryEncoderCommunication::spiSettings(10000000, MSBFIRST, SPI_MODE1);
 
-void RotaryEncoderCommunication::initSPI(const std::initializer_list<uint16_t> &list) {
-    for(auto x :list){
-        pinMode(x, OUTPUT);
-        digitalWrite(x, HIGH);
-    }
+void RotaryEncoderCommunication::initSPI() {
     SPI.begin();
     SPI.setSCK(RotaryEncoderCommunication::CLK);
 
@@ -26,4 +22,10 @@ uint16_t RotaryEncoderCommunication::SPITransfer(const uint8_t CSPin) {
     digitalWriteFast(CSPin, HIGH); //SPI Mode 1 -> receive information with rising edge
     SPI.endTransaction();
     return rotaryEncoderValue;
+}
+
+void RotaryEncoderCommunication::initMotorCSPins(const uint8_t CSPin) {
+    pinMode(CSPin, OUTPUT);
+    digitalWrite(CSPin, HIGH);
+
 }
