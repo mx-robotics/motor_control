@@ -65,25 +65,25 @@ enum Direction {
 
 class Motor {
 public:
-    constexpr Motor(InhibitPins inhibitPins_, InitPins initPins_, SPIPins SpiPins_, ISPins IsPins_, Direction direction_
-    ) : inhibitPins(inhibitPins_), initPins(initPins_), SpiPins(SpiPins_), IsPins(IsPins_), direction(direction_) {}
+    Motor(InhibitPins inhibitPins_, InitPins initPins_, SPIPins SpiPins_, ISPins IsPins_)
+    : inhibitPins(inhibitPins_), initPins(initPins_), SpiPins(SpiPins_), IsPins(IsPins_){}
 
     const  InhibitPins inhibitPins;
     const InitPins initPins;
     const SPIPins SpiPins; //@TODO dont need the whole set of pins, SPICOM calss should handle the others
     const ISPins IsPins;
-    Direction direction;
+    Direction direction = Direction::STOP;
     float speedRPM = 0;
     float torque = 0;
-    float modulationIndex=0.5f;
+    float modulationIndex=0.2f;
     uint16_t sensorOffset = 0;
+    uint16_t rotaryEncoderPosition = 0;
+    uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
 
     void setSensorOffset(uint16_t sensorOffset_) {
         sensorOffset = sensorOffset_;
     }
 
-    uint16_t rotaryEncoderPosition = 0;
-    uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
     void updateRotaryEncoderPosition(uint16_t rotPos){
         previousRotaryEncoderValue = rotaryEncoderPosition;
         rotaryEncoderPosition = rotPos;

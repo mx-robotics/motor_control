@@ -204,7 +204,7 @@ private:
     static constexpr uint16_t maxSensorResolution = 16384;
     static constexpr uint8_t motorPoleCount = 11;
     static constexpr uint16_t LUTSize = maxSensorResolution / motorPoleCount;
-    static constexpr uint16_t angleOffset = LUTSize/4; // @TODO calculate -90 + 90
+    static constexpr uint16_t angleOffset = LUTSize/4; // @TODO calculate -90 + 90, plot for variations
     static constexpr auto LUT=LUTGenerator::generate();
     static constexpr auto modulationIndexParams = LUTGenerator::calculateModulationIndexScalingOffsetParameters();
 

@@ -3,20 +3,20 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="1Motor_refactor" targetName="PLATFORMIO" />
+      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOADFS" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_TEST" />
       <config projectName="1Motor_refactor" targetName="DEBUG" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOAD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_VERBOSE" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_DEVICE_LIST" />
       <config projectName="1Motor_refactor" targetName="1Motor_refactor" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_CLEAN" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_MONITOR" />
     </generated>
   </component>
@@ -27,23 +27,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/include/SVPWM.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/1Motor_refactor.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/1Motor_refactor.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Motor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/SVPWMLookUpTable.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SVPWMLookUpTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SVPWM.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SVPWM.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWM.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" beforeDir="false" afterPath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +219,8 @@
       <workItem from="1580458830249" duration="6614000" />
       <workItem from="1580488601318" duration="3913000" />
       <workItem from="1580550793008" duration="12740000" />
-      <workItem from="1580567580280" duration="2453000" />
+      <workItem from="1580567580280" duration="8402000" />
+      <workItem from="1580577043790" duration="9000" />
     </task>
     <servers />
   </component>

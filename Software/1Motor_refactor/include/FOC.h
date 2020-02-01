@@ -12,13 +12,13 @@
 #include "PID.h"
 class FOC {
 
+public:
+
+    static constexpr uint8_t numberOfMotors=1;
     Motor *motors;
-    uint8_t numberOfMotors;
     //VelocityCalculation velocityCalculation;
     //static constexpr auto LUT = SVPWM::generate();
     static constexpr uint16_t PWM_FREQ = 20000;
-    uint16_t sensorOffset = 0; //@TODO to be calculated by this class
-    uint16_t angleOffset = 0; // @TODO to be calculated by this class
 
 
     void initInhibitPins(Motor &x){
@@ -129,7 +129,7 @@ class FOC {
         updatePWMPinsDutyCycle(x,motor);
         uint16_t encoderVal = RotaryEncoderCommunication::SPITransfer(motor.SpiPins.CS);
         uint16_t encoderValScaled = encoderVal % LUTSize;
-        uint16_t expectedRotorFlux = (LUTindex + LUTSize/2) % LUTSize;
+        uint16_t expectedRotorFlux = (LUTindex + LUTSize/2) % LUTSize; // + 180
         int16_t sensorOffset = expectedRotorFlux - encoderValScaled;
         return sensorOffset;
         /**
