@@ -4,3 +4,6 @@
 
 #include "SVPWM.h"
 
+//ModulationIndexScalingParams SVPWM::modulationIndexParams = LUTGenerator::calculateModulationIndexScalingOffsetParameters();
+
+

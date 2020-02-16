@@ -3,3 +3,9 @@
 //
 
 #include "FOC.h"
+FOC &FOC::getInstance() {
+    static FOC instance;
+    return instance;
+
+
+}

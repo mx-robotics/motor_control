@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/103/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/103/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fbc/projects/Teensy/2MBoardController
+CMAKE_SOURCE_DIR = /home/firat/projects/tuw_bldc/Software/2Motor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31
 
 # Include any dependencies generated for this target.
 include CMakeFiles/2MBoardController.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/2MBoardController.dir/flags.make
 
 CMakeFiles/2MBoardController.dir/src/FOC.cpp.o: CMakeFiles/2MBoardController.dir/flags.make
 CMakeFiles/2MBoardController.dir/src/FOC.cpp.o: ../src/FOC.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/2MBoardController.dir/src/FOC.cpp.o"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2MBoardController.dir/src/FOC.cpp.o -c /home/fbc/projects/Teensy/2MBoardController/src/FOC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/2MBoardController.dir/src/FOC.cpp.o"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2MBoardController.dir/src/FOC.cpp.o -c /home/firat/projects/tuw_bldc/Software/2Motor/src/FOC.cpp
 
 CMakeFiles/2MBoardController.dir/src/FOC.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2MBoardController.dir/src/FOC.cpp.i"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fbc/projects/Teensy/2MBoardController/src/FOC.cpp > CMakeFiles/2MBoardController.dir/src/FOC.cpp.i
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firat/projects/tuw_bldc/Software/2Motor/src/FOC.cpp > CMakeFiles/2MBoardController.dir/src/FOC.cpp.i
 
 CMakeFiles/2MBoardController.dir/src/FOC.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2MBoardController.dir/src/FOC.cpp.s"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fbc/projects/Teensy/2MBoardController/src/FOC.cpp -o CMakeFiles/2MBoardController.dir/src/FOC.cpp.s
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/tuw_bldc/Software/2Motor/src/FOC.cpp -o CMakeFiles/2MBoardController.dir/src/FOC.cpp.s
 
 CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o: CMakeFiles/2MBoardController.dir/flags.make
 CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o: ../src/dma_spi.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o -c /home/fbc/projects/Teensy/2MBoardController/src/dma_spi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o -c /home/firat/projects/tuw_bldc/Software/2Motor/src/dma_spi.cpp
 
 CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.i"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fbc/projects/Teensy/2MBoardController/src/dma_spi.cpp > CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.i
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firat/projects/tuw_bldc/Software/2Motor/src/dma_spi.cpp > CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.i
 
 CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.s"
-	/home/fbc/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fbc/projects/Teensy/2MBoardController/src/dma_spi.cpp -o CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.s
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/tuw_bldc/Software/2Motor/src/dma_spi.cpp -o CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.s
 
 # Object files for target 2MBoardController
 2MBoardController_OBJECTS = \
@@ -95,7 +95,7 @@ CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.s: cmake_force
 2MBoardController: CMakeFiles/2MBoardController.dir/src/dma_spi.cpp.o
 2MBoardController: CMakeFiles/2MBoardController.dir/build.make
 2MBoardController: CMakeFiles/2MBoardController.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 2MBoardController"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 2MBoardController"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2MBoardController.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/2MBoardController.dir/clean:
 .PHONY : CMakeFiles/2MBoardController.dir/clean
 
 CMakeFiles/2MBoardController.dir/depend:
-	cd /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbc/projects/Teensy/2MBoardController /home/fbc/projects/Teensy/2MBoardController /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31 /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31 /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firat/projects/tuw_bldc/Software/2Motor /home/firat/projects/tuw_bldc/Software/2Motor /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31 /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31 /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/2MBoardController.dir/depend
 

@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Foc.h>
 
-#define INT_FIRAT 1
+#define INT_FIRAT 0
 
 
 
@@ -23,6 +23,7 @@ void setup() {
     tuw::FOC::getInstance().initPins();
     Serial.begin(9600);
     while(!Serial);
+    tuw::FOC::getInstance().calculate_offset_parameters();
 
 #if INT_FIRAT
     cli(); //Disable global interrupts

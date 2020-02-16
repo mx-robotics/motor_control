@@ -218,6 +218,7 @@ void FOC::doTheMagic() {
 }
 
 
+
 void FOC::initPins() {
 
     FOC::calculate_offset_parameters_short();
@@ -292,36 +293,67 @@ void FOC::debugPlot() {
 }
 
 void FOC::calculate_offset_parameters() {
+    for (int i = 0; i <360 ; ++i) {
+    //this seems to be okay actually
+        int j = 1;
 
-    // max modulation index
-    rotor_position = 33;
-    float k1 = 0.2f;
-    calculateInputPinsDutyCycle();
-    uint16_t a1 = IN_W_duty_cycle * k1;
-    modulation_index *= (k1);
-    calculateInputPinsDutyCycle();
-    uint16_t x1 = IN_W_duty_cycle;
 
-    float_t k2 = 0.4f;
-    modulation_index = (2 / sqrt(3)); // max modul0 index again
-    calculateInputPinsDutyCycle();
-    uint16_t a2 = IN_W_duty_cycle * k2;
-    modulation_index *= k2;
-    calculateInputPinsDutyCycle();
-    uint16_t x2 = IN_W_duty_cycle;
+            // max modulation index
+            modulation_index = (2 / sqrt(3));
+            rotor_position = i;
+            float k1 = 0.2f*j;
+            calculateInputPinsDutyCycle();
+
+            //Serial.println(IN_U_duty_cycle);
+            //Serial.println(IN_V_duty_cycle);
+            uint16_t a1 = IN_W_duty_cycle * k1;
+            Serial.println(a1);
 
 
 
-    uint16_t yy1 = x1 - a1;
-    uint16_t yy2 = x2 - a2;
+            modulation_index *= (k1);
+            calculateInputPinsDutyCycle();
+            uint16_t x1 = IN_W_duty_cycle;
+            Serial.println(IN_W_duty_cycle);
 
-    uint16_t xx1 = k1 * 100;
-    uint16_t xx2 = k2 * 100;
+            float_t k2 = 0.4f;
+            modulation_index = (2 / sqrt(3)); // max modul0 index again
+            calculateInputPinsDutyCycle();
 
-    offset_param_m = (yy2 - yy1) / (xx2 - xx1);
 
-    offset_param_c = yy2 - (offset_param_m * xx2);
+            uint16_t a2 = IN_W_duty_cycle * k2;
+            modulation_index *= k2;
+            calculateInputPinsDutyCycle();
+            uint16_t x2 = IN_W_duty_cycle;
 
+
+            uint16_t yy1 = x1 - a1;
+            uint16_t yy2 = x2 - a2;
+
+            uint16_t xx1 = k1*j * 100;
+            uint16_t xx2 = k2 * 100;
+
+            offset_param_m = (yy2 - yy1) / (xx2 - xx1);
+
+            offset_param_c = yy2 - (offset_param_m * xx2);
+
+            //uint16_t error = offset_param_m*k1*j*100 + offset_param_c;
+            uint16_t error = abs(a1 - x1);
+            Serial.println(error);
+            /* Serial.print("rotor_position");
+             Serial.print(i);
+
+             Serial.print(", c = ");
+             Serial.print(offset_param_c);
+             Serial.print(", m = ");
+             Serial.println(offset_param_m);
+
+             */
+
+
+
+
+        }
 
 }
 

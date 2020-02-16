@@ -18,8 +18,7 @@ namespace tuw {
 
         void SPITransfer();
 
-
-
+        void calculate_offset_parameters();
         void initPins();  // called once in setup
         void doTheMagic(); // called every loop iteration
 
@@ -75,7 +74,6 @@ namespace tuw {
         void calculateInputPinsDutyCycle(); // on the fly calculation, used once for LUT creation
         inline uint16_t calculate_LUT_offset(); // calculate the modulation index-speed command relation
         std::array<uint16_t , 360> createLUT(); // create the LUT
-        void calculate_offset_parameters(); // calculates the parameters of the offset function, not being called
         void calculate_offset_parameters_short(); // calculates the offset func parameters in a magic way, called 1
         void calculateInputPinsDutyCycleLUT();
         void setInputPinsDutyCycle();

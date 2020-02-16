@@ -1,4 +1,4 @@
-/opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=teensy31 -G "CodeBlocks - Unix Makefiles" /home/fbc/projects/Teensy/2MBoardController
+/snap/clion/103/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=teensy31 -G "CodeBlocks - Unix Makefiles" /home/firat/projects/tuw_bldc/Software/2Motor
 -- The C compiler identification is GNU 7.4.0
 -- The CXX compiler identification is GNU 7.4.0
 -- Check for working C compiler: /usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31
+-- Build files have been written to: /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31

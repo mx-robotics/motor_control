@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/103/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/103/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fbc/projects/Teensy/2MBoardController
+CMAKE_SOURCE_DIR = /home/firat/projects/tuw_bldc/Software/2Motor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31
 
 # Utility rule file for PLATFORMIO_CLEAN.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/fbc/projects/Teensy/2MBoardController/cmake-build-teens
 include CMakeFiles/PLATFORMIO_CLEAN.dir/progress.make
 
 CMakeFiles/PLATFORMIO_CLEAN:
-	cd /home/fbc/projects/Teensy/2MBoardController && /usr/local/bin/pio -f -c clion run --target clean -eteensy31
+	cd /home/firat/projects/tuw_bldc/Software/2Motor && /usr/local/bin/pio -f -c clion run --target clean -eteensy31
 
 PLATFORMIO_CLEAN: CMakeFiles/PLATFORMIO_CLEAN
 PLATFORMIO_CLEAN: CMakeFiles/PLATFORMIO_CLEAN.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/PLATFORMIO_CLEAN.dir/clean:
 .PHONY : CMakeFiles/PLATFORMIO_CLEAN.dir/clean
 
 CMakeFiles/PLATFORMIO_CLEAN.dir/depend:
-	cd /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbc/projects/Teensy/2MBoardController /home/fbc/projects/Teensy/2MBoardController /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31 /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31 /home/fbc/projects/Teensy/2MBoardController/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firat/projects/tuw_bldc/Software/2Motor /home/firat/projects/tuw_bldc/Software/2Motor /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31 /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31 /home/firat/projects/tuw_bldc/Software/2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PLATFORMIO_CLEAN.dir/depend
 

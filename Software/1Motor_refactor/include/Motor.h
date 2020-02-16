@@ -56,7 +56,7 @@ struct ISPins {
 
 
 enum Direction {
-    CCW, STOP, CW
+    CCW = -1, STOP, CW
 };
 
 
@@ -72,10 +72,10 @@ public:
     const InitPins initPins;
     const SPIPins SpiPins; //@TODO dont need the whole set of pins, SPICOM calss should handle the others
     const ISPins IsPins;
-    Direction direction = Direction::STOP;
+    Direction direction = Direction::CW;
     float speedRPM = 0;
     float torque = 0;
-    float modulationIndex=0.2f;
+    float speedScalar= 80; // something between 0 and 1 update later so you dont multiplie once one
     uint16_t sensorOffset = 0;
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
@@ -92,8 +92,8 @@ public:
         speedRPM = rpm;
     }
 
-    void updateModulationIndex(float_t modIndex){
-        modulationIndex=modIndex;
+    void updateSpeedScalar(float_t modIndex){
+        speedScalar=modIndex;
     };
 
 

@@ -3,20 +3,20 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="1Motor_refactor" targetName="PLATFORMIO" />
-      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOADFS" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_TEST" />
       <config projectName="1Motor_refactor" targetName="DEBUG" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOAD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_VERBOSE" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_DEVICE_LIST" />
       <config projectName="1Motor_refactor" targetName="1Motor_refactor" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_CLEAN" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
+      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_MONITOR" />
     </generated>
   </component>
@@ -28,12 +28,151 @@
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/project.checksum" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/project.checksum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/.sconsign.py27.dblite" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/.sconsign.py27.dblite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/AudioStream.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/AudioStream.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/DMAChannel.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/DMAChannel.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/EventResponder.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/EventResponder.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial1.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial1.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial2.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial2.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial3.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial3.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial4.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial4.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial5.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial5.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial6.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/HardwareSerial6.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/IPAddress.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/IPAddress.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/IntervalTimer.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/IntervalTimer.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/Print.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/Print.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/Stream.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/Stream.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/Tone.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/Tone.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/WMath.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/WMath.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/WString.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/WString.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/analog.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/analog.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/avr_emulation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/avr_emulation.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/eeprom.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/eeprom.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/keylayouts.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/keylayouts.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/math_helper.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/math_helper.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/memcpy-armv7m.S.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/memcpy-armv7m.S.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/memset.S.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/memset.S.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/mk20dx128.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/mk20dx128.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/new.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/new.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/nonstd.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/nonstd.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/pins_teensy.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/pins_teensy.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/ser_print.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/ser_print.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial1.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial1.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial2.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial2.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial3.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial3.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial4.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial4.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial5.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial5.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial6.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial6.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial6_lpuart.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/serial6_lpuart.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/touch.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/touch.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_audio.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_audio.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_desc.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_desc.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_dev.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_dev.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_flightsim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_flightsim.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_inst.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_inst.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_joystick.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_joystick.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_keyboard.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_keyboard.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_mem.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_mem.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_midi.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_midi.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_mouse.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_mouse.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_mtp.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_mtp.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_rawhid.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_rawhid.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_seremu.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_seremu.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_touch.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/usb_touch.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/yield.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/FrameworkArduino/yield.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/firmware.elf" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/firmware.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/firmware.hex" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/firmware.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/libFrameworkArduino.a" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/.pio/build/teensy31/libFrameworkArduino.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_DEBUG.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_DEBUG.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_MONITOR.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_MONITOR.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_TEST.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_TEST.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/cmake-build-teensy31/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/include/Foc.h" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/include/Foc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/platformio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_DEBUG.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_DEBUG.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_MONITOR.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_MONITOR.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_TEST.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_TEST.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-teensy31/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy31/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Motor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/SVPWM.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWM.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FOC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RotaryEncoderCommnunication.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SVPWM.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SVPWM.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/2MBoardController.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/2MBoardController.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/2MBoardController.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_CLEAN.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_MONITOR.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_MONITOR.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_TEST.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_TEST.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOAD.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/cmake-build-teensy31/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" beforeDir="false" afterPath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +220,7 @@
     <property name="FullScreen" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2Motor" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
@@ -92,7 +231,7 @@
       <recent name="$PROJECT_DIR$/include" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.PLATFORMIO_BUILD_VERBOSE">
+  <component name="RunManager" selected="CMake Application.PLATFORMIO_UPLOAD">
     <configuration name="PLATFORMIO_BUILD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="1Motor_refactor" TARGET_NAME="PLATFORMIO_BUILD" CONFIG_NAME="teensy31">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -220,7 +359,14 @@
       <workItem from="1580488601318" duration="3913000" />
       <workItem from="1580550793008" duration="12740000" />
       <workItem from="1580567580280" duration="8402000" />
-      <workItem from="1580577043790" duration="9000" />
+      <workItem from="1580577043790" duration="782000" />
+      <workItem from="1580654122638" duration="2457000" />
+      <workItem from="1580672915626" duration="19352000" />
+      <workItem from="1580717676245" duration="1407000" />
+      <workItem from="1580724532338" duration="8620000" />
+      <workItem from="1580846283281" duration="22000" />
+      <workItem from="1581755078831" duration="24128000" />
+      <workItem from="1581852704353" duration="3369000" />
     </task>
     <servers />
   </component>
@@ -257,23 +403,24 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="3041" y="451" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580556462304" />
-    <state x="1066" y="545" width="424" height="513" key="FileChooserDialogImpl" timestamp="1579558913213">
-      <screen x="67" y="27" width="2493" height="1413" />
-    </state>
-    <state x="1066" y="545" width="424" height="513" key="FileChooserDialogImpl/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579558913213" />
-    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog" timestamp="1580550794291">
+    <state x="2946" y="528" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581775999807">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580550794291" />
+    <state x="2946" y="528" width="424" height="484" key="FileChooserDialogImpl/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1581775999807" />
+    <state x="1066" y="545" width="424" height="513" key="FileChooserDialogImpl/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579558913213" />
+    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog" timestamp="1580846285208">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580846285208" />
     <state x="945" y="628" key="com.intellij.ide.util.TipDialog/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579611210951" />
     <state x="2978" y="376" width="501" height="713" key="refactoring.ChangeSignatureDialog" timestamp="1580418309194">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2978" y="376" width="501" height="713" key="refactoring.ChangeSignatureDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580418309194" />
-    <state x="2829" y="502" width="691" height="691" key="search.everywhere.popup" timestamp="1580568178805">
+    <state x="2829" y="502" width="691" height="691" key="search.everywhere.popup" timestamp="1581766479568">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2829" y="502" width="691" height="691" key="search.everywhere.popup/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580568178805" />
+    <state x="2829" y="502" width="691" height="691" key="search.everywhere.popup/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1581766479568" />
     <state x="952" y="520" width="672" height="678" key="search.everywhere.popup/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579557652819" />
   </component>
   <component name="masterDetails">
