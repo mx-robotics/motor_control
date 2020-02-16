@@ -402,7 +402,6 @@ void FOC::setPWMpins() {
     FTM0_CNTIN = 0x00;
 
 
-    FTM0_SC = 0b01101000; //CPWM MODE 0x48 EPWM -> 0x68 0110 1000
 }
 
 void FOC::printLUToffsetValues() {

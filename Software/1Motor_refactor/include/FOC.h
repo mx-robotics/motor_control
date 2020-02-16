@@ -65,6 +65,7 @@ public:
         for (int i = 0; i < numberOfMotors ; ++i) {
             initInhibitPins(motors[i]);
             activateInhibitPins(motors[i]);
+            Serial.print("a2");
             RotaryEncoderCommunication::initMotorCSPins(motors[i]);
         }
 
@@ -133,6 +134,9 @@ public:
 
         FTM0_SC = 0b01101000; //CPWM MODE 0x48 EPWM -> 0x68 0110 1000
 
+        FTM0_SC = 0b01101000; //CPWM MODE 0x48 EPWM -> 0x68 0110 1000 -> TOF interrupt disabled
+        //FTM0_SC = 0b00101000; //CPWM MODE 0x48 EPWM -> 0x68 0110 1000
+
 
     }
 
@@ -159,7 +163,10 @@ public:
     }
 
     void doTheMagic2() {
+
+
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(motors[0]);
+
         rotaryEncoderValue = 1489 - rotaryEncoderValue; // sensor offset
         motors[0].updateRotaryEncoderPosition(rotaryEncoderValue);
         uint16_t targetSpeed = getSpeedFromSomewhere();
