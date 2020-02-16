@@ -1,10 +1,11 @@
 1. Rotary encoder:
-Current desing has the cable socket and the chip on the same side, this is a bit problematic since you want the chip as close as possible to the rotating magnet. A new design should put the cable socket to the other side.
+Current desing has the cable socket and the chip on the same side, this is a bit problematic since you want the chip as close as possible to the rotating magnet. A new design should put the cable socket to the other side. 
+Also the current setup uses an reversed cable order :  ABCDE on the board --> EDCBA on the sensor.
 
 2. 2Motor Board: **IMPORTANT**
-There has to be at least 2 current measurements done each cycle, per motor. There are 2 ADC units on Teensy that can do parallel measurements to save time. The more time you have to measure the more accurate the ADC gets. Unfortunately during the initial desing this wasnt taken into consideration so the choosen ADC pins are **not** distributed correctly to 2 different ADC units, so full utulisation can not be performed. An easy rewiring should solve the issue.
+There has to be at least 2 current measurements done each cycle, per motor. There are 2 ADC units on Teensy that can do parallel measurements to save time. The more time you have for measuring, the more accurate ADC gets. Unfortunately during the initial desing this wasnt taken into consideration so the choosen ADC pins are **not** distributed correctly to 2 different ADC units, so full utulisation can not be performed. An easy rewiring should solve the issue.
 
 3. All boards. SPI/Hal communication cable sockets
 The choosen sockets have 2 metal indentations on the sides which are used to further improve ḿechanical adhesion. Unfortunately the metal pads that should correspond to those indentation for soldering are not present on the board. They should be added.
 
-4. Thinner pin heards for Teensy to be plugged on the boards.
+4. The pin headers that are used to for hosting Teensy on boards are too _thick_ and it is really hard to solder them in a nice fashion, a bit of filing/grinding needs to be done at any place where 2 lines are adjacent. A thinner pin header set, like the ones arduino shield uses is a much better fit, they dont have to be as tall as arduino ones.
