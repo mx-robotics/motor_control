@@ -20,6 +20,8 @@ public:
     ADC *adc = new ADC();
     static constexpr uint16_t PWM_FREQ = 20000;
     static constexpr uint8_t ADC_PIN = A1;
+     uint16_t speed_ctr = 0;
+
 
 
     void initInhibitPins(Motor &x) {
@@ -164,11 +166,24 @@ public:
 
     void doTheMagic2() {
 
-
+        static uint16_t ctr = 0;
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(motors[0]);
-
-        rotaryEncoderValue = 1489 - rotaryEncoderValue; // sensor offset
         motors[0].updateRotaryEncoderPosition(rotaryEncoderValue);
+
+        motors[0].cumulativeAdd(rotaryEncoderValue);
+
+        if(ctr == 1000) {
+
+            //float_t rps = VelocityCalculation::getRotationsPerSecond(motors[0]);
+            //motors[0].updatePrevRotaryEncoderPosition(rotaryEncoderValue);
+            float_t rps = VelocityCalculation::getRotationsPerSecond2(motors[0].encoderCumulativeValue);
+            motors[0].updateEncoderCumulativeValue();
+            Serial.println(rps);
+
+            ctr = 0;
+
+        }
+        ++ctr;
         uint16_t targetSpeed = getSpeedFromSomewhere();
         motors[0].updateSpeedScalar(targetSpeed);
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(motors[0]);

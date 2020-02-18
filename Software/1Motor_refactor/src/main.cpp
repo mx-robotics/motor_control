@@ -47,7 +47,10 @@ void setup() {
     FOC::getInstance().motors = &x;
     FOC::getInstance().initHardware();
     Serial.begin(9600);
+
+
     while (!Serial);
+    //FOC::getInstance().calculateSensorOffset(x,200);
 
 
 #if INT_FIRAT
@@ -79,11 +82,11 @@ void loop() {
     //@ 2: test the modulo index offset calculation, plot it after scaling as well for debugging
     //@ 3: hardware init contuniuation for multi motor setup
     //@ 4: proper order of U V W and its documentation, drawing
-    //@TODO speed calculation
+    //@ 6: speed calculation
     //@TODO proper FOC class constructor for multi motor setup
     //@TODO header - cpp proper placing of functions
     //@ 5: initial spin
-    //@TODO SetSpeedFromSomewhere implementation 1-ADC
+    //@7: SetSpeedFromSomewhere implementation 1-ADC
     //@TODO PID
     //@TODO SetSpeedFromSomewhere implementation 2-Serial Interface For Speed
     //@TODO 2MBoard migration and tests

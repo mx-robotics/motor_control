@@ -224,7 +224,15 @@ public:
         SPWMDutyCycles temp;
        float modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
 
-        uint16_t base = (x.rotaryEncoderPosition + x.sensorOffset + (angleOffset * -1) + LUTSize) % LUTSize;
+        uint16_t base = (x.scaledRotaryEncoderPosition + ((x.fieldWeakening + angleOffset) * -1 - 20) + LUTSize) % LUTSize;
+        /*
+         * This part is tricky; there is a field-weakening and the best results has been found at -120 and + 80
+         * To avoid an else-if check the fieldWeakening is set to 100 and with this -20 it is set to -120 or 80 according to the direction of the motor
+         * It is very peculiar that the implicit Sensor Offet in the scaledRotaryEncoderPosition is different in each direction, one direction has a 40 degrees offset compared to the other
+         * This issue clearly shows itself with the max speed difference if left unattended. With the current fieldWeakening parameter themax speed is around 13.50 in each direction
+         *
+         *
+         * */
         uint16_t LUTIndexW = base;
         uint16_t LUTIndexU = (base + (LUTSize / 3) ) % LUTSize;
         uint16_t LUTIndexV = (base + (2 * (LUTSize / 3)) ) % LUTSize;

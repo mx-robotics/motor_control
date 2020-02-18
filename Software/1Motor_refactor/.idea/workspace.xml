@@ -3,20 +3,20 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="1Motor_refactor" targetName="PLATFORMIO" />
+      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOADFS" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_TEST" />
       <config projectName="1Motor_refactor" targetName="DEBUG" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOAD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_VERBOSE" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_DEVICE_LIST" />
       <config projectName="1Motor_refactor" targetName="1Motor_refactor" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_CLEAN" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_MONITOR" />
     </generated>
   </component>
@@ -27,12 +27,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor/src/Foc.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2Motor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" beforeDir="false" afterPath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Motor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SVPWM.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWM.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SpeedCalculation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SpeedCalculation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpeedCalculation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpeedCalculation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +227,8 @@
       <workItem from="1580846283281" duration="22000" />
       <workItem from="1581755078831" duration="24128000" />
       <workItem from="1581852704353" duration="8398000" />
-      <workItem from="1581871677304" duration="1696000" />
+      <workItem from="1581871677304" duration="6978000" />
+      <workItem from="1582054733094" duration="5490000" />
     </task>
     <servers />
   </component>
@@ -273,6 +275,10 @@
     </state>
     <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580846285208" />
     <state x="945" y="628" key="com.intellij.ide.util.TipDialog/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579611210951" />
+    <state x="2897" y="410" width="662" height="645" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582054799408">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2897" y="410" width="662" height="645" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1582054799408" />
     <state x="2978" y="376" width="501" height="713" key="refactoring.ChangeSignatureDialog" timestamp="1580418309194">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -282,6 +288,17 @@
     </state>
     <state x="2829" y="502" width="691" height="691" key="search.everywhere.popup/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1581766479568" />
     <state x="952" y="520" width="672" height="678" key="search.everywhere.popup/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579557652819" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/include/Motor.h</url>
+          <line>90</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

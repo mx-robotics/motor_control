@@ -76,19 +76,46 @@ public:
     float speedRPM = 0;
     float torque = 0;
     float speedScalar= 80; // something between 0 and 1 update later so you dont multiplie once one
-    uint16_t sensorOffset = 0;
+    int16_t fieldWeakening = -100; // best : 80 for -1;
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
+    uint16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening
+    uint16_t encoderCumulativeValue = 0;
 
     void setSensorOffset(uint16_t sensorOffset_) {
-        sensorOffset = sensorOffset_;
+        fieldWeakening = sensorOffset_;
+    }
+    void updateEncoderCumulativeValue(){
+        encoderCumulativeValue = 0;
+    }
+     void cumulativeAdd(uint16_t rotPos){
+        uint16_t diff = abs(rotPos - previousRotaryEncoderValue);
+        if(diff < 2){
+            diff = 0;
+        }
+        if(diff > 100){
+            diff = 16384 - diff;
+        }
+         previousRotaryEncoderValue = rotPos;
+         encoderCumulativeValue += diff;
+
+
+
+
     }
 
     void updateRotaryEncoderPosition(uint16_t rotPos){
-        previousRotaryEncoderValue = rotaryEncoderPosition;
+        scaledRotaryEncoderPosition = 1489 - rotPos;
+        //scaledRotaryEncoderPosition = rotPos;
         rotaryEncoderPosition = rotPos;
+
     }
-    void updateSpeedRPM(float_t rpm){
+    void updatePrevRotaryEncoderPosition(uint16_t rotPos){
+        previousRotaryEncoderValue = rotPos;
+
+    }
+
+        void updateSpeedRPM(float_t rpm){
         speedRPM = rpm;
     }
 
