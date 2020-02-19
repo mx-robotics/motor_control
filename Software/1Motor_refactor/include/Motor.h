@@ -76,7 +76,8 @@ public:
     float speedRPM = 0;
     float torque = 0;
     float speedScalar= 80; // something between 0 and 1 update later so you dont multiplie once one
-    int16_t fieldWeakening = -100; // best : 80 for -1;
+    //int16_t fieldWeakening = -100; // best : 80 for -1;
+    int16_t fieldWeakening = -70; // best : 80 for -1;
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
     uint16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening

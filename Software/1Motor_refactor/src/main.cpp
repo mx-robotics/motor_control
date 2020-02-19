@@ -47,11 +47,15 @@ void setup() {
     FOC::getInstance().motors = &x;
     FOC::getInstance().initHardware();
     Serial.begin(9600);
-
-
     while (!Serial);
-    //FOC::getInstance().calculateSensorOffset(x,200);
 
+   /* while (!Serial);
+    for (int j = 0; j < 1489 ; j+=20 ) {
+        FOC::getInstance().calculateSensorOffset(x,j);
+    while (!Serial);
+
+    }
+*/
 
 #if INT_FIRAT
     cli(); //Disable global interrupts
@@ -88,6 +92,7 @@ void loop() {
     //@ 5: initial spin
     //@7: SetSpeedFromSomewhere implementation 1-ADC
     //@TODO PID
+
     //@TODO SetSpeedFromSomewhere implementation 2-Serial Interface For Speed
     //@TODO 2MBoard migration and tests
     //@TODO 1M board current measurement tryouts, torque measurement

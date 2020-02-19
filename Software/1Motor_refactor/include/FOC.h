@@ -174,8 +174,7 @@ public:
 
         if(ctr == 1000) {
 
-            //float_t rps = VelocityCalculation::getRotationsPerSecond(motors[0]);
-            //motors[0].updatePrevRotaryEncoderPosition(rotaryEncoderValue);
+
             float_t rps = VelocityCalculation::getRotationsPerSecond2(motors[0].encoderCumulativeValue);
             motors[0].updateEncoderCumulativeValue();
             Serial.println(rps);
@@ -235,7 +234,7 @@ public:
         SPWMDutyCycles x{dutyCycleW, dutyCycleU, dutyCycleV};
         updatePWMPinsDutyCycle(x, motor);
 
-        delay(300);
+        delay(500);
 
         Serial.print("\nCurrent stator flux index: ");
         Serial.println(LUTindex);
@@ -243,13 +242,13 @@ public:
         uint16_t encoderVal = RotaryEncoderCommunication::SPITransfer(motor);
         uint16_t encoderValScaled = encoderVal % LUTSize;
         Serial.print(" encoder reading: ");
-        Serial.println(encoderVal);
+        Serial.println(encoderValScaled);
         uint16_t expectedRotorFlux = (LUTindex + LUTSize / 2) % LUTSize; // + 180
         Serial.print("Expected Rotor Flux position: ");
         Serial.println(expectedRotorFlux);
         int16_t sensorOffset = expectedRotorFlux - encoderValScaled;
-        Serial.print("Calculated difference: ");
-        Serial.println(sensorOffset);
+        Serial.print("Calculated RotorFlux position diff: ");
+        Serial.println((1489 - encoderValScaled) -expectedRotorFlux);
         return sensorOffset;
         /**
          *We want to find the SensorOffset because:
