@@ -5,10 +5,8 @@
 #ifndef INC_1MOTOR_REFACTOR_ROTARYENCODERCOMMNUNICATION_H
 #define INC_1MOTOR_REFACTOR_ROTARYENCODERCOMMNUNICATION_H
 
-#include <Arduino.h>
 #include <SPI.h>
 #include "Motor.h"
-#include <initializer_list>
 
 
 class RotaryEncoderCommunication{

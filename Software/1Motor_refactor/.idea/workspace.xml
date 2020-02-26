@@ -3,20 +3,20 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="1Motor_refactor" targetName="PLATFORMIO" />
+      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOADFS" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_TEST" />
       <config projectName="1Motor_refactor" targetName="DEBUG" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPLOAD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_VERBOSE" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_DEVICE_LIST" />
       <config projectName="1Motor_refactor" targetName="1Motor_refactor" />
-      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_UPDATE_ALL" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_CLEAN" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="1Motor_refactor" targetName="Z_DUMMY_TARGET" />
+      <config projectName="1Motor_refactor" targetName="PLATFORMIO_BUILD_DEBUG" />
       <config projectName="1Motor_refactor" targetName="PLATFORMIO_MONITOR" />
     </generated>
   </component>
@@ -27,10 +27,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/stackExchangeLinks.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Motor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/PID.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/PID.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/RotaryEncoderCommnunication.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SVPWM.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWM.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SpeedCalculation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SpeedCalculation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FOC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PID.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PID.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpeedCalculation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpeedCalculation.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +95,7 @@
       <recent name="$PROJECT_DIR$/include" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.PLATFORMIO_UPLOAD">
+  <component name="RunManager" selected="CMake Application.PLATFORMIO_BUILD_VERBOSE">
     <configuration name="PLATFORMIO_BUILD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="1Motor_refactor" TARGET_NAME="PLATFORMIO_BUILD" CONFIG_NAME="teensy31">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -228,7 +234,8 @@
       <workItem from="1581871677304" duration="6978000" />
       <workItem from="1582054733094" duration="5829000" />
       <workItem from="1582146329277" duration="3935000" />
-      <workItem from="1582151700321" duration="1178000" />
+      <workItem from="1582151700321" duration="1652000" />
+      <workItem from="1582733969195" duration="7974000" />
     </task>
     <servers />
   </component>
@@ -261,6 +268,10 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="884" y="462" width="800" height="677" key="#Configure_Path_Variables/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579558546256" />
+    <state x="2889" y="537" width="678" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582742134508">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2889" y="537" width="678" height="390" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1582742134508" />
     <state x="3041" y="451" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1580556462304">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -270,10 +281,10 @@
     </state>
     <state x="2946" y="528" width="424" height="484" key="FileChooserDialogImpl/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1581775999807" />
     <state x="1066" y="545" width="424" height="513" key="FileChooserDialogImpl/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579558913213" />
-    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog" timestamp="1580846285208">
+    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog" timestamp="1582733970132">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580846285208" />
+    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1582733970132" />
     <state x="945" y="628" key="com.intellij.ide.util.TipDialog/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579611210951" />
     <state x="2897" y="410" width="662" height="645" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582054799408">
       <screen x="1920" y="0" width="2560" height="1440" />
