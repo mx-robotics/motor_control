@@ -73,9 +73,9 @@ public:
     const SPIPins SpiPins; //@TODO dont need the whole set of pins, SPICOM calss should handle the others
     const ISPins IsPins;
     Direction direction = Direction::CW;
-    float speedRPM = 0;
+    float speedRPS = 0;
     float torque = 0;
-    float speedScalar= 80; // something between 0 and 1 update later so you dont multiplie once one
+    float speedScalar= 40; // something between 0 and 1 update later so you dont multiplie once one
     //int16_t fieldWeakening = -100; // best : 80 for -1;
     int16_t fieldWeakening = -70; // best : 80 for -1;
     uint16_t rotaryEncoderPosition = 0;
@@ -116,12 +116,12 @@ public:
 
     }
 
-        void updateSpeedRPM(float_t rpm){
-        speedRPM = rpm;
+        void updateSpeedRPS(float_t rps){
+            speedRPS = rps;
     }
 
-    void updateSpeedScalar(float_t modIndex){
-        speedScalar=modIndex;
+    void updateSpeedScalar(float_t speed){
+        speedScalar=speed;
     };
 
 

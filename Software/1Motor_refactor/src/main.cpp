@@ -23,6 +23,7 @@ void ftm0_isr(void)
 
     FTM0_SC &= ~FTM_SC_TOF;
     FOC::getInstance().doTheMagic2();
+    //FOC::getInstance().speedSweep();
     //tuw::FOC::getInstance().doTheMagic();
 
 

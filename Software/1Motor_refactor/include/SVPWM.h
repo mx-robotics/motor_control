@@ -27,9 +27,11 @@ struct ModulationIndexScalingParams{
 class LUTGenerator{
 
 public:
+    static constexpr uint16_t maxSensorResolution = 16384;
+    static constexpr uint8_t motorPoleCount = 11;
+    static constexpr uint16_t LUTSize = maxSensorResolution / motorPoleCount;
     static constexpr uint16_t PWM_FREQ = 20000;
     static constexpr uint16_t MAX_DUTY_CYCLE = (F_BUS / PWM_FREQ) / 2;
-    static constexpr uint16_t LUTSize = 1489;
 
 
     constexpr static  std::array<uint16_t, LUTSize> generate() {
@@ -210,9 +212,7 @@ public:
 
 class SVPWM {
 private:
-    static constexpr uint16_t maxSensorResolution = 16384;
-    static constexpr uint8_t motorPoleCount = 11;
-    static constexpr uint16_t LUTSize = maxSensorResolution / motorPoleCount;
+    static constexpr uint16_t LUTSize = LUTGenerator::LUTSize;
     static constexpr uint16_t angleOffset = LUTSize/4; // @TODO calculate -90 + 90, plot for variations
     static constexpr auto LUT = LUTGenerator::generate();
     static constexpr ModulationIndexScalingParams modulationIndexParams = LUTGenerator::calculateModulationIndexScalingOffsetParameters();
@@ -224,7 +224,7 @@ public:
         SPWMDutyCycles temp;
        float modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
 
-        uint16_t base = (x.scaledRotaryEncoderPosition + ((x.fieldWeakening + angleOffset) * -1 - 20) + LUTSize) % LUTSize;
+        uint16_t base = (x.scaledRotaryEncoderPosition + ((x.fieldWeakening + angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
         /*
          * This part is tricky; there is a field-weakening and the best results has been found at -120 and + 80
          * To avoid an else-if check the fieldWeakening is set to 100 and with this -20 it is set to -120 or 80 according to the direction of the motor

@@ -35,12 +35,19 @@ class MyClass:
         plt.legend()
         plt.show()
 
+    def configure_for_speed_command_plot(self):
+        self.ax1 = self.fig.add_subplot(1, 1, 1)
+        self.axii_names = ['x','y']
+        self.labels = ["Speed"]
+        self.bytes_to_receive = 6
+
     def configure_for_floats(self):
         self.ax1 = self.fig.add_subplot(2, 1, 1)
         self.ax2 = self.fig.add_subplot(2, 1, 2)
         self.axii_names = ['x', 'y', 'z', 'e', 'c']
         self.labels = ["Measured", "Target", "Error", "Command"]
         self.bytes_to_receive = 160
+
     def configure_for_uin16_t(self):
         self.ax1 = self.fig.add_subplot(1, 1, 1)
         self.axii_names = ['x', 'y', 'z', 't']
@@ -102,6 +109,7 @@ class MyClass:
                     print("exception thrown")
                     pass
             self.plot_key = True
+
 
     def get_serial_float_data_to_populate_arrays(self):
         if self.ser.in_waiting:  # Check for data not for an open port
