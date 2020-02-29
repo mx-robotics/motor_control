@@ -45,7 +45,7 @@ void setup() {
     constexpr ISPins isPins {A15,A16,A17};
     Motor x(inhibitPins_,initPins,spiPins,isPins);
 
-    FOC::getInstance().motors = &x;
+    FOC::getInstance().registerMotors(&x);
     FOC::getInstance().initHardware();
     Serial.begin(9600);
     while (!Serial);

@@ -56,7 +56,7 @@ struct ISPins {
 
 
 enum Direction {
-    CCW = -1, STOP, CW
+    CW = -1, STOP, CCW
 };
 
 
@@ -75,9 +75,9 @@ public:
     Direction direction = Direction::CW;
     float speedRPS = 0;
     float torque = 0;
-    float speedScalar= 40; // something between 0 and 1 update later so you dont multiplie once one
+    float speedScalar= 80; // actual speed command 0.. 100
     //int16_t fieldWeakening = -100; // best : 80 for -1;
-    int16_t fieldWeakening = -70; // best : 80 for -1;
+    int16_t fieldWeakening = -100; // best : 80 for -1;
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
     uint16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening

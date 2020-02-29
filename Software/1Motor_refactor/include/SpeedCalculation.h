@@ -12,7 +12,7 @@
 class VelocityCalculation {
     static constexpr float wheelDiameter{4.12f};
     static constexpr float wheelCircumference = wheelDiameter * M_PI * 2;
-    static constexpr float measurementPeriodinMs = 100.0f;
+    static constexpr float measurementPeriodinMs = 50.0f;
     static constexpr float rotaryEncoderMaxValue = 16384.0f;
     static constexpr uint8_t overflowTreshold = 100;
     static uint32_t encoderCumulativeValue;

@@ -15,14 +15,13 @@ class FOC {
 
 public:
 
-    static const uint8_t numberOfMotors = 1;
-    Motor *motors;
+    inline static  uint8_t numberOfMotors = 0;
+    Motor * motors[2];
     ADC *adc = new ADC();
     static constexpr uint16_t PWM_FREQ = 20000;
     static constexpr uint8_t ADC_PIN = A1;
-     uint16_t speed_ctr = 0;
 
-
+    void registerMotors(Motor *m_ptr);
 
     void speedSweep();
 

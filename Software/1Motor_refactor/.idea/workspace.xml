@@ -27,12 +27,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Python_visualisation/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Motor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/PID.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/PID.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/SVPWM.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWM.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/SpeedCalculation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SpeedCalculation.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FOC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOC.cpp" afterDir="false" />
@@ -234,7 +231,7 @@
       <workItem from="1582054733094" duration="5829000" />
       <workItem from="1582146329277" duration="3935000" />
       <workItem from="1582151700321" duration="1178000" />
-      <workItem from="1582972985119" duration="7456000" />
+      <workItem from="1582972985119" duration="10683000" />
     </task>
     <servers />
   </component>
