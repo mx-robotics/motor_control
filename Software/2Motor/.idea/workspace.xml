@@ -25,11 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="-initial commit">
-      <change beforePath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python_visualisation/plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../1Motor_refactor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor_refactor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1Motor_refactor/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor_refactor/include/FOC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1Motor_refactor/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor_refactor/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" beforeDir="false" afterPath="$PROJECT_DIR$/../../hardware/HardwareRevisionNotes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor_refactor/include/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor_refactor/include/Motor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1Motor_refactor/src/FOC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../1Motor_refactor/src/FOC.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +189,7 @@
       <workItem from="1581776003742" duration="936000" />
       <workItem from="1581852704026" duration="1232000" />
       <workItem from="1581871660905" duration="9000" />
+      <workItem from="1582989675518" duration="50000" />
     </task>
     <task id="LOCAL-00001" summary="-initial commit">
       <created>1572122992703</created>

@@ -39,8 +39,8 @@ class VelocityCalculation {
 
 public:
 
-    static float getRotationsPerSecond2(uint16_t encoderCumulativeValue){
-        float_t retVal =(encoderCumulativeValue/rotaryEncoderMaxValue) * (1000 / measurementPeriodinMs);
+    static float getRotationsPerSecond2(Motor & m){
+        float_t retVal =(m.encoderCumulativeValue/rotaryEncoderMaxValue) * (1000 / measurementPeriodinMs);
         return retVal;
     }
     static float getRotationsPerMinute(Motor &motor) {

@@ -86,7 +86,7 @@ public:
     void setSensorOffset(uint16_t sensorOffset_) {
         fieldWeakening = sensorOffset_;
     }
-    void updateEncoderCumulativeValue(){
+    void setEncoderCumulativeValueToZero(){
         encoderCumulativeValue = 0;
     }
      void cumulativeAdd(uint16_t rotPos){

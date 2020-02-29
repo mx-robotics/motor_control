@@ -144,8 +144,8 @@ void FOC::speedSweep(){
         uint8_t my_buff[8];
         float targetSpeed = speed_ctr; //getSpeedFromSomewhere();
         motors[0]->updateSpeedScalar(targetSpeed);
-        float_t rps = VelocityCalculation::getRotationsPerSecond2(motors[0]->encoderCumulativeValue);
-        motors[0]->updateEncoderCumulativeValue();
+        float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[0]);
+        motors[0]->setEncoderCumulativeValueToZero();
         memcpy( my_buff, &targetSpeed, 4);
         memcpy( my_buff +4, &rps, 4);
         Serial.write(my_buff,8);
@@ -170,29 +170,29 @@ void FOC::speedSweep(){
 void FOC::doTheMagic2() {
 
     static uint16_t ctr = 0;
-    uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[0]);
-    motors[0]->updateRotaryEncoderPosition(rotaryEncoderValue);
+    for (int i = 0; i < numberOfMotors ; ++i) {
+        uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+        motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue);
+        motors[i]->cumulativeAdd(rotaryEncoderValue);
 
-    motors[0]->cumulativeAdd(rotaryEncoderValue);
+        if (ctr == 1000) { //every 0.1 sec
+            float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
+            Serial.println(rps);
+            motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
+            motors[i]->updateSpeedRPS(rps);
+            //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
+            motors[i]->updateSpeedScalar(77);
+            if(i == numberOfMotors-1) {
+                ctr = 0;
+            }
 
-    if(ctr == 1000) {
-        float_t rps = VelocityCalculation::getRotationsPerSecond2(motors[0]->encoderCumulativeValue);
-        Serial.println(rps);
-        motors[0]->updateEncoderCumulativeValue(); // sets to zero
-        motors[0]->updateSpeedRPS(rps);
-
-        //float speed_command = SpeedPIDController::getSpeedCommand(motors[0], 1);
-        motors[0]->updateSpeedScalar(44);
-
-        //Serial.println(speed_command);
-
-        ctr =0;
+        }
+        SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
+        updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
 
     }
-    ++ctr;
 
-    SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[0]);
-    updatePWMPinsDutyCycle(dutyCycles, *motors[0]);
+    ++ctr;
 
 }
 
