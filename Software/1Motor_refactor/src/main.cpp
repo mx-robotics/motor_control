@@ -5,37 +5,19 @@
 #include "FOC.h"
 #include "utils.h"
 
-/*
- * There is only one ftm0_isr function that is being triggered by either
- * - FTM0 TOF(Timer Overflow Event) currently in use
- * - Channel (n) Interrupt: FTM0_CnSC [Channel Flag] This interrupt comes when the CnV value is matched
- *   [CHnIE] = 1 must be set, The interrupt sets the CHF FTMO_C6SC &= ~FTM_CSC_CHF
- *
- *
- *  #define FTM_CSC_CHF			0x80				// Channel Flag
- *   #define FTM_CSC_CHIE			0x40				// Channel Interrupt Enable
- *
- *   - Fault event - not relevant
- * */
+
 
 void ftm0_isr(void)
 {
 
     FTM0_SC &= ~FTM_SC_TOF;
     FOC::getInstance().doTheMagic2();
-    //FOC::getInstance().speedSweep();
-    //tuw::FOC::getInstance().doTheMagic();
-
-
-
 
 }
 
 
-int LUTindex = 100;
-
-
 #define INT_FIRAT 1
+
 void setup() {
 
 
