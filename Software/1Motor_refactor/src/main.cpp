@@ -50,13 +50,9 @@ void setup() {
     Serial.begin(9600);
     while (!Serial);
 
-   /* while (!Serial);
-    for (int j = 0; j < 1489 ; j+=20 ) {
-        FOC::getInstance().calculateSensorOffset(x,j);
-    while (!Serial);
 
-    }
-*/
+
+
 
 #if INT_FIRAT
     cli(); //Disable global interrupts
@@ -66,12 +62,6 @@ void setup() {
 
 #endif
 
-        while(1){
-            //Serial.println(f.setSpeedFromADC());
-            //delay(100);
-            //FOC::getInstance().doTheMagic2();
-            //delayMicroseconds(40);
-        }
 
 
 
@@ -79,8 +69,6 @@ void setup() {
 
 
 void loop() {
-    //int kam[10000]={0};
-
 
     //Serial.println("POS");
     //@ 1:plot all 3 duty cycles to see if there are in unision
@@ -88,8 +76,8 @@ void loop() {
     //@ 3: hardware init contuniuation for multi motor setup
     //@ 4: proper order of U V W and its documentation, drawing
     //@ 6: speed calculation
-    //@TODO proper FOC class constructor for multi motor setup
-    //@TODO header - cpp proper placing of functions
+    //@ 8 proper FOC class constructor for multi motor setup
+    //@ TODO header - cpp proper placing of functions
     //@ 5: initial spin
     //@7: SetSpeedFromSomewhere implementation 1-ADC
     //@TODO PID

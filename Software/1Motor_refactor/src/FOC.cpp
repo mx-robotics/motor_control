@@ -180,11 +180,14 @@ void FOC::doTheMagic2() {
             Serial.println(rps);
             motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
             motors[i]->updateSpeedRPS(rps);
+            float speed_command = getSpeedFromSomewhere();
+            Serial.println(speed_command);
+
             //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
-            motors[i]->updateSpeedScalar(77);
-            if(i == numberOfMotors-1) {
-                ctr = 0;
-            }
+            motors[i]->updateSpeedScalar(speed_command);
+            //if(i == numberOfMotors-1) {
+            ctr = 0;
+            //}
 
         }
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
@@ -263,7 +266,7 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
     Serial.println(expectedRotorFlux);
 
     int16_t sensorOffset = expectedRotorFlux - encoderValScaled;
-    Serial.print("Difference between calculated rotor flux and expected rotor flux");
+    Serial.print("Difference between calculated rotor flux and expected rotor flux ");
     Serial.println((1489 - encoderValScaled) -expectedRotorFlux);
     return sensorOffset;
     /**
@@ -294,6 +297,13 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
      *
      *
     **/
+
+
+}
+
+void FOC::testMotors(Motor( &x)) {
+
+    for (int j = 0; j < 1489 ; j+=20 ) { calculateSensorOffset(x,j); }
 
 
 }

@@ -160,7 +160,6 @@ public:
 
     }
 
-    static std::array<uint16_t, 1489> createLUT();
 
     static  constexpr ModulationIndexScalingParams calculateModulationIndexScalingOffsetParameters() {
 
@@ -224,7 +223,8 @@ public:
         SPWMDutyCycles temp;
        float modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
 
-        uint16_t base = (x.scaledRotaryEncoderPosition + ((x.fieldWeakening + angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
+        uint16_t base = (x.scaledRotaryEncoderPosition + (  angleOffset * x.direction) + LUTSize) % LUTSize;
+        //uint16_t base = (x.scaledRotaryEncoderPosition + ((x.fieldWeakening + angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
         /*
          * This part is tricky; there is a field-weakening and the best results has been found at -120 and + 80
          * To avoid an else-if check the fieldWeakening is set to 100 and with this -20 it is set to -120 or 80 according to the direction of the motor

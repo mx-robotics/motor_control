@@ -23,35 +23,33 @@ public:
 
     void registerMotors(Motor *m_ptr);
 
-    void speedSweep();
 
     void initInhibitPins(Motor &x) ;
-
     void activateInhibitPins(Motor &x);
-
-
     void updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor);
-
-
     void initHardware();
+    void initPWMPins();
+    void initADCconversions() ;
 
     void initMotorParams(const uint16_t LUTindex);
     static FOC &getInstance();  // Singleton handler
 
-    void initPWMPins();
 
     uint16_t getSpeedFromSomewhere();
-    void doTheMagic() ;
-
     void doTheMagic2();
 
-    void primitiveSpin(uint16_t LUTindex);
-    void initADCconversions() ;
 
     uint16_t setSpeedFromADC();
 
     int16_t calculateSensorOffset(Motor &motor,
                                   const uint16_t LUTindex);
+
+
+    void testMotors(Motor &x);
+    void primitiveSpin(uint16_t LUTindex);
+    void speedSweep();
+
+
 };
 
 #endif //INC_1MOTOR_REFACTOR_FOC_H

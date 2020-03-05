@@ -28,9 +28,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/FOC.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/FOC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Motor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SVPWM.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SVPWM.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/utils.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FOC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/FOC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2Motor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2Motor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,6 +232,8 @@
       <workItem from="1582146329277" duration="3935000" />
       <workItem from="1582151700321" duration="1178000" />
       <workItem from="1582972985119" duration="10683000" />
+      <workItem from="1582991222524" duration="124000" />
+      <workItem from="1583398563511" duration="4334000" />
     </task>
     <servers />
   </component>
@@ -265,19 +270,19 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2907" y="456" width="642" height="553" key="#PLATFORMIO_UPLOAD/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1582979562641" />
-    <state x="3041" y="451" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1580556462304">
+    <state x="3041" y="451" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1583402613428">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="3041" y="451" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1580556462304" />
+    <state x="3041" y="451" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1583402613428" />
     <state x="2946" y="528" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581775999807">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2946" y="528" width="424" height="484" key="FileChooserDialogImpl/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1581775999807" />
     <state x="1066" y="545" width="424" height="513" key="FileChooserDialogImpl/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579558913213" />
-    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog" timestamp="1582972985205">
+    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog" timestamp="1583398563642">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1582972985205" />
+    <state x="2822" y="612" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1583398563642" />
     <state x="945" y="628" key="com.intellij.ide.util.TipDialog/67.27.2493.1413/2560.0.1920.1080@67.27.2493.1413" timestamp="1579611210951" />
     <state x="2897" y="410" width="662" height="645" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582054799408">
       <screen x="1920" y="0" width="2560" height="1440" />
@@ -298,7 +303,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/include/Motor.h</url>
-          <line>91</line>
+          <line>90</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

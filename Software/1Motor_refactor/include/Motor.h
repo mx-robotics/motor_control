@@ -76,7 +76,6 @@ public:
     float speedRPS = 0;
     float torque = 0;
     float speedScalar= 80; // actual speed command 0.. 100
-    //int16_t fieldWeakening = -100; // best : 80 for -1;
     int16_t fieldWeakening = -100; // best : 80 for -1;
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
