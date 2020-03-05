@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-
 include CMakeFiles/PLATFORMIO_UPLOADFS.dir/progress.make
 
 CMakeFiles/PLATFORMIO_UPLOADFS:
-	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /home/firat/.local/bin/pio -f -c clion run --target uploadfs -eteensy31
+	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /usr/local/bin/pio -f -c clion run --target uploadfs -eteensy31
 
 PLATFORMIO_UPLOADFS: CMakeFiles/PLATFORMIO_UPLOADFS
 PLATFORMIO_UPLOADFS: CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make

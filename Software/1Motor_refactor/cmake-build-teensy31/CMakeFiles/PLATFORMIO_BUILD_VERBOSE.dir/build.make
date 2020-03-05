@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-
 include CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/progress.make
 
 CMakeFiles/PLATFORMIO_BUILD_VERBOSE:
-	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /home/firat/.local/bin/pio -f -c clion run --verbose -eteensy31
+	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /usr/local/bin/pio -f -c clion run --verbose -eteensy31
 
 PLATFORMIO_BUILD_VERBOSE: CMakeFiles/PLATFORMIO_BUILD_VERBOSE
 PLATFORMIO_BUILD_VERBOSE: CMakeFiles/PLATFORMIO_BUILD_VERBOSE.dir/build.make

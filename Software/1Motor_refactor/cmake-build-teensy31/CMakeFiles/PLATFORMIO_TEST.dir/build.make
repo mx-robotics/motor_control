@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-
 include CMakeFiles/PLATFORMIO_TEST.dir/progress.make
 
 CMakeFiles/PLATFORMIO_TEST:
-	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /home/firat/.local/bin/pio -f -c clion test -eteensy31
+	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /usr/local/bin/pio -f -c clion test -eteensy31
 
 PLATFORMIO_TEST: CMakeFiles/PLATFORMIO_TEST
 PLATFORMIO_TEST: CMakeFiles/PLATFORMIO_TEST.dir/build.make

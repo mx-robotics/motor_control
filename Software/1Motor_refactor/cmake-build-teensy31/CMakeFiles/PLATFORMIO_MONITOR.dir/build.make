@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-
 include CMakeFiles/PLATFORMIO_MONITOR.dir/progress.make
 
 CMakeFiles/PLATFORMIO_MONITOR:
-	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /home/firat/.local/bin/pio -f -c clion device monitor -eteensy31
+	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /usr/local/bin/pio -f -c clion device monitor -eteensy31
 
 PLATFORMIO_MONITOR: CMakeFiles/PLATFORMIO_MONITOR
 PLATFORMIO_MONITOR: CMakeFiles/PLATFORMIO_MONITOR.dir/build.make
