@@ -1,4 +1,0 @@
-/snap/clion/103/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=teensy31 -G "CodeBlocks - Unix Makefiles" /home/firat/projects/tuw_bldc/Software/1Motor_refactor
--- Configuring done
--- Generating done
--- Build files have been written to: /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-teensy31

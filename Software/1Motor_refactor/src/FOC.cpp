@@ -167,35 +167,47 @@ void FOC::speedSweep(){
 
 }
 
+void FOC::run() {
+
+    uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[0]);
+    Serial.println(rotaryEncoderValue);
+}
 void FOC::doTheMagic2() {
 
     static uint16_t ctr = 0;
+
     for (int i = 0; i < numberOfMotors ; ++i) {
+
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+
         motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue);
+
         motors[i]->cumulativeAdd(rotaryEncoderValue);
 
         if (ctr == 1000) { //every 0.1 sec
-            float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
-            Serial.println(rps);
-            motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
-            motors[i]->updateSpeedRPS(rps);
-            float speed_command = getSpeedFromSomewhere();
-            Serial.println(speed_command);
+               float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
+               Serial.println(rps);
+               motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
+               motors[i]->updateSpeedRPS(rps);
+               float speed_command = getSpeedFromSomewhere();
+               Serial.println(speed_command);
 
-            //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
-            motors[i]->updateSpeedScalar(speed_command);
-            //if(i == numberOfMotors-1) {
+               //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
+               motors[i]->updateSpeedScalar(speed_command);
+               //if(i == numberOfMotors-1) {
+               //}
             ctr = 0;
-            //}
+
 
         }
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
         updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
-
     }
 
+
+
     ++ctr;
+
 
 }
 
@@ -222,20 +234,19 @@ void FOC::registerMotors(Motor * m_ptr){
 void FOC::initADCconversions() {
 
     pinMode(ADC_PIN, INPUT);
-
-    adc->setAveraging(4); // set number of averages
-    adc->setResolution(12); // set bits of resolution
-    adc->setConversionSpeed(ADC_CONVERSION_SPEED::VERY_HIGH_SPEED); // change the conversion speed
-    adc->setSamplingSpeed(ADC_SAMPLING_SPEED::VERY_HIGH_SPEED); // change the sampling speed
+    adc->adc0->setAveraging(4); // set number of averages
+    adc->adc0->setResolution(12); // set bits of resolution
+    adc->adc0->setConversionSpeed(ADC_CONVERSION_SPEED::VERY_HIGH_SPEED); // change the conversion speed
+    adc->adc0->setSamplingSpeed(ADC_SAMPLING_SPEED::VERY_HIGH_SPEED); // change the sampling speed
     adc->startContinuous(ADC_PIN);
 
 }
 
 uint16_t FOC::setSpeedFromADC() {
 
-    if (adc->isComplete()) {
+    if (adc->adc0->isComplete()) {
         uint_fast16_t value1 = adc->analogReadContinuous(ADC_PIN);
-        value1 =   (value1  / static_cast<float_t > (adc->getMaxValue(ADC_0))) * 100 ;
+        value1 =   (value1  / static_cast<float_t > (adc->adc0->getMaxValue())) * 100;
         return value1;
     }
     return 0;

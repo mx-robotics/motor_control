@@ -7,11 +7,19 @@
 
 
 
+constexpr InhibitPins inhibitPins_{33, 24, 31};
+constexpr InitPins initPins{21, 23, 22};
+constexpr SPIPins spiPins{1,2,10};
+constexpr ISPins isPins {A15,A16,A17};
+Motor x(inhibitPins_,initPins,spiPins,isPins);
 void ftm0_isr(void)
 {
 
     FTM0_SC &= ~FTM_SC_TOF;
-    FOC::getInstance().doTheMagic2();
+
+
+   FOC::getInstance().doTheMagic2();
+
 
 }
 
@@ -21,11 +29,8 @@ void ftm0_isr(void)
 void setup() {
 
 
-    constexpr InhibitPins inhibitPins_{33, 24, 31};
-    constexpr InitPins initPins{21, 23, 22};
-    constexpr SPIPins spiPins{1,2,10};
-    constexpr ISPins isPins {A15,A16,A17};
-    Motor x(inhibitPins_,initPins,spiPins,isPins);
+
+
 
     FOC::getInstance().registerMotors(&x);
     FOC::getInstance().initHardware();
@@ -35,8 +40,8 @@ void setup() {
 
 
 
-
 #if INT_FIRAT
+
     cli(); //Disable global interrupts
     NVIC_SET_PRIORITY(IRQ_FTM0, 64);
     NVIC_ENABLE_IRQ(IRQ_FTM0);

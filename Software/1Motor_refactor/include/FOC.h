@@ -23,7 +23,7 @@ public:
 
     void registerMotors(Motor *m_ptr);
 
-
+    void run();
     void initInhibitPins(Motor &x) ;
     void activateInhibitPins(Motor &x);
     void updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor);

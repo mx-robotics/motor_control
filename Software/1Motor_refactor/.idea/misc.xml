@@ -7,10 +7,13 @@
     </sourceRoots>
     <libraryRoots>
       <file path="$PROJECT_DIR$/lib" />
-      <file path="$PROJECT_DIR$/.pio/libdeps" />
+      <file path="$PROJECT_DIR$/.piolibdeps" />
     </libraryRoots>
     <excludeRoots>
       <file path="$PROJECT_DIR$/.pio" />
+    </excludeRoots>
+    <excludeRoots>
+      <file path="$PROJECT_DIR$/.pioenvs" />
     </excludeRoots>
   </component>
 </project>
