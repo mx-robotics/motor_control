@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-
 include CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/progress.make
 
 CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX:
-	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /usr/local/bin/pio -f -c clion init --ide clion
+	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /home/firat/.local/bin/pio -f -c clion init --ide clion
 
 PLATFORMIO_REBUILD_PROJECT_INDEX: CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX
 PLATFORMIO_REBUILD_PROJECT_INDEX: CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make

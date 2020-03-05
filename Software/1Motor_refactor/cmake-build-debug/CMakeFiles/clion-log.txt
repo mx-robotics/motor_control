@@ -1,0 +1,9 @@
+/snap/clion/103/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/firat/projects/tuw_bldc/Software/1Motor_refactor
+CMake Error at CMakeLists.txt:11 (include):
+  include could not find load file:
+
+    CMakeListsPrivate.txt
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-build-debug/CMakeFiles/CMakeOutput.log".

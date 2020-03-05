@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-
 include CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/progress.make
 
 CMakeFiles/PLATFORMIO_DEVICE_LIST:
-	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /usr/local/bin/pio -f -c clion device list
+	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /home/firat/.local/bin/pio -f -c clion device list
 
 PLATFORMIO_DEVICE_LIST: CMakeFiles/PLATFORMIO_DEVICE_LIST
 PLATFORMIO_DEVICE_LIST: CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make

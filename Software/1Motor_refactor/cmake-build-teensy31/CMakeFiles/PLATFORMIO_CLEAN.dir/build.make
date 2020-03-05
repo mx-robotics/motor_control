@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/tuw_bldc/Software/1Motor_refactor/cmake-
 include CMakeFiles/PLATFORMIO_CLEAN.dir/progress.make
 
 CMakeFiles/PLATFORMIO_CLEAN:
-	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /usr/local/bin/pio -f -c clion run --target clean -eteensy31
+	cd /home/firat/projects/tuw_bldc/Software/1Motor_refactor && /home/firat/.local/bin/pio -f -c clion run --target clean -eteensy31
 
 PLATFORMIO_CLEAN: CMakeFiles/PLATFORMIO_CLEAN
 PLATFORMIO_CLEAN: CMakeFiles/PLATFORMIO_CLEAN.dir/build.make

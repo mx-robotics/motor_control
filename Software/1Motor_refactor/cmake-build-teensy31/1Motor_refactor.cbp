@@ -36,8 +36,9 @@
 				<Compiler>
 					<Add directory="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include"/>
 					<Add directory="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/cores/teensy3"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SPI"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ADC"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/cores/teensy3"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_CC3000"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_CC3000/utility"/>
@@ -69,12 +70,14 @@
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FastCRC"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FastLED"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FlexCAN"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FlexCAN_T4"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FlexiTimer2"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FreqCount"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FreqMeasure"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FreqMeasureMulti"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FrequencyTimer2"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ILI9341_t3"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ILI9488_t3"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/IRremote"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Keypad/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/LedControl/src"/>
@@ -96,20 +99,19 @@
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/PWMServo"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Ping"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/PulsePosition"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/QuadEncoder"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/RA8875"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/RadioHead"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ResponsiveAnalogRead/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SD"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SD/utility"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SPI"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SPIFlash"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ST7565"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ST7735_t3"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SerialFlash"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Servo"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ShiftPWM"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Snooze"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Snooze/utility"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Snooze/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SoftPWM"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SoftwareSerial"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/TFT_ILI9163C"/>
@@ -137,10 +139,10 @@
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ssd1351"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/x10"/>
 					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/5.4.1"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/5.4.1/arm-none-eabi"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/5.4.1/include-fixed"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/5.4.1/include"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/8.2.1"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/8.2.1/arm-none-eabi"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/8.2.1/include"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/8.2.1/include-fixed"/>
 					<Add directory="/home/firat/.platformio/packages/tool-unity"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
@@ -167,8 +169,9 @@
 				<Compiler>
 					<Add directory="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include"/>
 					<Add directory="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/cores/teensy3"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SPI"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ADC"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/cores/teensy3"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_CC3000"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_CC3000/utility"/>
@@ -200,12 +203,14 @@
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FastCRC"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FastLED"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FlexCAN"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FlexCAN_T4"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FlexiTimer2"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FreqCount"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FreqMeasure"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FreqMeasureMulti"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/FrequencyTimer2"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ILI9341_t3"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ILI9488_t3"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/IRremote"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Keypad/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/LedControl/src"/>
@@ -227,20 +232,19 @@
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/PWMServo"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Ping"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/PulsePosition"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/QuadEncoder"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/RA8875"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/RadioHead"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ResponsiveAnalogRead/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SD"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SD/utility"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SPI"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SPIFlash"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ST7565"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ST7735_t3"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SerialFlash"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Servo"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ShiftPWM"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Snooze"/>
-					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Snooze/utility"/>
+					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/Snooze/src"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SoftPWM"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/SoftwareSerial"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/TFT_ILI9163C"/>
@@ -268,10 +272,10 @@
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/ssd1351"/>
 					<Add directory="/home/firat/.platformio/packages/framework-arduinoteensy/libraries/x10"/>
 					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/5.4.1"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/5.4.1/arm-none-eabi"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/5.4.1/include-fixed"/>
-					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/5.4.1/include"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/8.2.1"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/c++/8.2.1/arm-none-eabi"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/8.2.1/include"/>
+					<Add directory="/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/lib/gcc/arm-none-eabi/8.2.1/include-fixed"/>
 					<Add directory="/home/firat/.platformio/packages/tool-unity"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
@@ -420,30 +424,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/FOC.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/Motor.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/PID.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/RotaryEncoderCommnunication.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/SVPWM.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/SpeedCalculation.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/SteeringServoController.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/include/utils.h">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
 		<Unit filename="/home/firat/projects/tuw_bldc/Software/1Motor_refactor/src/FOC.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>

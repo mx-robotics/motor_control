@@ -6,6 +6,7 @@
 # The `CMakeListsUser.txt` will not be overwritten by PlatformIO.
 
 cmake_minimum_required(VERSION 3.2)
+
 project("1Motor_refactor")
 
 include(CMakeListsPrivate.txt)
@@ -86,4 +87,4 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_executable(Z_DUMMY_TARGET ${SRC_LIST} src/main.cpp include/Motor.h src/Motor.cpp include/SpeedCalculation.h src/SpeedCalculation.cpp include/SVPWM.h src/SVPWM.cpp src/FOC.cpp include/FOC.h src/RotaryEncoderCommnunication.cpp include/RotaryEncoderCommnunication.h src/SteeringServoController.cpp include/SteeringServoController.h src/PID.cpp include/PID.h src/utils.cpp include/utils.h)
+add_executable(Z_DUMMY_TARGET ${SRC_LIST})
