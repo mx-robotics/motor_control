@@ -152,9 +152,9 @@
 <hole x="88.5825" y="70.8025" drill="2.1"/>
 <hole x="53.6575" y="13.97" drill="2.1"/>
 <hole x="46.6598" y="47.625" drill="2.1"/>
-<wire x1="44.7675" y1="73.3425" x2="44.7675" y2="11.43" width="0.1524" layer="20"/>
+<wire x1="44.7675" y1="73.1901" x2="44.7675" y2="11.43" width="0.1524" layer="20"/>
 <wire x1="44.7675" y1="11.43" x2="90.805" y2="11.43" width="0.1524" layer="20"/>
-<wire x1="90.805" y1="73.3425" x2="44.7675" y2="73.3425" width="0.1524" layer="20"/>
+<wire x1="90.805" y1="73.3425" x2="44.7675" y2="73.1901" width="0.1524" layer="20"/>
 <wire x1="90.805" y1="73.3425" x2="90.805" y2="11.43" width="0.1524" layer="20"/>
 </plain>
 <libraries>
@@ -370,6 +370,33 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
+<package name="JST-6-SMD-HORI-1.0MM">
+<description>&lt;h3&gt;JST SH Vertical 6-Pin SMT&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:6&lt;/li&gt;
+&lt;li&gt;Pin pitch: 1 mm&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/GPS/EM406-SMDConnector-eSH.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;JST_6PIN_VERTICAL&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<circle x="-3.44" y="-5.16" radius="0.1047" width="0.4064" layer="21"/>
+<wire x1="-2.9" y1="-0.1" x2="2.9" y2="-0.1" width="0.254" layer="21"/>
+<wire x1="-4" y1="-2.1" x2="-4" y2="-4.4" width="0.254" layer="21"/>
+<wire x1="3.1" y1="-4.4" x2="4" y2="-4.4" width="0.254" layer="21"/>
+<wire x1="4" y1="-4.4" x2="4" y2="-2.1" width="0.254" layer="21"/>
+<wire x1="-4" y1="-4.4" x2="-3.1" y2="-4.4" width="0.254" layer="21"/>
+<smd name="1" x="-2.5" y="-4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="2" x="-1.5" y="-4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="3" x="-0.5" y="-4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="4" x="0.5" y="-4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="5" x="1.5" y="-4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="6" x="2.5" y="-4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="M1" x="-3.8" y="-0.9" dx="1.2" dy="1.8" layer="1"/>
+<smd name="M2" x="3.8" y="-0.9" dx="1.2" dy="1.8" layer="1"/>
+<text x="-1.524" y="0.54" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.905" y="-6.667" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
 </packages>
 </library>
 <library name="_traco_tsr-1">
@@ -410,17 +437,6 @@ Ingenieurbüro ing-rb, mail@ing-rb.de&lt;/p&gt;&lt;/author&gt;</description>
 <rectangle x1="-0.25" y1="-0.15" x2="0.25" y2="0.15" layer="51"/>
 <rectangle x1="-2.79" y1="-0.15" x2="-2.29" y2="0.15" layer="51"/>
 <rectangle x1="2.29" y1="-0.15" x2="2.79" y2="0.15" layer="51"/>
-</package>
-</packages>
-</library>
-<library name="5569-03">
-<packages>
-<package name="5569-003">
-<hole x="4.2" y="-3.65" drill="3"/>
-<hole x="-4.2" y="-3.65" drill="3"/>
-<pad name="W" x="4.2" y="3.65" drill="1.8" shape="square" rot="R270"/>
-<pad name="V" x="0" y="3.65" drill="1.8" shape="square" rot="R270"/>
-<pad name="U" x="-4.2" y="3.65" drill="1.8" shape="square" rot="R270"/>
 </package>
 </packages>
 </library>
@@ -1583,6 +1599,56 @@ grid 2.54 mm, diameter 6 mm</description>
 </package>
 </packages>
 </library>
+<library name="SparkFun-Connectors" urn="urn:adsk.eagle:library:513">
+<description>&lt;h3&gt;SparkFun Connectors&lt;/h3&gt;
+This library contains electrically-functional connectors. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="1X03_NO_SILK" urn="urn:adsk.eagle:footprint:37685/1" library_version="1">
+<description>&lt;h3&gt;Plated Through Hole - 3 Pin No Silk Outline&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:3&lt;/li&gt;
+&lt;li&gt;Pin pitch:0.1"&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;CONN_03&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<pad name="3" x="5.08" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
+<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
+<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="1X03_NO_SILK" urn="urn:adsk.eagle:package:38076/1" type="box" library_version="1">
+<description>Plated Through Hole - 3 Pin No Silk Outline
+Specifications:
+Pin count:3
+Pin pitch:0.1"
+
+Example device(s):
+CONN_03
+</description>
+<packageinstances>
+<packageinstance name="1X03_NO_SILK"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1853,12 +1919,6 @@ Your Multi-CB Team
 <attribute name="PROD_ID" value="CAP-07822" x="50.165" y="10.795" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="VALUE" x="58.293" y="32.385" size="0.6096" layer="28" font="vector" ratio="20" rot="MR90" align="top-center"/>
 </element>
-<element name="SPI_CONN" library="SparkFun-Connectors" package="1X06-1MM" value="ENCODER" x="47.9425" y="62.5475" smashed="yes" rot="R270">
-<attribute name="NAME" x="47.5615" y="63.9445" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
-<attribute name="PROD_ID" value="CONN-08249" x="47.9425" y="62.5475" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="SF_ID" value="GPS-00579" x="47.9425" y="62.5475" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="46.6725" y="64.1985" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
-</element>
 <element name="IC2_1_CONN" library="SparkFun-Connectors" package="1X03_NO_SILK" value="INTEL_BRD" x="49.2125" y="50.6476" smashed="yes" rot="R90">
 <attribute name="NAME" x="50.8635" y="49.2506" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="51.7525" y="48.9966" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
@@ -1978,7 +2038,6 @@ Your Multi-CB Team
 <attribute name="NAME" x="93.1418" y="40.5384" size="0.6096" layer="26" font="vector" ratio="20" rot="MR90"/>
 <attribute name="VALUE" x="85.9028" y="40.5384" size="0.6096" layer="28" font="vector" ratio="20" rot="MR90"/>
 </element>
-<element name="U$4" library="5569-03" package="5569-003" value="" x="81.28" y="18.0975" smashed="yes" rot="MR0"/>
 <element name="U$5" library="5569-02" package="5569-002" value="5569-002" x="47.3075" y="21.9075" smashed="yes"/>
 <element name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" package="E2,5-6E" package3d_urn="urn:adsk.eagle:package:23430/1" value="470uF" x="53.34" y="21.59" smashed="yes" rot="R270">
 <attribute name="NAME" x="54.864" y="18.923" size="1.27" layer="25" ratio="10" rot="R270"/>
@@ -2009,6 +2068,15 @@ Your Multi-CB Team
 <element name="U$6" library="Teensy_3_and_LC_Series_Boards_v1.4" package="TEENSY_3.0-3.2_ALL_PINS_&amp;_PADS" value="TEENSY_3.1-3.2_ALL_PINS&amp;PADS" x="68.58" y="60.96" smashed="yes" rot="R270">
 <attribute name="NAME" x="78.4225" y="62.5475" size="1.27" layer="25" font="vector" rot="R270"/>
 <attribute name="VALUE" x="88.5825" y="72.7075" size="1.27" layer="27" font="vector" rot="R270"/>
+</element>
+<element name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X03_NO_SILK" package3d_urn="urn:adsk.eagle:package:38076/1" value="" x="77.5716" y="20.4216" smashed="yes">
+<attribute name="NAME" x="76.3016" y="21.8186" size="0.6096" layer="25" font="vector" ratio="20"/>
+<attribute name="VALUE" x="76.3016" y="18.3896" size="0.6096" layer="27" font="vector" ratio="20"/>
+</element>
+<element name="J2" library="SparkFun-Connectors" package="JST-6-SMD-HORI-1.0MM" value="BM06B-SRSS-TB" x="4.572" y="-1.524" smashed="yes">
+<attribute name="NAME" x="3.048" y="-0.984" size="0.6096" layer="25" font="vector" ratio="20"/>
+<attribute name="PROD_ID" value="XXX-00000" x="4.572" y="-1.524" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="2.667" y="-8.191" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
 </elements>
 <signals>
@@ -2095,8 +2163,6 @@ Your Multi-CB Team
 <wire x1="87.769109375" y1="50.965690625" x2="87.9348" y2="50.8" width="0.508" layer="1"/>
 <wire x1="89.5858" y1="56.74241875" x2="89.5858" y2="52.78238125" width="0.508" layer="1"/>
 <wire x1="89.5858" y1="52.78238125" x2="87.769109375" y2="50.965690625" width="0.508" layer="1"/>
-<contactref element="SPI_CONN" pad="6"/>
-<wire x1="49.2125" y1="60.0875" x2="48.895" y2="59.77" width="0.254" layer="1"/>
 <wire x1="48.895" y1="59.77" x2="48.26" y2="59.77" width="0.254" layer="1"/>
 <wire x1="48.26" y1="59.77" x2="47.545" y2="59.77" width="0.254" layer="1"/>
 <wire x1="47.545" y1="59.77" x2="47.3075" y2="60.0075" width="0.254" layer="1"/>
@@ -2144,9 +2210,11 @@ Your Multi-CB Team
 <wire x1="87.9348" y1="50.8" x2="87.9348" y2="48.85953125" width="0.508" layer="1"/>
 <wire x1="85.09" y1="46.01473125" x2="85.09" y2="44.45" width="0.508" layer="1"/>
 <wire x1="87.9348" y1="48.85953125" x2="85.09" y2="46.01473125" width="0.508" layer="1"/>
+<contactref element="J2" pad="1"/>
 <wire x1="87.757" y1="34.925" x2="87.757" y2="31.5849" width="0" layer="19" extent="16-16"/>
 <wire x1="72.0725" y1="36.2975" x2="77.47" y2="36.2975" width="0" layer="19" extent="16-16"/>
 <wire x1="85.09" y1="57.4421" x2="86.0552" y2="57.4421" width="0" layer="19" extent="1-1"/>
+<wire x1="2.072" y1="-6.299" x2="47.3075" y2="21.9075" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U$2" pad="3"/>
@@ -2174,7 +2242,6 @@ Your Multi-CB Team
 <wire x1="58.42" y1="47.41" x2="58.42" y2="45.4152" width="0.254" layer="16"/>
 </signal>
 <signal name="W">
-<contactref element="U$4" pad="W"/>
 <contactref element="U$2" pad="4"/>
 <contactref element="U$2" pad="8"/>
 <contactref element="W_C4" pad="2"/>
@@ -2188,14 +2255,17 @@ Your Multi-CB Team
 <wire x1="56.515" y1="33.235" x2="59.055" y2="33.235" width="0.254" layer="16"/>
 <wire x1="55.9054" y1="42.7495375" x2="55.9054" y2="36.8304625" width="0.254" layer="1"/>
 <wire x1="55.9054" y1="36.8304625" x2="55.88" y2="36.8050625" width="0.254" layer="1"/>
-<wire x1="75.65" y1="23.1775" x2="77.08" y2="21.7475" width="2.032" layer="1"/>
-<wire x1="60.96" y1="23.1775" x2="59.055" y2="25.0825" width="2.032" layer="1"/>
-<wire x1="60.96" y1="23.1775" x2="75.65" y2="23.1775" width="2.032" layer="1"/>
-<wire x1="59.055" y1="25.0825" x2="59.055" y2="27.6225" width="2.032" layer="1"/>
-<wire x1="59.055" y1="27.6225" x2="59.055" y2="30.22" width="2.032" layer="1"/>
 <wire x1="59.055" y1="30.22" x2="55.88" y2="33.395" width="2.032" layer="1"/>
 <wire x1="57.15" y1="27.6225" x2="59.055" y2="27.6225" width="0.254" layer="1"/>
 <wire x1="55.88" y1="33.395" x2="55.88" y2="36.8050625" width="0.254" layer="1"/>
+<contactref element="J1" pad="1"/>
+<wire x1="55.88" y1="33.395" x2="58.8264" y2="30.4486" width="2.032" layer="1"/>
+<wire x1="58.8264" y1="30.4486" x2="58.8264" y2="25.4508" width="2.032" layer="1"/>
+<wire x1="58.8264" y1="25.4508" x2="61.5696" y2="22.7076" width="2.032" layer="1"/>
+<wire x1="73.3044" y1="20.4216" x2="77.5716" y2="20.4216" width="2.032" layer="1"/>
+<wire x1="61.5696" y1="22.7076" x2="71.0184" y2="22.7076" width="2.032" layer="1"/>
+<wire x1="71.0184" y1="22.7076" x2="73.3044" y2="20.4216" width="2.032" layer="1"/>
+<wire x1="55.88" y1="33.395" x2="54.61" y2="33.235" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="VBAT">
 <contactref element="U$6" pad="VBAT"/>
@@ -2276,8 +2346,6 @@ Your Multi-CB Team
 <wire x1="83.8454" y1="45.5295" x2="83.8327" y2="45.5422" width="0.254" layer="16"/>
 </signal>
 <signal name="U">
-<contactref element="U$4" pad="U"/>
-<wire x1="83.8925" y1="30.7825" x2="83.8925" y2="27.6225" width="2.032" layer="1"/>
 <contactref element="U$1" pad="8"/>
 <contactref element="U$1" pad="4"/>
 <contactref element="C9" pad="2"/>
@@ -2289,9 +2357,11 @@ Your Multi-CB Team
 <via x="81.5975" y="27.6225" extent="1-16" drill="0.35"/>
 <wire x1="81.5975" y1="27.6225" x2="83.8925" y2="27.6225" width="0.254" layer="1"/>
 <wire x1="81.28" y1="33.395" x2="83.8925" y2="30.7825" width="0.254" layer="1"/>
-<wire x1="83.8925" y1="27.6225" x2="83.8925" y2="26.6878" width="2.032" layer="1"/>
-<wire x1="85.48" y1="25.1003" x2="85.48" y2="21.7475" width="2.032" layer="1"/>
-<wire x1="85.48" y1="25.1003" x2="83.8925" y2="26.6878" width="2.032" layer="1"/>
+<contactref element="J1" pad="3"/>
+<wire x1="81.28" y1="33.395" x2="83.6676" y2="31.0074" width="2.032" layer="1"/>
+<wire x1="83.6676" y1="21.4376" x2="82.6516" y2="20.4216" width="2.032" layer="1"/>
+<wire x1="83.6676" y1="31.0074" x2="83.6676" y2="21.4376" width="2.032" layer="1"/>
+<wire x1="81.28" y1="33.395" x2="80.01" y2="33.235" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="N$18">
 <contactref element="U$3" pad="3"/>
@@ -2309,13 +2379,10 @@ Your Multi-CB Team
 <wire x1="71.12" y1="45.4152" x2="71.12" y2="43.4975" width="0.254" layer="1"/>
 </signal>
 <signal name="V">
-<contactref element="U$4" pad="V"/>
 <contactref element="U$3" pad="8"/>
 <contactref element="U$3" pad="4"/>
 <contactref element="C15" pad="2"/>
 <contactref element="C14" pad="2"/>
-<wire x1="73.68875" y1="27.33375" x2="73.4" y2="27.6225" width="0.254" layer="1"/>
-<wire x1="73.4" y1="27.6225" x2="69.85" y2="27.6225" width="0.254" layer="1"/>
 <via x="69.85" y="27.6225" extent="1-16" drill="0.35"/>
 <wire x1="68.6054" y1="42.7495375" x2="68.6054" y2="36.8304625" width="0.254" layer="1"/>
 <wire x1="68.58" y1="43.4975" x2="68.58" y2="42.7749375" width="0.254" layer="1"/>
@@ -2325,13 +2392,19 @@ Your Multi-CB Team
 <wire x1="67.31" y1="33.235" x2="69.85" y2="33.235" width="0.3048" layer="16"/>
 <wire x1="69.85" y1="33.235" x2="71.4375" y2="33.235" width="0.3048" layer="16"/>
 <wire x1="69.85" y1="27.6225" x2="69.85" y2="33.235" width="0.3048" layer="16"/>
-<wire x1="81.28" y1="21.7475" x2="81.28" y2="22.24263125" width="2.032" layer="1"/>
-<wire x1="81.28" y1="22.24263125" x2="76.18888125" y2="27.33375" width="2.032" layer="1"/>
-<wire x1="72.69638125" y1="27.33375" x2="69.858815625" y2="30.171315625" width="2.032" layer="1"/>
-<wire x1="72.69638125" y1="27.33375" x2="73.68875" y2="27.33375" width="2.032" layer="1"/>
-<wire x1="76.18888125" y1="27.33375" x2="73.68875" y2="27.33375" width="2.032" layer="1"/>
 <wire x1="68.58" y1="33.395" x2="69.858815625" y2="32.116184375" width="0.254" layer="1"/>
 <wire x1="69.858815625" y1="32.116184375" x2="69.858815625" y2="30.171315625" width="0.254" layer="1"/>
+<contactref element="J1" pad="2"/>
+<wire x1="79.7052" y1="20.828" x2="80.0608" y2="20.4724" width="0.4064" layer="1"/>
+<wire x1="80.0608" y1="20.4724" x2="80.1116" y2="20.4216" width="0.4064" layer="1"/>
+<wire x1="68.58" y1="33.395" x2="71.7804" y2="30.1946" width="2.032" layer="1"/>
+<wire x1="71.7804" y1="30.1946" x2="71.7804" y2="26.67" width="2.032" layer="1"/>
+<wire x1="71.7804" y1="26.67" x2="73.7616" y2="24.6888" width="2.032" layer="1"/>
+<wire x1="73.7616" y1="24.6888" x2="77.2668" y2="24.6888" width="2.032" layer="1"/>
+<wire x1="77.2668" y1="24.6888" x2="80.0608" y2="21.8948" width="2.032" layer="1"/>
+<wire x1="80.0608" y1="21.8948" x2="80.0608" y2="20.4724" width="2.032" layer="1"/>
+<wire x1="69.85" y1="27.6225" x2="70.8279" y2="27.6225" width="0.254" layer="1"/>
+<wire x1="70.8279" y1="27.6225" x2="71.7804" y2="26.67" width="0.254" layer="1"/>
 </signal>
 <signal name="IN_V">
 <contactref element="R10" pad="2"/>
@@ -2520,8 +2593,6 @@ Your Multi-CB Team
 <wire x1="73.7235" y1="68.326" x2="72.7075" y2="67.31" width="0.254" layer="16"/>
 <wire x1="72.7075" y1="67.31" x2="72.39" y2="66.9925" width="0.254" layer="16"/>
 <wire x1="72.39" y1="66.9925" x2="71.4375" y2="66.9925" width="0.254" layer="16"/>
-<contactref element="SPI_CONN" pad="1"/>
-<wire x1="49.2125" y1="65.0875" x2="47.9425" y2="65.0875" width="0.254" layer="1"/>
 <wire x1="47.9425" y1="65.0875" x2="47.625" y2="64.77" width="0.254" layer="1"/>
 <via x="47.625" y="64.77" extent="1-16" drill="0.35"/>
 <wire x1="47.625" y1="64.77" x2="50.8" y2="64.77" width="0.254" layer="16"/>
@@ -2533,6 +2604,8 @@ Your Multi-CB Team
 <wire x1="83.82" y1="66.04" x2="84.8525" y2="65.0075" width="0.254" layer="1"/>
 <wire x1="84.8525" y1="65.0075" x2="86.0425" y2="65.0075" width="0.254" layer="1"/>
 <wire x1="78.74" y1="61.38" x2="78.74" y2="62.9675" width="0.254" layer="1"/>
+<contactref element="J2" pad="6"/>
+<wire x1="7.072" y1="-6.299" x2="47.625" y2="64.77" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="U$3" pad="5"/>
@@ -2633,15 +2706,15 @@ Your Multi-CB Team
 <wire x1="85.344" y1="50.5968" x2="85.344" y2="46.9392" width="0.254" layer="16"/>
 </signal>
 <signal name="SCK">
-<contactref element="SPI_CONN" pad="4"/>
 <contactref element="U$6" pad="14/A0"/>
 <wire x1="50.8" y1="61.2775" x2="50.8" y2="52.07" width="0.254" layer="1"/>
 <via x="50.8" y="52.07" extent="1-16" drill="0.35"/>
 <wire x1="54.61" y1="53.34" x2="54.2925" y2="53.34" width="0.254" layer="16"/>
 <wire x1="54.2925" y1="53.34" x2="53.0225" y2="52.07" width="0.254" layer="16"/>
 <wire x1="53.0225" y1="52.07" x2="50.8" y2="52.07" width="0.254" layer="16"/>
-<wire x1="49.2125" y1="62.0875" x2="49.99" y2="62.0875" width="0.254" layer="1"/>
 <wire x1="49.99" y1="62.0875" x2="50.8" y2="61.2775" width="0.254" layer="1"/>
+<contactref element="J2" pad="3"/>
+<wire x1="4.072" y1="-6.299" x2="50.8" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDA0">
 <via x="63.5" y="69.85" extent="1-16" drill="0.4"/>
@@ -2664,17 +2737,15 @@ Your Multi-CB Team
 </signal>
 <signal name="MISO">
 <contactref element="U$6" pad="12"/>
-<contactref element="SPI_CONN" pad="3"/>
 <wire x1="52.07" y1="68.08644375" x2="52.07" y2="68.58" width="0.254" layer="1"/>
 <wire x1="52.07" y1="68.08644375" x2="50.7492" y2="66.76564375" width="0.254" layer="1"/>
 <wire x1="50.7492" y1="66.76564375" x2="50.7492" y2="63.1317" width="0.254" layer="1"/>
-<wire x1="50.705" y1="63.0875" x2="49.2125" y2="63.0875" width="0.254" layer="1"/>
 <wire x1="50.7492" y1="63.1317" x2="50.705" y2="63.0875" width="0.254" layer="1"/>
+<contactref element="J2" pad="4"/>
+<wire x1="5.072" y1="-6.299" x2="50.705" y2="63.0875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOSI">
 <contactref element="U$6" pad="11"/>
-<contactref element="SPI_CONN" pad="2"/>
-<wire x1="49.2125" y1="64.0875" x2="49.165" y2="64.135" width="0.254" layer="1"/>
 <wire x1="49.165" y1="64.135" x2="48.5775" y2="64.135" width="0.254" layer="1"/>
 <wire x1="48.5775" y1="64.135" x2="47.625" y2="63.1825" width="0.254" layer="1"/>
 <wire x1="47.625" y1="63.1825" x2="47.3301" y2="63.1825" width="0.254" layer="1"/>
@@ -2683,19 +2754,21 @@ Your Multi-CB Team
 <wire x1="47.3301" y1="63.1825" x2="48.3334" y2="62.1792" width="0.254" layer="16"/>
 <wire x1="54.61" y1="64.1477" x2="52.6415" y2="62.1792" width="0.254" layer="16"/>
 <wire x1="54.61" y1="68.58" x2="54.61" y2="64.1477" width="0.254" layer="16"/>
+<contactref element="J2" pad="5"/>
+<wire x1="6.072" y1="-6.299" x2="47.3301" y2="63.1825" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CS">
 <contactref element="U$6" pad="10"/>
-<contactref element="SPI_CONN" pad="5"/>
 <wire x1="46.3451" y1="65.3951" x2="50.8" y2="69.85" width="0.254" layer="16"/>
 <wire x1="50.8" y1="69.85" x2="56.515" y2="69.85" width="0.254" layer="16"/>
 <wire x1="57.15" y1="69.215" x2="57.15" y2="68.58" width="0.254" layer="16"/>
 <wire x1="56.515" y1="69.85" x2="57.15" y2="69.215" width="0.254" layer="16"/>
-<wire x1="49.2125" y1="61.0875" x2="47.815" y2="61.0875" width="0.254" layer="1"/>
 <via x="47.3075" y="61.595" extent="1-16" drill="0.35"/>
 <wire x1="47.3075" y1="61.595" x2="46.3451" y2="62.5574" width="0.254" layer="16"/>
 <wire x1="47.815" y1="61.0875" x2="47.3075" y2="61.595" width="0.254" layer="1"/>
 <wire x1="46.3451" y1="62.5574" x2="46.3451" y2="65.3951" width="0.254" layer="16"/>
+<contactref element="J2" pad="2"/>
+<wire x1="3.072" y1="-6.299" x2="47.815" y2="61.0875" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
