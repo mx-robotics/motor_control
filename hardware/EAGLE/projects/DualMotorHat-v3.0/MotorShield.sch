@@ -15875,12 +15875,12 @@ with different sets of drill holes or mounting pads</description>
 <part name="MOTOR1" library="SparkFun-Connectors" deviceset="CONN_03" device="1X03_NO_SILK" value="JP"/>
 <part name="X1" library="raspberrypi_bastelstube_v13" deviceset="RASPI_BOARD_B+" device="_H"/>
 <part name="BATTERY" library="SparkFun-Connectors" deviceset="CONN_03" device="1X03_NO_SILK"/>
-<part name="VCC" library="SparkFun-Connectors" deviceset="CONN_02" device="1X02_NO_SILK"/>
 <part name="SERVOS" library="SparkFun-Connectors" deviceset="CONN_02" device="1X02_NO_SILK"/>
 <part name="MOTOR1_SENS" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR0_SENS" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR0_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR1_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
+<part name="J1" library="SparkFun-Connectors" deviceset="CONN_03" device="1X03_NO_SILK"/>
 </parts>
 <sheets>
 <sheet>
@@ -16246,10 +16246,6 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="VALUE" x="0" y="71.374" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="0" y="84.328" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="VCC" gate="G$1" x="2.54" y="50.8" smashed="yes">
-<attribute name="VALUE" x="0" y="45.974" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="0" y="56.388" size="1.778" layer="95" font="vector"/>
-</instance>
 <instance part="SERVOS" gate="G$1" x="2.54" y="27.94" smashed="yes">
 <attribute name="VALUE" x="0" y="23.114" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="0" y="33.528" size="1.778" layer="95" font="vector"/>
@@ -16269,6 +16265,10 @@ with different sets of drill holes or mounting pads</description>
 <instance part="MOTOR1_CONTROL" gate="G$1" x="449.58" y="-99.06" smashed="yes">
 <attribute name="VALUE" x="444.5" y="-108.966" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="444.5" y="-88.392" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="J1" gate="J$1" x="2.54" y="53.34" smashed="yes">
+<attribute name="VALUE" x="0" y="45.974" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="0" y="58.928" size="1.778" layer="95" font="vector"/>
 </instance>
 </instances>
 <busses>
@@ -16532,7 +16532,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <wire x1="10.16" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
 <label x="12.7" y="50.8" size="1.778" layer="95" xref="yes"/>
-<pinref part="VCC" gate="G$1" pin="1"/>
+<pinref part="J1" gate="J$1" pin="1"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -16581,7 +16581,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="368.3" y="2.54"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="5.0V" class="0">
 <segment>
 <pinref part="SERVO_0" gate="J$1" pin="3"/>
 <wire x1="129.54" y1="86.36" x2="132.08" y2="86.36" width="0.1524" layer="91"/>
@@ -16600,7 +16600,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <wire x1="10.16" y1="53.34" x2="20.32" y2="53.34" width="0.1524" layer="91"/>
 <label x="20.32" y="53.34" size="1.778" layer="95" xref="yes"/>
-<pinref part="VCC" gate="G$1" pin="2"/>
+<pinref part="J1" gate="J$1" pin="2"/>
 </segment>
 </net>
 <net name="IN_U0" class="0">
@@ -16961,10 +16961,9 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="SPI_CONN0" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="X1" gate="G$1" pin="3V3"/>
-<wire x1="162.56" y1="-50.8" x2="162.56" y2="-40.64" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="-40.64" x2="175.26" y2="-40.64" width="0.1524" layer="91"/>
-<label x="175.26" y="-40.64" size="1.778" layer="95" xref="yes"/>
+<pinref part="J1" gate="J$1" pin="3"/>
+<wire x1="10.16" y1="55.88" x2="12.7" y2="55.88" width="0.1524" layer="91"/>
+<label x="12.7" y="55.88" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$2" class="0">
