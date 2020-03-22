@@ -15880,7 +15880,7 @@ with different sets of drill holes or mounting pads</description>
 <part name="MOTOR0_SENS" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR0_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR1_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
-<part name="J1" library="SparkFun-Connectors" deviceset="CONN_03" device="1X03_NO_SILK"/>
+<part name="VCC" library="SparkFun-Connectors" deviceset="CONN_03" device="1X03_NO_SILK"/>
 </parts>
 <sheets>
 <sheet>
@@ -15907,7 +15907,7 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="NAME" x="288.036" y="-15.24" size="1.778" layer="95" font="vector" rot="MR270" align="bottom-center"/>
 <attribute name="VALUE" x="293.116" y="-15.24" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
-<instance part="W0-C1" gate="G$1" x="274.32" y="-17.78" smashed="yes" rot="MR0">
+<instance part="W0-C1" gate="G$1" x="274.32" y="-15.24" smashed="yes" rot="MR180">
 <attribute name="NAME" x="272.796" y="-14.859" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="272.796" y="-19.939" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -15918,7 +15918,7 @@ with different sets of drill holes or mounting pads</description>
 <instance part="GND2" gate="1" x="259.08" y="-30.48" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="259.08" y="-30.734" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="W0-C4" gate="G$1" x="381" y="-17.78" smashed="yes" rot="MR0">
+<instance part="W0-C4" gate="G$1" x="381" y="-15.24" smashed="yes" rot="MR180">
 <attribute name="NAME" x="379.476" y="-14.859" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="379.476" y="-19.939" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -15969,7 +15969,7 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="NAME" x="286.004" y="116.84" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
 <attribute name="VALUE" x="293.116" y="116.84" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
-<instance part="U0-C1" gate="G$1" x="274.32" y="114.3" smashed="yes" rot="MR0">
+<instance part="U0-C1" gate="G$1" x="274.32" y="116.84" smashed="yes" rot="MR180">
 <attribute name="NAME" x="272.796" y="117.221" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="272.796" y="112.141" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -15980,7 +15980,7 @@ with different sets of drill holes or mounting pads</description>
 <instance part="GND11" gate="1" x="259.08" y="101.6" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="259.08" y="101.346" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="U0-C4" gate="G$1" x="381" y="114.3" smashed="yes" rot="MR0">
+<instance part="U0-C4" gate="G$1" x="381" y="116.84" smashed="yes" rot="MR180">
 <attribute name="NAME" x="379.476" y="117.221" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="379.476" y="112.141" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -16012,7 +16012,7 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="NAME" x="286.004" y="50.8" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
 <attribute name="VALUE" x="293.116" y="50.8" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
-<instance part="V0-C1" gate="G$1" x="274.32" y="48.26" smashed="yes" rot="MR0">
+<instance part="V0-C1" gate="G$1" x="274.32" y="50.8" smashed="yes" rot="MR180">
 <attribute name="NAME" x="272.796" y="51.181" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="272.796" y="46.101" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -16020,7 +16020,7 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="NAME" x="303.276" y="51.181" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="303.276" y="46.101" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
-<instance part="V0-C4" gate="G$1" x="381" y="48.26" smashed="yes" rot="MR0">
+<instance part="V0-C4" gate="G$1" x="381" y="50.8" smashed="yes" rot="MR180">
 <attribute name="NAME" x="379.476" y="51.181" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="379.476" y="46.101" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -16089,7 +16089,7 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="NAME" x="489.204" y="116.84" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
 <attribute name="VALUE" x="496.316" y="116.84" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
-<instance part="U1-C1" gate="G$1" x="477.52" y="114.3" smashed="yes" rot="MR0">
+<instance part="U1-C1" gate="G$1" x="477.52" y="116.84" smashed="yes" rot="MR180">
 <attribute name="NAME" x="475.996" y="117.221" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="475.996" y="112.141" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -16100,7 +16100,7 @@ with different sets of drill holes or mounting pads</description>
 <instance part="GND27" gate="1" x="452.12" y="101.6" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="452.12" y="101.346" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="U1-C4" gate="G$1" x="584.2" y="114.3" smashed="yes" rot="MR0">
+<instance part="U1-C4" gate="G$1" x="584.2" y="116.84" smashed="yes" rot="MR180">
 <attribute name="NAME" x="582.676" y="117.221" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="582.676" y="112.141" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -16132,7 +16132,7 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="NAME" x="489.204" y="50.8" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
 <attribute name="VALUE" x="496.316" y="50.8" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
-<instance part="V1-C1" gate="G$1" x="477.52" y="48.26" smashed="yes" rot="MR0">
+<instance part="V1-C1" gate="G$1" x="477.52" y="50.8" smashed="yes" rot="MR180">
 <attribute name="NAME" x="475.996" y="51.181" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="475.996" y="46.101" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -16143,9 +16143,9 @@ with different sets of drill holes or mounting pads</description>
 <instance part="GND30" gate="1" x="452.12" y="35.56" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="452.12" y="35.306" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="V1-C4" gate="G$1" x="584.2" y="48.26" smashed="yes" rot="MR0">
-<attribute name="NAME" x="582.676" y="51.181" size="1.778" layer="95" font="vector" rot="MR0"/>
-<attribute name="VALUE" x="582.676" y="46.101" size="1.778" layer="96" font="vector" rot="MR0"/>
+<instance part="V1-C4" gate="G$1" x="584.2" y="50.8" smashed="yes" rot="MR180">
+<attribute name="NAME" x="582.676" y="46.101" size="1.778" layer="95" font="vector" rot="MR0"/>
+<attribute name="VALUE" x="582.676" y="51.181" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
 <instance part="V1-C5" gate="G$1" x="568.96" y="78.74" smashed="yes" rot="MR0">
 <attribute name="NAME" x="567.436" y="81.661" size="1.778" layer="95" font="vector" rot="MR0"/>
@@ -16178,8 +16178,8 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="NAME" x="489.204" y="-15.24" size="1.778" layer="95" font="vector" rot="MR90" align="bottom-center"/>
 <attribute name="VALUE" x="496.316" y="-15.24" size="1.778" layer="96" font="vector" rot="MR90" align="top-center"/>
 </instance>
-<instance part="W1-C1" gate="G$1" x="477.52" y="-17.78" smashed="yes" rot="MR0">
-<attribute name="NAME" x="475.996" y="-14.859" size="1.778" layer="95" font="vector" rot="MR0"/>
+<instance part="W1-C1" gate="G$1" x="477.52" y="-15.24" smashed="yes" rot="MR180">
+<attribute name="NAME" x="475.361" y="-13.716" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="475.996" y="-19.939" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
 <instance part="W1-C2" gate="G$1" x="508" y="-15.24" smashed="yes" rot="MR180">
@@ -16189,7 +16189,7 @@ with different sets of drill holes or mounting pads</description>
 <instance part="GND35" gate="1" x="452.12" y="-30.48" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="449.58" y="-30.734" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="W1-C4" gate="G$1" x="584.2" y="-17.78" smashed="yes" rot="MR0">
+<instance part="W1-C4" gate="G$1" x="584.2" y="-15.24" smashed="yes" rot="MR180">
 <attribute name="NAME" x="582.676" y="-14.859" size="1.778" layer="95" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="582.676" y="-19.939" size="1.778" layer="96" font="vector" rot="MR0"/>
 </instance>
@@ -16266,7 +16266,7 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="VALUE" x="444.5" y="-108.966" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="444.5" y="-88.392" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="J1" gate="J$1" x="2.54" y="53.34" smashed="yes">
+<instance part="VCC" gate="J$1" x="2.54" y="53.34" smashed="yes">
 <attribute name="VALUE" x="0" y="45.974" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="0" y="58.928" size="1.778" layer="95" font="vector"/>
 </instance>
@@ -16276,11 +16276,11 @@ with different sets of drill holes or mounting pads</description>
 <nets>
 <net name="GND" class="0">
 <segment>
-<pinref part="W0-C1" gate="G$1" pin="2"/>
+<pinref part="W0-C1" gate="G$1" pin="1"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="274.32" y1="-20.32" x2="274.32" y2="-25.4" width="0.1524" layer="91"/>
 <pinref part="HB-W0" gate="G$1" pin="GND"/>
-<pinref part="W0-C4" gate="G$1" pin="2"/>
+<pinref part="W0-C4" gate="G$1" pin="1"/>
 <junction x="350.52" y="-25.4"/>
 <pinref part="W0-C3" gate="G$1" pin="1"/>
 <wire x1="347.98" y1="-2.54" x2="350.52" y2="-2.54" width="0.1524" layer="91"/>
@@ -16317,7 +16317,7 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="HB-U0" gate="G$1" pin="GND"/>
 <wire x1="347.98" y1="129.54" x2="350.52" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="350.52" y1="129.54" x2="350.52" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="U0-C4" gate="G$1" pin="2"/>
+<pinref part="U0-C4" gate="G$1" pin="1"/>
 <pinref part="U0-C3" gate="G$1" pin="1"/>
 <wire x1="365.76" y1="111.76" x2="365.76" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="381" y1="111.76" x2="381" y2="106.68" width="0.1524" layer="91"/>
@@ -16325,7 +16325,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="365.76" y="106.68"/>
 <wire x1="365.76" y1="106.68" x2="350.52" y2="106.68" width="0.1524" layer="91"/>
 <junction x="350.52" y="106.68"/>
-<pinref part="U0-C1" gate="G$1" pin="2"/>
+<pinref part="U0-C1" gate="G$1" pin="1"/>
 <wire x1="274.32" y1="111.76" x2="274.32" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="350.52" y1="106.68" x2="320.04" y2="106.68" width="0.1524" layer="91"/>
 <junction x="274.32" y="106.68"/>
@@ -16373,7 +16373,7 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="HB-U1" gate="G$1" pin="GND"/>
 <wire x1="551.18" y1="129.54" x2="553.72" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="553.72" y1="129.54" x2="553.72" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="U1-C4" gate="G$1" pin="2"/>
+<pinref part="U1-C4" gate="G$1" pin="1"/>
 <pinref part="U1-C3" gate="G$1" pin="1"/>
 <wire x1="584.2" y1="111.76" x2="584.2" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="584.2" y1="106.68" x2="568.96" y2="106.68" width="0.1524" layer="91"/>
@@ -16393,7 +16393,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="508" y="106.68"/>
 <junction x="492.76" y="106.68"/>
 <wire x1="492.76" y1="106.68" x2="477.52" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="U1-C1" gate="G$1" pin="2"/>
+<pinref part="U1-C1" gate="G$1" pin="1"/>
 <wire x1="477.52" y1="111.76" x2="477.52" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="474.98" y1="106.68" x2="477.52" y2="106.68" width="0.1524" layer="91"/>
 <junction x="477.52" y="106.68"/>
@@ -16403,7 +16403,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="523.24" y="106.68"/>
 </segment>
 <segment>
-<pinref part="V0-C4" gate="G$1" pin="2"/>
+<pinref part="V0-C4" gate="G$1" pin="1"/>
 <wire x1="381" y1="45.72" x2="381" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="381" y1="40.64" x2="365.76" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="V0-C3" gate="G$1" pin="1"/>
@@ -16427,7 +16427,7 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="289.56" y1="45.72" x2="289.56" y2="40.64" width="0.1524" layer="91"/>
 <junction x="289.56" y="40.64"/>
 <wire x1="289.56" y1="40.64" x2="274.32" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="V0-C1" gate="G$1" pin="2"/>
+<pinref part="V0-C1" gate="G$1" pin="1"/>
 <wire x1="274.32" y1="45.72" x2="274.32" y2="40.64" width="0.1524" layer="91"/>
 <junction x="274.32" y="40.64"/>
 <wire x1="274.32" y1="40.64" x2="259.08" y2="40.64" width="0.1524" layer="91"/>
@@ -16439,7 +16439,7 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="551.18" y1="63.5" x2="553.72" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="GND33" gate="1" pin="GND"/>
 <wire x1="553.72" y1="63.5" x2="553.72" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="V1-C4" gate="G$1" pin="2"/>
+<pinref part="V1-C4" gate="G$1" pin="1"/>
 <pinref part="V1-C3" gate="G$1" pin="1"/>
 <wire x1="584.2" y1="45.72" x2="584.2" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="584.2" y1="40.64" x2="568.96" y2="40.64" width="0.1524" layer="91"/>
@@ -16458,7 +16458,7 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="508" y1="40.64" x2="492.76" y2="40.64" width="0.1524" layer="91"/>
 <junction x="492.76" y="40.64"/>
 <wire x1="492.76" y1="40.64" x2="477.52" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="V1-C1" gate="G$1" pin="2"/>
+<pinref part="V1-C1" gate="G$1" pin="1"/>
 <pinref part="GND30" gate="1" pin="GND"/>
 <wire x1="477.52" y1="40.64" x2="452.12" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="452.12" y1="40.64" x2="452.12" y2="38.1" width="0.1524" layer="91"/>
@@ -16468,7 +16468,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="523.24" y="40.64"/>
 </segment>
 <segment>
-<pinref part="W1-C1" gate="G$1" pin="2"/>
+<pinref part="W1-C1" gate="G$1" pin="1"/>
 <pinref part="GND35" gate="1" pin="GND"/>
 <wire x1="452.12" y1="-27.94" x2="452.12" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="452.12" y1="-25.4" x2="477.52" y2="-25.4" width="0.1524" layer="91"/>
@@ -16489,7 +16489,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="523.24" y="-25.4"/>
 <wire x1="553.72" y1="-25.4" x2="553.72" y2="-2.54" width="0.1524" layer="91"/>
 <pinref part="HB-W1" gate="G$1" pin="GND"/>
-<pinref part="W1-C4" gate="G$1" pin="2"/>
+<pinref part="W1-C4" gate="G$1" pin="1"/>
 <pinref part="W1-C3" gate="G$1" pin="1"/>
 <wire x1="553.72" y1="-2.54" x2="551.18" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="553.72" y1="-25.4" x2="568.96" y2="-25.4" width="0.1524" layer="91"/>
@@ -16532,17 +16532,17 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <wire x1="10.16" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
 <label x="12.7" y="50.8" size="1.778" layer="95" xref="yes"/>
-<pinref part="J1" gate="J$1" pin="1"/>
+<pinref part="VCC" gate="J$1" pin="1"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="HB_INH_W0" class="0">
 <segment>
 <pinref part="HB-W0" gate="G$1" pin="INH"/>
 <pinref part="W0-R3" gate="G$1" pin="1"/>
 <wire x1="279.4" y1="10.16" x2="325.12" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="SR_W0" class="0">
 <segment>
 <pinref part="W0-R2" gate="G$1" pin="2"/>
 <pinref part="HB-W0" gate="G$1" pin="SR"/>
@@ -16554,7 +16554,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="320.04" y="0"/>
 </segment>
 </net>
-<net name="N$20" class="0">
+<net name="HB_IN_W0" class="0">
 <segment>
 <pinref part="HB-W0" gate="G$1" pin="IN"/>
 <pinref part="W0-R4" gate="G$1" pin="1"/>
@@ -16600,7 +16600,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <wire x1="10.16" y1="53.34" x2="20.32" y2="53.34" width="0.1524" layer="91"/>
 <label x="20.32" y="53.34" size="1.778" layer="95" xref="yes"/>
-<pinref part="J1" gate="J$1" pin="2"/>
+<pinref part="VCC" gate="J$1" pin="2"/>
 </segment>
 </net>
 <net name="IN_U0" class="0">
@@ -16615,14 +16615,14 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="4"/>
 </segment>
 </net>
-<net name="N$11" class="0">
+<net name="HB_INH_U0" class="0">
 <segment>
 <pinref part="HB-U0" gate="G$1" pin="INH"/>
 <pinref part="U0-R3" gate="G$1" pin="1"/>
 <wire x1="279.4" y1="142.24" x2="325.12" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$14" class="0">
+<net name="HB_IN_U0" class="0">
 <segment>
 <pinref part="HB-U0" gate="G$1" pin="IN"/>
 <pinref part="U0-R4" gate="G$1" pin="1"/>
@@ -16649,14 +16649,14 @@ with different sets of drill holes or mounting pads</description>
 <junction x="368.3" y="134.62"/>
 </segment>
 </net>
-<net name="N$18" class="0">
+<net name="HB_INH_V0" class="0">
 <segment>
 <pinref part="HB-V0" gate="G$1" pin="INH"/>
 <pinref part="V0-R3" gate="G$1" pin="1"/>
 <wire x1="279.4" y1="76.2" x2="325.12" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$24" class="0">
+<net name="HB_IN_V0" class="0">
 <segment>
 <pinref part="HB-V0" gate="G$1" pin="IN"/>
 <pinref part="V0-R4" gate="G$1" pin="1"/>
@@ -16745,7 +16745,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <pinref part="HB-W0" gate="G$1" pin="IS"/>
 <pinref part="W0-R1" gate="G$1" pin="2"/>
-<pinref part="W0-C1" gate="G$1" pin="1"/>
+<pinref part="W0-C1" gate="G$1" pin="2"/>
 <wire x1="274.32" y1="-12.7" x2="274.32" y2="-5.08" width="0.1524" layer="91"/>
 <label x="259.08" y="-5.08" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="274.32" y1="-5.08" x2="259.08" y2="-5.08" width="0.1524" layer="91"/>
@@ -16765,7 +16765,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <pinref part="HB-V0" gate="G$1" pin="IS"/>
 <pinref part="V0-R1" gate="G$1" pin="2"/>
-<pinref part="V0-C1" gate="G$1" pin="1"/>
+<pinref part="V0-C1" gate="G$1" pin="2"/>
 <wire x1="274.32" y1="53.34" x2="274.32" y2="60.96" width="0.1524" layer="91"/>
 <label x="259.08" y="60.96" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="274.32" y1="60.96" x2="259.08" y2="60.96" width="0.1524" layer="91"/>
@@ -16785,7 +16785,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <pinref part="HB-U0" gate="G$1" pin="IS"/>
 <pinref part="U0-R1" gate="G$1" pin="2"/>
-<pinref part="U0-C1" gate="G$1" pin="1"/>
+<pinref part="U0-C1" gate="G$1" pin="2"/>
 <wire x1="274.32" y1="119.38" x2="274.32" y2="127" width="0.1524" layer="91"/>
 <label x="259.08" y="127" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="325.12" y1="127" x2="289.56" y2="127" width="0.1524" layer="91"/>
@@ -16818,7 +16818,7 @@ with different sets of drill holes or mounting pads</description>
 </segment>
 <segment>
 <pinref part="HB-V0" gate="G$1" pin="VS"/>
-<pinref part="V0-C4" gate="G$1" pin="1"/>
+<pinref part="V0-C4" gate="G$1" pin="2"/>
 <pinref part="V0-C5" gate="G$1" pin="1"/>
 <label x="259.08" y="86.36" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="259.08" y1="86.36" x2="350.52" y2="86.36" width="0.1524" layer="91"/>
@@ -16833,7 +16833,7 @@ with different sets of drill holes or mounting pads</description>
 </segment>
 <segment>
 <pinref part="HB-U0" gate="G$1" pin="VS"/>
-<pinref part="U0-C4" gate="G$1" pin="1"/>
+<pinref part="U0-C4" gate="G$1" pin="2"/>
 <pinref part="U0-C5" gate="G$1" pin="1"/>
 <wire x1="381" y1="152.4" x2="381" y2="119.38" width="0.1524" layer="91"/>
 <label x="259.08" y="152.4" size="1.778" layer="95" rot="MR0" xref="yes"/>
@@ -16848,7 +16848,7 @@ with different sets of drill holes or mounting pads</description>
 </segment>
 <segment>
 <pinref part="HB-W1" gate="G$1" pin="VS"/>
-<pinref part="W1-C4" gate="G$1" pin="1"/>
+<pinref part="W1-C4" gate="G$1" pin="2"/>
 <pinref part="W1-C5" gate="G$1" pin="1"/>
 <label x="452.12" y="20.32" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="452.12" y1="20.32" x2="553.72" y2="20.32" width="0.1524" layer="91"/>
@@ -16863,7 +16863,7 @@ with different sets of drill holes or mounting pads</description>
 </segment>
 <segment>
 <pinref part="HB-U1" gate="G$1" pin="VS"/>
-<pinref part="U1-C4" gate="G$1" pin="1"/>
+<pinref part="U1-C4" gate="G$1" pin="2"/>
 <pinref part="U1-C5" gate="G$1" pin="1"/>
 <label x="452.12" y="152.4" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="584.2" y1="119.38" x2="584.2" y2="152.4" width="0.1524" layer="91"/>
@@ -16878,7 +16878,7 @@ with different sets of drill holes or mounting pads</description>
 </segment>
 <segment>
 <pinref part="HB-V1" gate="G$1" pin="VS"/>
-<pinref part="V1-C4" gate="G$1" pin="1"/>
+<pinref part="V1-C4" gate="G$1" pin="2"/>
 <pinref part="V1-C5" gate="G$1" pin="1"/>
 <label x="452.12" y="86.36" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="584.2" y1="53.34" x2="584.2" y2="86.36" width="0.1524" layer="91"/>
@@ -16892,7 +16892,7 @@ with different sets of drill holes or mounting pads</description>
 </segment>
 <segment>
 <pinref part="HB-W0" gate="G$1" pin="VS"/>
-<pinref part="W0-C4" gate="G$1" pin="1"/>
+<pinref part="W0-C4" gate="G$1" pin="2"/>
 <pinref part="W0-C5" gate="G$1" pin="1"/>
 <wire x1="381" y1="20.32" x2="381" y2="-12.7" width="0.1524" layer="91"/>
 <label x="259.08" y="20.32" size="1.778" layer="95" rot="MR0" xref="yes"/>
@@ -16961,12 +16961,12 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="SPI_CONN0" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="J1" gate="J$1" pin="3"/>
+<pinref part="VCC" gate="J$1" pin="3"/>
 <wire x1="10.16" y1="55.88" x2="12.7" y2="55.88" width="0.1524" layer="91"/>
 <label x="12.7" y="55.88" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="SR_V0" class="0">
 <segment>
 <pinref part="HB-V0" gate="G$1" pin="SR"/>
 <wire x1="325.12" y1="66.04" x2="320.04" y2="66.04" width="0.1524" layer="91"/>
@@ -16978,7 +16978,7 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="304.8" y1="66.04" x2="304.8" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$10" class="0">
+<net name="SR_U0" class="0">
 <segment>
 <pinref part="HB-U0" gate="G$1" pin="SR"/>
 <wire x1="325.12" y1="132.08" x2="320.04" y2="132.08" width="0.1524" layer="91"/>
@@ -16990,35 +16990,35 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="304.8" y1="132.08" x2="304.8" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$17" class="0">
+<net name="HB_INH_U1" class="0">
 <segment>
 <pinref part="HB-U1" gate="G$1" pin="INH"/>
 <pinref part="U1-R3" gate="G$1" pin="1"/>
 <wire x1="482.6" y1="142.24" x2="528.32" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$19" class="0">
+<net name="HB_IN_U1" class="0">
 <segment>
 <pinref part="HB-U1" gate="G$1" pin="IN"/>
 <pinref part="U1-R4" gate="G$1" pin="1"/>
 <wire x1="528.32" y1="137.16" x2="497.84" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$26" class="0">
+<net name="HB_INH_V1" class="0">
 <segment>
 <pinref part="HB-V1" gate="G$1" pin="INH"/>
 <pinref part="V1-R3" gate="G$1" pin="1"/>
 <wire x1="482.6" y1="76.2" x2="528.32" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$27" class="0">
+<net name="HB_IN_V1" class="0">
 <segment>
 <pinref part="HB-V1" gate="G$1" pin="IN"/>
 <pinref part="V1-R4" gate="G$1" pin="1"/>
 <wire x1="528.32" y1="71.12" x2="497.84" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$29" class="0">
+<net name="SR_V1" class="0">
 <segment>
 <pinref part="HB-V1" gate="G$1" pin="SR"/>
 <wire x1="528.32" y1="66.04" x2="523.24" y2="66.04" width="0.1524" layer="91"/>
@@ -17161,7 +17161,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <pinref part="HB-W1" gate="G$1" pin="IS"/>
 <pinref part="W1-R1" gate="G$1" pin="2"/>
-<pinref part="W1-C1" gate="G$1" pin="1"/>
+<pinref part="W1-C1" gate="G$1" pin="2"/>
 <label x="452.12" y="-5.08" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="452.12" y1="-5.08" x2="477.52" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="477.52" y1="-5.08" x2="492.76" y2="-5.08" width="0.1524" layer="91"/>
@@ -17181,7 +17181,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <pinref part="HB-V1" gate="G$1" pin="IS"/>
 <pinref part="V1-R1" gate="G$1" pin="2"/>
-<pinref part="V1-C1" gate="G$1" pin="1"/>
+<pinref part="V1-C1" gate="G$1" pin="2"/>
 <label x="452.12" y="60.96" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="452.12" y1="60.96" x2="477.52" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="477.52" y1="60.96" x2="492.76" y2="60.96" width="0.1524" layer="91"/>
@@ -17201,7 +17201,7 @@ with different sets of drill holes or mounting pads</description>
 <segment>
 <pinref part="HB-U1" gate="G$1" pin="IS"/>
 <pinref part="U1-R1" gate="G$1" pin="2"/>
-<pinref part="U1-C1" gate="G$1" pin="1"/>
+<pinref part="U1-C1" gate="G$1" pin="2"/>
 <wire x1="477.52" y1="119.38" x2="477.52" y2="127" width="0.1524" layer="91"/>
 <label x="452.12" y="127" size="1.778" layer="95" rot="MR0" xref="yes"/>
 <wire x1="528.32" y1="127" x2="492.76" y2="127" width="0.1524" layer="91"/>
@@ -17217,21 +17217,21 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="4"/>
 </segment>
 </net>
-<net name="N$30" class="0">
+<net name="HB_INH_W1" class="0">
 <segment>
 <pinref part="HB-W1" gate="G$1" pin="INH"/>
 <pinref part="W1-R3" gate="G$1" pin="1"/>
 <wire x1="482.6" y1="10.16" x2="528.32" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$31" class="0">
+<net name="HB_IN_W1" class="0">
 <segment>
 <pinref part="HB-W1" gate="G$1" pin="IN"/>
 <pinref part="W1-R4" gate="G$1" pin="1"/>
 <wire x1="528.32" y1="5.08" x2="497.84" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$33" class="0">
+<net name="SR_W1" class="0">
 <segment>
 <pinref part="HB-W1" gate="G$1" pin="SR"/>
 <wire x1="528.32" y1="0" x2="523.24" y2="0" width="0.1524" layer="91"/>
@@ -17243,7 +17243,7 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="508" y1="0" x2="508" y2="-12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$23" class="0">
+<net name="SR_U1" class="0">
 <segment>
 <pinref part="HB-U1" gate="G$1" pin="SR"/>
 <wire x1="528.32" y1="132.08" x2="523.24" y2="132.08" width="0.1524" layer="91"/>
