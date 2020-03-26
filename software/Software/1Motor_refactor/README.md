@@ -8,3 +8,4 @@
 
 * Change Motor class contents: SPI Pins, FieldWeakening
 * Configure for 2 Motors
+* Test without constexpr 
