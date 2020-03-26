@@ -7,11 +7,10 @@
 
 
 
-constexpr InhibitPins inhibitPins_{33, 24, 31};
-constexpr InitPins initPins{21, 23, 22};
-constexpr SPIPins spiPins{1,2,10};
+constexpr INHPins inhibitPins_{33, 24, 31};
+constexpr PWMPins initPins{21, 23, 22};
 constexpr ISPins isPins {A15,A16,A17};
-Motor x(inhibitPins_,initPins,spiPins,isPins);
+Motor x(inhibitPins_,initPins,10,isPins);
 void ftm0_isr(void)
 {
 
@@ -27,8 +26,6 @@ void ftm0_isr(void)
 #define INT_FIRAT 1
 
 void setup() {
-
-
 
 
 

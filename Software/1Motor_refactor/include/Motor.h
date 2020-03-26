@@ -8,23 +8,23 @@
 #include <array>
 
 
-struct InhibitPins {
+struct INHPins {
     const uint8_t InhibitPinU;
     const uint8_t InhibitPinV;
     const uint8_t InhibitPinW;
 
-    constexpr InhibitPins(uint8_t PinU_, uint8_t PinV_, uint8_t PinW_) : InhibitPinU(PinU_), InhibitPinV(PinV_),
-                                                                         InhibitPinW(PinW_) {}
+    constexpr INHPins(uint8_t PinU_, uint8_t PinV_, uint8_t PinW_) : InhibitPinU(PinU_), InhibitPinV(PinV_),
+                                                                     InhibitPinW(PinW_) {}
 
 };
 
-struct InitPins {
+struct PWMPins {
     const uint8_t InitPinU;
     const uint8_t InitPinV;
     const uint8_t InitPinW;
 
-    constexpr InitPins(uint8_t PinU_, uint8_t PinV_, uint8_t PinW_) : InitPinU(PinU_), InitPinV(PinV_),
-                                                                      InitPinW(PinW_) {}
+    constexpr PWMPins(uint8_t PinU_, uint8_t PinV_, uint8_t PinW_) : InitPinU(PinU_), InitPinV(PinV_),
+                                                                     InitPinW(PinW_) {}
 
 };
 
@@ -35,13 +35,6 @@ struct ServoPins {
     constexpr ServoPins(uint8_t servoPin1_, uint8_t servoPin2_) : servoPin1(servoPin1_), servoPin2(servoPin2_) {}
 };
 
-struct SPIPins {
-    const uint8_t MISO;
-    const uint8_t MOSI;
-    const uint8_t CS;
-
-    constexpr SPIPins(uint8_t MISO_, uint8_t MOSI_, uint8_t CS_) : MISO(MISO_), MOSI(MOSI_), CS(CS_) {}
-};
 
 
 struct ISPins {
@@ -65,12 +58,12 @@ enum Direction {
 
 class Motor {
 public:
-    Motor(InhibitPins inhibitPins_, InitPins initPins_, SPIPins SpiPins_, ISPins IsPins_)
-    : inhibitPins(inhibitPins_), initPins(initPins_), SpiPins(SpiPins_), IsPins(IsPins_){}
+    Motor(INHPins inhibitPins_, PWMPins initPins_, uint8_t CSPin_, ISPins IsPins_)
+    : inhibitPins(inhibitPins_), initPins(initPins_), CSPin(CSPin_), IsPins(IsPins_){}
 
-    const  InhibitPins inhibitPins;
-    const InitPins initPins;
-    const SPIPins SpiPins; //@TODO dont need the whole set of pins, SPICOM calss should handle the others
+    const  INHPins inhibitPins;
+    const PWMPins initPins;
+    const uint8_t CSPin;
     const ISPins IsPins;
     Direction direction = Direction::CCW;
     float speedRPS = 0;
