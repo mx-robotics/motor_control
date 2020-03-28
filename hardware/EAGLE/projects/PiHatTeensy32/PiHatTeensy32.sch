@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.0">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -15417,6 +15417,11 @@ with different sets of drill holes or mounting pads</description>
 <label x="17.78" y="7.62" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="4"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="23/A9/T/PWM"/>
+<wire x1="134.62" y1="-12.7" x2="129.54" y2="-12.7" width="0.1524" layer="91"/>
+<label x="127" y="-12.7" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="IN_V0" class="0">
 <segment>
@@ -15424,12 +15429,22 @@ with different sets of drill holes or mounting pads</description>
 <label x="35.56" y="10.16" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="5"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="22/A8/T/PWM"/>
+<wire x1="134.62" y1="-10.16" x2="129.54" y2="-10.16" width="0.1524" layer="91"/>
+<label x="127" y="-10.16" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="IN_W0" class="0">
 <segment>
 <wire x1="10.16" y1="12.7" x2="53.34" y2="12.7" width="0.1524" layer="91"/>
 <label x="53.34" y="12.7" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="6"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="21/A7/PWM"/>
+<wire x1="134.62" y1="-7.62" x2="129.54" y2="-7.62" width="0.1524" layer="91"/>
+<label x="127" y="-7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="INH_U0" class="0">
@@ -15459,6 +15474,11 @@ with different sets of drill holes or mounting pads</description>
 <label x="53.34" y="-10.16" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_SENS" gate="G$1" pin="6"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="18/A4/T/SDA0"/>
+<wire x1="134.62" y1="0" x2="129.54" y2="0" width="0.1524" layer="91"/>
+<label x="127" y="0" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="IS_V0" class="0">
 <segment>
@@ -15466,12 +15486,22 @@ with different sets of drill holes or mounting pads</description>
 <label x="35.56" y="-12.7" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_SENS" gate="G$1" pin="5"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="19/A5/T/SCL0"/>
+<wire x1="134.62" y1="-2.54" x2="129.54" y2="-2.54" width="0.1524" layer="91"/>
+<label x="127" y="-2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="IS_U0" class="0">
 <segment>
 <wire x1="10.16" y1="-15.24" x2="17.78" y2="-15.24" width="0.1524" layer="91"/>
 <label x="17.78" y="-15.24" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_SENS" gate="G$1" pin="4"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="20/A6/PWM"/>
+<wire x1="134.62" y1="-5.08" x2="129.54" y2="-5.08" width="0.1524" layer="91"/>
+<label x="127" y="-5.08" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VI" class="0">
@@ -15515,6 +15545,11 @@ with different sets of drill holes or mounting pads</description>
 <label x="20.32" y="-43.18" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="4"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="5/PWM"/>
+<wire x1="134.62" y1="33.02" x2="129.54" y2="33.02" width="0.1524" layer="91"/>
+<label x="129.54" y="33.02" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="IN_V1" class="0">
 <segment>
@@ -15522,12 +15557,22 @@ with different sets of drill holes or mounting pads</description>
 <label x="38.1" y="-40.64" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="5"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="6/PWM"/>
+<wire x1="134.62" y1="30.48" x2="129.54" y2="30.48" width="0.1524" layer="91"/>
+<label x="129.54" y="30.48" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="IN_W1" class="0">
 <segment>
 <wire x1="10.16" y1="-38.1" x2="55.88" y2="-38.1" width="0.1524" layer="91"/>
 <label x="55.88" y="-38.1" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="6"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="10/TX2/PWM"/>
+<wire x1="134.62" y1="20.32" x2="129.54" y2="20.32" width="0.1524" layer="91"/>
+<label x="129.54" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="INH_V1" class="0">
@@ -15550,6 +15595,11 @@ with different sets of drill holes or mounting pads</description>
 <label x="55.88" y="-60.96" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="6"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="28/A17"/>
+<wire x1="180.34" y1="-7.62" x2="185.42" y2="-7.62" width="0.1524" layer="91"/>
+<label x="185.42" y="-7.62" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="IS_V1" class="0">
 <segment>
@@ -15557,12 +15607,22 @@ with different sets of drill holes or mounting pads</description>
 <label x="38.1" y="-63.5" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="5"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="27/A16"/>
+<wire x1="180.34" y1="-10.16" x2="185.42" y2="-10.16" width="0.1524" layer="91"/>
+<label x="185.42" y="-10.16" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="IS_U1" class="0">
 <segment>
 <wire x1="10.16" y1="-66.04" x2="20.32" y2="-66.04" width="0.1524" layer="91"/>
 <label x="20.32" y="-66.04" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="4"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="26/A15"/>
+<wire x1="180.34" y1="-12.7" x2="185.42" y2="-12.7" width="0.1524" layer="91"/>
+<label x="185.42" y="-12.7" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="I2C1_SDA" class="0">
@@ -15585,12 +15645,22 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="142.24" y1="-114.3" x2="134.62" y2="-114.3" width="0.1524" layer="91"/>
 <label x="134.62" y="-114.3" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="30/A19/SDA1"/>
+<wire x1="180.34" y1="-2.54" x2="185.42" y2="-2.54" width="0.1524" layer="91"/>
+<label x="185.42" y="-2.54" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="I2C0_SCL" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="SCL"/>
 <wire x1="142.24" y1="-111.76" x2="116.84" y2="-111.76" width="0.1524" layer="91"/>
 <label x="116.84" y="-111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="29/A18/SCL1"/>
+<wire x1="180.34" y1="-5.08" x2="185.42" y2="-5.08" width="0.1524" layer="91"/>
+<label x="185.42" y="-5.08" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SPI_SCLK" class="0">
@@ -15599,12 +15669,23 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="172.72" y1="-68.58" x2="187.96" y2="-68.58" width="0.1524" layer="91"/>
 <label x="187.96" y="-68.58" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="14/A0"/>
+<wire x1="134.62" y1="10.16" x2="129.54" y2="10.16" width="0.1524" layer="91"/>
+<label x="129.54" y="10.16" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="SPI_MOSI" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="SPI_MOSI"/>
 <wire x1="172.72" y1="-63.5" x2="187.96" y2="-63.5" width="0.1524" layer="91"/>
 <label x="187.96" y="-63.5" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="11/MOSI"/>
+<wire x1="134.62" y1="17.78" x2="129.54" y2="17.78" width="0.1524" layer="91"/>
+<label x="129.54" y="17.78" size="1.778" layer="95" rot="R180" xref="yes"/>
+<label x="129.54" y="17.78" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SPI_MISO" class="0">
@@ -15613,12 +15694,22 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="172.72" y1="-66.04" x2="187.96" y2="-66.04" width="0.1524" layer="91"/>
 <label x="187.96" y="-66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="12/MISO"/>
+<wire x1="134.62" y1="15.24" x2="129.54" y2="15.24" width="0.1524" layer="91"/>
+<label x="129.54" y="15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="SPI_CS1" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="SPI_CE1"/>
 <wire x1="172.72" y1="-73.66" x2="187.96" y2="-73.66" width="0.1524" layer="91"/>
 <label x="187.96" y="-73.66" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="31/A20"/>
+<wire x1="180.34" y1="0" x2="185.42" y2="0" width="0.1524" layer="91"/>
+<label x="185.42" y="0" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SPI_CS0" class="0">
@@ -15627,12 +15718,22 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="172.72" y1="-71.12" x2="187.96" y2="-71.12" width="0.1524" layer="91"/>
 <label x="187.96" y="-71.12" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="15/A1/T"/>
+<wire x1="134.62" y1="7.62" x2="129.54" y2="7.62" width="0.1524" layer="91"/>
+<label x="129.54" y="7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="HALL_U0" class="0">
 <segment>
 <wire x1="10.16" y1="-22.86" x2="17.78" y2="-22.86" width="0.1524" layer="91"/>
 <label x="17.78" y="-22.86" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_SENS" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="0/RX1/T"/>
+<wire x1="134.62" y1="45.72" x2="129.54" y2="45.72" width="0.1524" layer="91"/>
+<label x="129.54" y="45.72" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="HALL_V0" class="0">
@@ -15641,12 +15742,22 @@ with different sets of drill holes or mounting pads</description>
 <label x="35.56" y="-20.32" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_SENS" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="24"/>
+<wire x1="134.62" y1="-15.24" x2="129.54" y2="-15.24" width="0.1524" layer="91"/>
+<label x="127" y="-15.24" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="HALL_W0" class="0">
 <segment>
 <wire x1="10.16" y1="-17.78" x2="53.34" y2="-17.78" width="0.1524" layer="91"/>
 <label x="53.34" y="-17.78" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR0_SENS" gate="G$1" pin="3"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="33/T"/>
+<wire x1="180.34" y1="5.08" x2="185.42" y2="5.08" width="0.1524" layer="91"/>
+<label x="185.42" y="5.08" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SERVO_0" class="0">
@@ -15655,12 +15766,22 @@ with different sets of drill holes or mounting pads</description>
 <label x="12.7" y="27.94" size="1.778" layer="95" xref="yes"/>
 <pinref part="SERVOS" gate="G$1" pin="1"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="32/T/PWM"/>
+<wire x1="180.34" y1="2.54" x2="185.42" y2="2.54" width="0.1524" layer="91"/>
+<label x="185.42" y="2.54" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="HALL_U1" class="0">
 <segment>
 <wire x1="10.16" y1="-73.66" x2="20.32" y2="-73.66" width="0.1524" layer="91"/>
 <label x="20.32" y="-73.66" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="1/TX1/T"/>
+<wire x1="134.62" y1="43.18" x2="129.54" y2="43.18" width="0.1524" layer="91"/>
+<label x="129.54" y="43.18" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="HALL_V1" class="0">
@@ -15669,6 +15790,11 @@ with different sets of drill holes or mounting pads</description>
 <label x="38.1" y="-71.12" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="2"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="2"/>
+<wire x1="134.62" y1="40.64" x2="129.54" y2="40.64" width="0.1524" layer="91"/>
+<label x="129.54" y="40.64" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="HALL_W1" class="0">
 <segment>
@@ -15676,12 +15802,22 @@ with different sets of drill holes or mounting pads</description>
 <label x="55.88" y="-68.58" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="3"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="4/CAN-RX/PWM"/>
+<wire x1="134.62" y1="35.56" x2="129.54" y2="35.56" width="0.1524" layer="91"/>
+<label x="129.54" y="35.56" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="SERVO_1" class="0">
 <segment>
 <wire x1="10.16" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
 <label x="30.48" y="30.48" size="1.778" layer="95" xref="yes"/>
 <pinref part="SERVOS" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="25/T/PWM"/>
+<wire x1="180.34" y1="-15.24" x2="185.42" y2="-15.24" width="0.1524" layer="91"/>
+<label x="185.42" y="-15.24" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="5.0V" class="0">
@@ -15699,6 +15835,13 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="U$1" gate="G$1" pin="VIN"/>
 <wire x1="180.34" y1="45.72" x2="187.96" y2="45.72" width="0.1524" layer="91"/>
 <label x="187.96" y="45.72" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="3/CAN-TX/PWM"/>
+<wire x1="134.62" y1="38.1" x2="129.54" y2="38.1" width="0.1524" layer="91"/>
+<label x="129.54" y="38.1" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
