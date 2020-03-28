@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="5" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -15880,7 +15880,7 @@ with different sets of drill holes or mounting pads</description>
 <part name="MOTOR0_SENS" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR0_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR1_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
-<part name="VCC" library="SparkFun-Connectors" deviceset="CONN_03" device="1X03_NO_SILK"/>
+<part name="VCC" library="SparkFun-Connectors" deviceset="CONN_04" device="1X04_NO_SILK" value="JP"/>
 </parts>
 <sheets>
 <sheet>
@@ -16266,9 +16266,9 @@ with different sets of drill holes or mounting pads</description>
 <attribute name="VALUE" x="444.5" y="-108.966" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="444.5" y="-88.392" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="VCC" gate="J$1" x="2.54" y="53.34" smashed="yes">
-<attribute name="VALUE" x="0" y="45.974" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="0" y="58.928" size="1.778" layer="95" font="vector"/>
+<instance part="VCC" gate="G$1" x="0" y="53.34" smashed="yes">
+<attribute name="VALUE" x="0" y="45.466" size="1.778" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="-5.08" y="61.468" size="1.778" layer="95" font="vector"/>
 </instance>
 </instances>
 <busses>
@@ -16351,8 +16351,9 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="GND22" gate="1" pin="GND"/>
 <pinref part="C0" gate="G$1" pin="-"/>
 <wire x1="40.64" y1="76.2" x2="40.64" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="76.2" x2="40.64" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="76.2" x2="15.24" y2="76.2" width="0.1524" layer="91"/>
 <junction x="40.64" y="76.2"/>
+<wire x1="15.24" y1="76.2" x2="40.64" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="76.2" x2="40.64" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="GND"/>
 <wire x1="86.36" y1="76.2" x2="86.36" y2="88.9" width="0.1524" layer="91"/>
@@ -16368,6 +16369,10 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="172.72" y1="81.28" x2="172.72" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="76.2" x2="132.08" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="BATTERY" gate="J$1" pin="1"/>
+<pinref part="BATTERY" gate="J$1" pin="3"/>
+<wire x1="10.16" y1="81.28" x2="15.24" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="81.28" x2="15.24" y2="76.2" width="0.1524" layer="91"/>
+<junction x="15.24" y="76.2"/>
 </segment>
 <segment>
 <pinref part="HB-U1" gate="G$1" pin="GND"/>
@@ -16530,9 +16535,9 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="365.76" y1="-68.58" x2="370.84" y2="-68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="10.16" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
 <label x="12.7" y="50.8" size="1.778" layer="95" xref="yes"/>
-<pinref part="VCC" gate="J$1" pin="1"/>
+<pinref part="VCC" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="HB_INH_W0" class="0">
@@ -16581,7 +16586,7 @@ with different sets of drill holes or mounting pads</description>
 <junction x="368.3" y="2.54"/>
 </segment>
 </net>
-<net name="5.0V" class="0">
+<net name="VCC-SERVOS" class="0">
 <segment>
 <pinref part="SERVO_0" gate="J$1" pin="3"/>
 <wire x1="129.54" y1="86.36" x2="132.08" y2="86.36" width="0.1524" layer="91"/>
@@ -16598,9 +16603,9 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="172.72" y1="86.36" x2="172.72" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="10.16" y1="53.34" x2="20.32" y2="53.34" width="0.1524" layer="91"/>
-<label x="20.32" y="53.34" size="1.778" layer="95" xref="yes"/>
-<pinref part="VCC" gate="J$1" pin="2"/>
+<pinref part="VCC" gate="G$1" pin="4"/>
+<wire x1="5.08" y1="58.42" x2="22.86" y2="58.42" width="0.1524" layer="91"/>
+<label x="22.86" y="58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IN_U0" class="0">
@@ -16809,12 +16814,12 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="40.64" y1="96.52" x2="30.48" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="96.52" x2="25.4" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="C0" gate="G$1" pin="+"/>
-<wire x1="30.48" y1="96.52" x2="30.48" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="96.52" x2="30.48" y2="78.74" width="0.1524" layer="91"/>
 <junction x="30.48" y="96.52"/>
 <wire x1="40.64" y1="86.36" x2="40.64" y2="96.52" width="0.1524" layer="91"/>
 <junction x="40.64" y="96.52"/>
-<pinref part="BATTERY" gate="J$1" pin="3"/>
-<wire x1="10.16" y1="81.28" x2="30.48" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="BATTERY" gate="J$1" pin="2"/>
+<wire x1="10.16" y1="78.74" x2="30.48" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="HB-V0" gate="G$1" pin="VS"/>
@@ -16961,9 +16966,9 @@ with different sets of drill holes or mounting pads</description>
 <pinref part="SPI_CONN0" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="VCC" gate="J$1" pin="3"/>
-<wire x1="10.16" y1="55.88" x2="12.7" y2="55.88" width="0.1524" layer="91"/>
-<label x="12.7" y="55.88" size="1.778" layer="95" xref="yes"/>
+<wire x1="5.08" y1="53.34" x2="22.86" y2="53.34" width="0.1524" layer="91"/>
+<label x="22.86" y="53.34" size="1.778" layer="95" xref="yes"/>
+<pinref part="VCC" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="SR_V0" class="0">
@@ -17496,6 +17501,13 @@ with different sets of drill holes or mounting pads</description>
 <wire x1="10.16" y1="30.48" x2="30.48" y2="30.48" width="0.1524" layer="91"/>
 <label x="30.48" y="30.48" size="1.778" layer="95" xref="yes"/>
 <pinref part="SERVOS" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="5.0V" class="0">
+<segment>
+<pinref part="VCC" gate="G$1" pin="3"/>
+<wire x1="5.08" y1="55.88" x2="12.7" y2="55.88" width="0.1524" layer="91"/>
+<label x="12.7" y="55.88" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
