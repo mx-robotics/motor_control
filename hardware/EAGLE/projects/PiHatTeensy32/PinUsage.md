@@ -16,10 +16,10 @@
 #### I2C Pins
 * 2 Pins
 
-|     I2C    | SCL0 | SDA0 |
-|:----------:|:----:|:----:|
-| Teensy 3.2 |  19  |  18  |
-| Teensy 4.0 |  19  |  18  |
+|     I2C    | SCL0 | SDA0 | SCL1 & HALL_U0 | SDA1 & HALL_W0|
+|:----------:|:----:|:----:|:----:|:----:|
+| Teensy 3.2 |  19  |  18  |  29  |  30  |
+| Teensy 4.0 |  19  |  18  |  ?    |  ?  |
 
 
 #### UART Pins(Hardware Serial)
@@ -33,7 +33,7 @@
 #### SPI
 * 5 Pins
 
-|     SPI    | MISO | MOSI | SCK | CS1 | CS2 |
+|     SPI    | MISO | MOSI | SCK | CS0 | CS1 & HALL_W1 |
 |:----------:|:----:|:----:|-----|-----|-----|
 | Teensy 3.2 |  12  |  11  | 13  | 2   | 14   |
 | Teensy 4.0 |  12  |  11  | 13  | 2   | 14   |
@@ -61,14 +61,14 @@
 
 |     INH    | INH_U0 | INH_V0 | INH_W0 | INH_U1 | INH_V1 | INH_W1 |
 |:----------:|:------:|:------:|:------:|:------:|------:|------:|
-| Teensy 3.2 |   26   |   30   |   31   |    7   |    8   |    28   |
-| Teensy 4.0 |   29   |   26   |   27   |    7   |    8   |           |
+| Teensy 3.2 |   26   |   33   |   31   |    7   |    8   |    28   |
+| Teensy 4.0 |   29   |   ?    |   27   |    7   |    8   |           |
 
 #### HALL Pins
 * 6 Pins (They are interconnected)
 
-|     HALL    | HALL_U0 | HALL_V0 | HALL_W0 | HALL_U1 | HALL_V1 | HALL_W1 |
+|     HALL    | HALL_U0 & SCL1 | HALL_V0 | HALL_W0 & SDA1 | HALL_U1 | HALL_V1 | HALL_W1 & CS1 |
 |:----------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| Teensy 3.2 |    29   |    32   |    33   |    24   |    25   |    14   |
-| Teensy 4.0 |    24   |    25   |    33   |    32   |    31   |    14   |
+| Teensy 3.2 |    29   |    32   |    30   |    24   |    25   |    14   |
+| Teensy 4.0 |    24   |    25   |     ?   |    32   |    31   |    14   |
 
