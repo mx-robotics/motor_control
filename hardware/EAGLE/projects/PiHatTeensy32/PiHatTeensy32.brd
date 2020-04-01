@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="8" display="yes" altdistance="6.25" altunitdist="mil" altunit="mil"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="4" display="yes" altdistance="6.25" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -1805,19 +1805,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="44.45" y="9.017" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="MOTOR0_CONTROL" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="8.89" y="34.29" smashed="yes" rot="R90">
-<attribute name="NAME" x="7.493" y="33.02" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="7.493" y="38.1" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="10.922" y="33.02" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
 <element name="MOTOR0_SENS" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="8.89" y="11.43" smashed="yes" rot="R90">
-<attribute name="NAME" x="7.493" y="10.16" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="7.493" y="15.24" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="10.922" y="10.16" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
 <element name="MOTOR1_CONTROL" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="57.15" y="34.29" smashed="yes" rot="R90">
-<attribute name="NAME" x="55.753" y="33.02" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="58.547" y="45.4025" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
 <attribute name="VALUE" x="59.182" y="33.02" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
 <element name="MOTOR1_SENS" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="57.15" y="11.43" smashed="yes" rot="R90">
-<attribute name="NAME" x="55.753" y="10.16" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="NAME" x="58.547" y="20.32" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
 <attribute name="VALUE" x="59.182" y="10.16" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
 <element name="SERVOS" library="SparkFun-Connectors" package="1X02_NO_SILK" value="" x="11.43" y="11.43" smashed="yes">
@@ -1829,7 +1829,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="22.0345" y="4.0005" size="1.4224" layer="27" rot="R180"/>
 </element>
 <element name="X1" library="raspberrypi_bastelstube_v13" package="RASPI_BOARD_B+HAT" value="RASPI_BOARD_B+_H" x="0.518159375" y="0.84074375" smashed="yes"/>
-<element name="VCC" library="SparkFun-Connectors" package="1X04_NO_SILK" value="JP" x="57.15" y="5.08" smashed="yes" rot="R180">
+<element name="VCC" library="SparkFun-Connectors" package="1X04_NO_SILK" value="" x="57.15" y="5.08" smashed="yes" rot="R180">
 <attribute name="NAME" x="58.42" y="3.683" size="0.6096" layer="25" font="vector" ratio="20" rot="R180"/>
 <attribute name="PROD_ID" value="CONN-09696" x="57.15" y="5.08" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="58.42" y="7.112" size="0.6096" layer="27" font="vector" ratio="20" rot="R180"/>
@@ -1843,22 +1843,20 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="26.67" y="15.5575" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="T4-32-33" library="SparkFun-Connectors" package="1X02_NO_SILK" value="" x="38.1" y="36.83" smashed="yes" rot="R90">
-<attribute name="NAME" x="36.703" y="35.56" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="40.132" y="35.56" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
 <element name="T4-30-31" library="SparkFun-Connectors" package="1X02_NO_SILK" value="" x="35.56" y="36.83" smashed="yes" rot="R90">
-<attribute name="NAME" x="34.163" y="35.56" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="37.592" y="35.56" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
 <element name="T4-24-25" library="SparkFun-Connectors" package="1X02_NO_SILK" value="" x="27.94" y="36.83" smashed="yes" rot="R90">
-<attribute name="NAME" x="26.543" y="35.56" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="VALUE" x="29.972" y="35.56" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
+</element>
+<element name="VCC_RPI" library="SparkFun-Connectors" package="1X02_NO_SILK" value="" x="12.7" y="48.26" smashed="yes">
+<attribute name="NAME" x="12.7" y="46.1645" size="0.6096" layer="25" font="vector" ratio="20"/>
+<attribute name="VALUE" x="11.43" y="46.228" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
 </elements>
 <signals>
-<signal name="5V0">
-<contactref element="X1" pad="2"/>
-</signal>
 <signal name="3V3">
 <contactref element="X1" pad="1"/>
 </signal>
@@ -1867,8 +1865,7 @@ design rules under a new name.</description>
 <contactref element="U1" pad="2"/>
 <contactref element="BATTERY" pad="1"/>
 <wire x1="41.91" y1="7.62" x2="57.15" y2="7.62" width="1.27" layer="16"/>
-<wire x1="30.48" y1="5.08" x2="30.48" y2="6.5532" width="1.27" layer="16"/>
-<wire x1="30.48" y1="6.5532" x2="30.48" y2="7.62" width="1.27" layer="16"/>
+<wire x1="30.48" y1="5.08" x2="30.48" y2="7.62" width="1.27" layer="16"/>
 <wire x1="30.48" y1="7.62" x2="35.56" y2="7.62" width="1.27" layer="16"/>
 <wire x1="35.56" y1="7.62" x2="41.91" y2="7.62" width="1.27" layer="16"/>
 <contactref element="BATTERY" pad="3"/>
@@ -1879,11 +1876,22 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="GND" route="any" routetag="G$1.GND"/>
 <contactref element="U$1" pad="GND1" route="any" routetag="G$1.GND"/>
 <contactref element="U$1" pad="GND2" route="any" routetag="G$1.GND"/>
-<wire x1="17.2212" y1="7.62" x2="16.51" y2="7.62" width="0.1524" layer="16"/>
-<wire x1="18.288" y1="6.5532" x2="17.2212" y2="7.62" width="0.1524" layer="16"/>
-<wire x1="30.48" y1="6.5532" x2="18.288" y2="6.5532" width="0.1524" layer="16"/>
-<wire x1="33.02" y1="44.45" x2="13.968159375" y2="54.61074375" width="0" layer="19" extent="1-1"/>
-<wire x1="41.91" y1="7.62" x2="40.64" y2="11.43" width="0" layer="19" extent="1-1"/>
+<wire x1="16.5862" y1="7.62" x2="16.51" y2="7.62" width="0.3048" layer="16"/>
+<wire x1="13.968159375" y1="54.61074375" x2="13.968159375" y2="54.608159375" width="0.3048" layer="16"/>
+<wire x1="13.968159375" y1="54.608159375" x2="12.7" y2="53.34" width="0.3048" layer="16"/>
+<wire x1="12.7" y1="53.34" x2="12.7" y2="50.8" width="0.3048" layer="16"/>
+<wire x1="10.795" y1="48.895" x2="3.81" y2="48.895" width="0.3048" layer="16"/>
+<wire x1="3.81" y1="48.895" x2="2.54" y2="47.625" width="0.3048" layer="16"/>
+<wire x1="2.54" y1="47.625" x2="2.54" y2="10.16" width="0.3048" layer="16"/>
+<wire x1="3.81" y1="8.89" x2="15.24" y2="8.89" width="0.3048" layer="16"/>
+<wire x1="15.24" y1="8.89" x2="16.51" y2="7.62" width="0.3048" layer="16"/>
+<wire x1="12.7" y1="50.8" x2="10.795" y2="48.895" width="0.3048" layer="16"/>
+<wire x1="2.54" y1="10.16" x2="3.81" y2="8.89" width="0.3048" layer="16"/>
+<wire x1="17.145" y1="5.08" x2="16.51" y2="5.715" width="0.3048" layer="16"/>
+<wire x1="16.51" y1="5.715" x2="16.51" y2="7.62" width="0.3048" layer="16"/>
+<wire x1="30.48" y1="5.08" x2="17.145" y2="5.08" width="0.3048" layer="16"/>
+<wire x1="41.91" y1="7.62" x2="41.91" y2="10.16" width="0.3048" layer="16"/>
+<wire x1="41.91" y1="10.16" x2="40.64" y2="11.43" width="0.3048" layer="16"/>
 </signal>
 <signal name="VCC-SERVOS">
 <contactref element="VCC" pad="4"/>
@@ -1892,10 +1900,8 @@ design rules under a new name.</description>
 <contactref element="MOTOR0_CONTROL" pad="4"/>
 <contactref element="U$1" pad="23/A9"/>
 <contactref element="T4" pad="1"/>
-<wire x1="29.4132" y1="19.2024" x2="29.52" y2="19.0875" width="0.1524" layer="1"/>
-<wire x1="8.8392" y1="41.91" x2="8.89" y2="41.91" width="0.1524" layer="16"/>
 <wire x1="25.4" y1="19.05" x2="8.89" y2="41.91" width="0" layer="19" extent="1-1"/>
-<wire x1="29.4132" y1="19.2024" x2="25.4" y2="19.05" width="0" layer="19" extent="1-1"/>
+<wire x1="29.52" y1="19.0875" x2="25.4" y2="19.05" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN_V0">
 <contactref element="MOTOR0_CONTROL" pad="5"/>
@@ -1910,10 +1916,8 @@ design rules under a new name.</description>
 <contactref element="MOTOR0_CONTROL" pad="6"/>
 <contactref element="U$1" pad="10"/>
 <contactref element="T4" pad="4"/>
-<wire x1="32.6136" y1="19.2024" x2="32.52" y2="19.0875" width="0.1524" layer="1"/>
-<wire x1="8.9916" y1="46.9392" x2="8.89" y2="46.99" width="0.1524" layer="1"/>
-<wire x1="32.6136" y1="19.2024" x2="40.64" y2="39.37" width="0" layer="19" extent="1-1"/>
-<wire x1="8.9916" y1="46.9392" x2="40.64" y2="39.37" width="0" layer="19" extent="1-1"/>
+<wire x1="32.52" y1="19.0875" x2="40.64" y2="39.37" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="46.99" x2="40.64" y2="39.37" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INH_U0">
 <contactref element="MOTOR0_CONTROL" pad="1"/>
@@ -1924,21 +1928,18 @@ design rules under a new name.</description>
 <contactref element="MOTOR0_CONTROL" pad="2"/>
 <contactref element="U$1" pad="33"/>
 <contactref element="T4-32-33" pad="2"/>
-<wire x1="8.8392" y1="36.7284" x2="8.89" y2="36.83" width="0.1524" layer="1"/>
 <wire x1="30.48" y1="31.75" x2="38.1" y2="39.37" width="0" layer="19" extent="1-1"/>
 <wire x1="8.89" y1="36.83" x2="30.48" y2="31.75" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INH_W0">
 <contactref element="MOTOR0_CONTROL" pad="3"/>
 <contactref element="U$1" pad="31"/>
-<wire x1="8.9916" y1="39.3192" x2="8.89" y2="39.37" width="0.1524" layer="1"/>
-<wire x1="8.9916" y1="39.3192" x2="30.48" y2="36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="39.37" x2="30.48" y2="36.83" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IS_W0">
 <contactref element="MOTOR0_SENS" pad="6"/>
 <contactref element="U$1" pad="21/A7"/>
-<wire x1="8.9916" y1="24.2316" x2="8.89" y2="24.13" width="0.1524" layer="1"/>
-<wire x1="8.9916" y1="24.2316" x2="25.4" y2="24.13" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="24.13" x2="25.4" y2="24.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IS_V0">
 <contactref element="MOTOR0_SENS" pad="5"/>
@@ -1981,39 +1982,31 @@ design rules under a new name.</description>
 <contactref element="MOTOR1_CONTROL" pad="4"/>
 <contactref element="U$1" pad="5"/>
 <contactref element="T4" pad="6"/>
-<wire x1="34.5948" y1="19.6596" x2="34.5948" y2="19.2024" width="0.1524" layer="1"/>
-<wire x1="34.5948" y1="19.2024" x2="34.52" y2="19.0875" width="0.1524" layer="1"/>
 <wire x1="40.64" y1="26.67" x2="57.15" y2="41.91" width="0" layer="19" extent="1-1"/>
-<wire x1="34.5948" y1="19.6596" x2="40.64" y2="26.67" width="0" layer="19" extent="1-1"/>
+<wire x1="34.52" y1="19.0875" x2="40.64" y2="26.67" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN_V1">
 <contactref element="MOTOR1_CONTROL" pad="5"/>
 <contactref element="U$1" pad="6"/>
 <contactref element="T4" pad="7"/>
-<wire x1="35.6616" y1="19.6596" x2="35.6616" y2="19.2024" width="0.1524" layer="1"/>
-<wire x1="35.6616" y1="19.2024" x2="35.52" y2="19.0875" width="0.1524" layer="1"/>
-<wire x1="57.15" y1="44.3484" x2="57.15" y2="44.45" width="0.1524" layer="16"/>
-<wire x1="40.64" y1="29.21" x2="57.15" y2="44.3484" width="0" layer="19" extent="16-16"/>
-<wire x1="35.6616" y1="19.6596" x2="40.64" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="29.21" x2="57.15" y2="44.45" width="0" layer="19" extent="1-1"/>
+<wire x1="35.52" y1="19.0875" x2="40.64" y2="29.21" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN_W1">
 <contactref element="MOTOR1_CONTROL" pad="6"/>
 <contactref element="U$1" pad="9"/>
 <contactref element="T4" pad="8"/>
-<wire x1="36.576" y1="19.2024" x2="36.52" y2="19.0875" width="0.1524" layer="1"/>
 <wire x1="40.64" y1="36.83" x2="57.15" y2="46.99" width="0" layer="19" extent="1-1"/>
-<wire x1="36.576" y1="19.2024" x2="40.64" y2="36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="36.52" y1="19.0875" x2="40.64" y2="36.83" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INH_V1">
 <contactref element="MOTOR1_CONTROL" pad="2"/>
 <contactref element="U$1" pad="8"/>
-<wire x1="57.15" y1="36.7284" x2="57.15" y2="36.83" width="0.1524" layer="1"/>
-<wire x1="40.64" y1="34.29" x2="57.15" y2="36.7284" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="34.29" x2="57.15" y2="36.83" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INH_W1">
 <contactref element="MOTOR1_CONTROL" pad="3"/>
 <contactref element="U$1" pad="28"/>
-<wire x1="57.15" y1="39.3192" x2="57.15" y2="39.37" width="0.1524" layer="1"/>
 <contactref element="T4-30-31" pad="2"/>
 <wire x1="35.56" y1="39.37" x2="57.15" y2="39.37" width="0" layer="19" extent="1-1"/>
 <wire x1="33.02" y1="41.91" x2="35.56" y2="39.37" width="0" layer="19" extent="1-1"/>
@@ -2021,8 +2014,7 @@ design rules under a new name.</description>
 <signal name="IS_W1">
 <contactref element="MOTOR1_SENS" pad="6"/>
 <contactref element="U$1" pad="17/A3"/>
-<wire x1="57.15" y1="24.2316" x2="57.15" y2="24.13" width="0.1524" layer="1"/>
-<wire x1="25.4" y1="34.29" x2="57.15" y2="24.2316" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="34.29" x2="57.15" y2="24.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IS_V1">
 <contactref element="MOTOR1_SENS" pad="5"/>
@@ -2066,13 +2058,21 @@ design rules under a new name.</description>
 <contactref element="VCC" pad="3"/>
 <contactref element="U1" pad="3"/>
 <contactref element="U$1" pad="VIN"/>
-<wire x1="13.97" y1="7.62" x2="17.78" y2="11.43" width="0.8128" layer="1"/>
-<wire x1="17.78" y1="11.43" x2="25.4" y2="11.43" width="0.8128" layer="1"/>
+<wire x1="13.97" y1="7.62" x2="17.78" y2="11.43" width="0.3048" layer="1"/>
+<wire x1="17.78" y1="11.43" x2="25.4" y2="11.43" width="0.3048" layer="1"/>
 <wire x1="52.07" y1="5.08" x2="52.07" y2="3.175" width="0.8128" layer="1"/>
 <wire x1="52.07" y1="3.175" x2="51.435" y2="2.54" width="0.8128" layer="1"/>
 <wire x1="51.435" y1="2.54" x2="14.605" y2="2.54" width="0.8128" layer="1"/>
 <wire x1="13.97" y1="7.62" x2="13.97" y2="3.175" width="0.8128" layer="1"/>
 <wire x1="14.605" y1="2.54" x2="13.97" y2="3.175" width="0.8128" layer="1"/>
+<contactref element="VCC_RPI" pad="1"/>
+<wire x1="10.795" y1="48.26" x2="9.525" y2="49.53" width="0.3048" layer="1"/>
+<wire x1="9.525" y1="49.53" x2="5.08" y2="49.53" width="0.3048" layer="1"/>
+<wire x1="5.08" y1="49.53" x2="3.81" y2="48.26" width="0.3048" layer="1"/>
+<wire x1="3.81" y1="48.26" x2="3.81" y2="8.89" width="0.3048" layer="1"/>
+<wire x1="3.81" y1="8.89" x2="5.08" y2="7.62" width="0.3048" layer="1"/>
+<wire x1="5.08" y1="7.62" x2="13.97" y2="7.62" width="0.3048" layer="1"/>
+<wire x1="12.7" y1="48.26" x2="10.795" y2="48.26" width="0.3048" layer="1"/>
 </signal>
 <signal name="AGND">
 <contactref element="U$1" pad="AGND"/>
@@ -2089,9 +2089,7 @@ design rules under a new name.</description>
 <signal name="PI_TX">
 <contactref element="X1" pad="8"/>
 <contactref element="U$1" pad="0"/>
-<via x="37.4904" y="19.05" extent="1-16" drill="0.35"/>
-<wire x1="37.4904" y1="19.05" x2="16.508159375" y2="54.61074375" width="0" layer="19" extent="1-1"/>
-<wire x1="40.64" y1="13.97" x2="37.4904" y2="19.05" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="13.97" x2="16.508159375" y2="54.61074375" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PI_RX">
 <contactref element="X1" pad="10"/>
@@ -2108,12 +2106,11 @@ design rules under a new name.</description>
 <signal name="I2C1_SCL">
 <contactref element="X1" pad="28"/>
 <contactref element="T4-24-25" pad="2"/>
-<wire x1="27.8892" y1="39.4716" x2="27.94" y2="39.37" width="0.1524" layer="1"/>
 <contactref element="U$1" pad="29"/>
 <wire x1="30.48" y1="41.91" x2="41.908159375" y2="54.61074375" width="0" layer="19" extent="1-1"/>
-<wire x1="27.8892" y1="39.4716" x2="30.48" y2="41.91" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="39.37" x2="30.48" y2="41.91" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="SPI_CS1_&amp;_HALL_V0">
+<signal name="HALL_V0_&amp;_SPI_CS1">
 <contactref element="U$1" pad="14/A0"/>
 <contactref element="MOTOR0_SENS" pad="2"/>
 <contactref element="X1" pad="26"/>
@@ -2150,10 +2147,21 @@ design rules under a new name.</description>
 <wire x1="40.64" y1="19.05" x2="36.828159375" y2="54.61074375" width="0" layer="19" extent="1-1"/>
 <wire x1="8.89" y1="16.51" x2="40.64" y2="19.05" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="SPISCLK">
+<signal name="SPI_SCLK">
 <contactref element="U$1" pad="13"/>
 <contactref element="X1" pad="23"/>
 <wire x1="25.4" y1="44.45" x2="36.828159375" y2="52.07074375" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="RPI_5.0V">
+<contactref element="X1" pad="2"/>
+<contactref element="VCC_RPI" pad="2"/>
+<wire x1="15.24" y1="48.26" x2="15.24" y2="49.53" width="0.3048" layer="1"/>
+<wire x1="15.24" y1="49.53" x2="14.605" y2="50.165" width="0.3048" layer="1"/>
+<wire x1="14.605" y1="50.165" x2="10.795" y2="50.165" width="0.3048" layer="1"/>
+<wire x1="10.795" y1="50.165" x2="10.16" y2="50.8" width="0.3048" layer="1"/>
+<wire x1="10.16" y1="50.8" x2="10.16" y2="53.34" width="0.3048" layer="1"/>
+<wire x1="10.16" y1="53.34" x2="8.88925625" y2="54.61074375" width="0.3048" layer="1"/>
+<wire x1="8.88925625" y1="54.61074375" x2="8.888159375" y2="54.61074375" width="0.3048" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
