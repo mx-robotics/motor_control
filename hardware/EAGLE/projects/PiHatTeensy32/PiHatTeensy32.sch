@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.0">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16074,18 +16074,16 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="236.22" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="TBA5" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="7/RX3"/>
-<wire x1="165.1" y1="-81.28" x2="124.46" y2="-81.28" width="0.1524" layer="91"/>
-<label x="124.46" y="-81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="HALL_V1" class="0">
 <segment>
 <wire x1="10.16" y1="-60.96" x2="20.32" y2="-60.96" width="0.1524" layer="91"/>
 <label x="20.32" y="-60.96" size="1.778" layer="95" xref="yes"/>
 <pinref part="MOTOR1_SENS" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="7/RX3"/>
+<wire x1="165.1" y1="-81.28" x2="124.46" y2="-81.28" width="0.1524" layer="91"/>
+<label x="124.46" y="-81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SPI_MOSI" class="0">
