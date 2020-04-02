@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -15443,7 +15443,7 @@ http://www.jst-mfg.com&lt;p&gt;
 </class>
 </classes>
 <parts>
-<part name="U1" library="_traco_tsr-1" deviceset="TSR_1-*" device="" technology="2450"/>
+<part name="DC-DC" library="_traco_tsr-1" deviceset="TSR_1-*" device="" technology="2450"/>
 <part name="GND22" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="C0" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2,5-6E" package3d_urn="urn:adsk.eagle:package:23430/1"/>
 <part name="X1" library="raspberrypi_bastelstube_v13" deviceset="RASPI_BOARD_B+" device="_H"/>
@@ -15454,7 +15454,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <part name="MOTOR0_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="MOTOR1_CONTROL" library="SparkFun-Connectors" deviceset="CONN_06" device="NO_SILK_NO_POP"/>
 <part name="VCC" library="SparkFun-Connectors" deviceset="CONN_04" device="1X04_NO_SILK"/>
-<part name="U$1" library="Teensy_3_and_LC_Series_Boards_v1.4" deviceset="TEENSY_3.1-3.2_ALL_PINS&amp;PADS" device=""/>
+<part name="TEENSY" library="Teensy_3_and_LC_Series_Boards_v1.4" deviceset="TEENSY_3.1-3.2_ALL_PINS&amp;PADS" device=""/>
 <part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="T4" library="con-jst2" deviceset="?M08B-SRSS-TB" device="B"/>
@@ -15468,7 +15468,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <plain>
 </plain>
 <instances>
-<instance part="U1" gate="G$1" x="205.74" y="58.42" smashed="yes">
+<instance part="DC-DC" gate="G$1" x="205.74" y="58.42" smashed="yes">
 <attribute name="NAME" x="198.12" y="63.881" size="1.6764" layer="95"/>
 <attribute name="VALUE" x="198.12" y="61.595" size="1.6764" layer="96"/>
 </instance>
@@ -15508,7 +15508,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <attribute name="VALUE" x="-2.54" y="42.926" size="1.778" layer="96" font="vector" rot="R180"/>
 <attribute name="NAME" x="0" y="51.308" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="U$1" gate="G$1" x="187.96" y="-91.44" smashed="yes">
+<instance part="TEENSY" gate="G$1" x="187.96" y="-91.44" smashed="yes">
 <attribute name="NAME" x="182.372" y="-57.15" size="1.27" layer="95" font="vector" ratio="15"/>
 <attribute name="VALUE" x="185.166" y="-129.54" size="1.27" layer="96" font="vector" ratio="15"/>
 </instance>
@@ -15571,7 +15571,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <wire x1="129.54" y1="48.26" x2="134.62" y2="48.26" width="0.1524" layer="91"/>
 <junction x="160.02" y="43.18"/>
 <wire x1="160.02" y1="43.18" x2="160.02" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
+<pinref part="DC-DC" gate="G$1" pin="GND"/>
 <wire x1="205.74" y1="43.18" x2="205.74" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="43.18" x2="205.74" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="BATTERY" gate="J$1" pin="1"/>
@@ -15594,7 +15594,7 @@ http://www.jst-mfg.com&lt;p&gt;
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="TEENSY" gate="G$1" pin="GND"/>
 <wire x1="254" y1="-73.66" x2="254" y2="-71.12" width="0.1524" layer="91"/>
 <wire x1="254" y1="-71.12" x2="210.82" y2="-71.12" width="0.1524" layer="91"/>
 </segment>
@@ -15613,7 +15613,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="4"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="23/A9/T/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="23/A9/T/PWM"/>
 <wire x1="165.1" y1="-121.92" x2="124.46" y2="-121.92" width="0.1524" layer="91"/>
 <label x="124.46" y="-121.92" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15630,7 +15630,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="22/A8/T/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="22/A8/T/PWM"/>
 <wire x1="165.1" y1="-119.38" x2="157.48" y2="-119.38" width="0.1524" layer="91"/>
 <label x="157.48" y="-119.38" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15647,7 +15647,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="6"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="10/TX2/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="10/TX2/PWM"/>
 <wire x1="165.1" y1="-88.9" x2="157.48" y2="-88.9" width="0.1524" layer="91"/>
 <label x="157.48" y="-88.9" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15664,7 +15664,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="26/A15"/>
+<pinref part="TEENSY" gate="G$1" pin="26/A15"/>
 <wire x1="210.82" y1="-121.92" x2="248.92" y2="-121.92" width="0.1524" layer="91"/>
 <label x="248.92" y="-121.92" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15676,7 +15676,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="33/T"/>
+<pinref part="TEENSY" gate="G$1" pin="33/T"/>
 <wire x1="210.82" y1="-104.14" x2="215.9" y2="-104.14" width="0.1524" layer="91"/>
 <label x="215.9" y="-104.14" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15693,7 +15693,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_CONTROL" gate="G$1" pin="3"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="31/A20"/>
+<pinref part="TEENSY" gate="G$1" pin="31/A20"/>
 <wire x1="210.82" y1="-109.22" x2="215.9" y2="-109.22" width="0.1524" layer="91"/>
 <label x="215.9" y="-109.22" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15705,7 +15705,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_SENS" gate="G$1" pin="6"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="21/A7/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="21/A7/PWM"/>
 <wire x1="165.1" y1="-116.84" x2="124.46" y2="-116.84" width="0.1524" layer="91"/>
 <label x="124.46" y="-116.84" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15717,7 +15717,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_SENS" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="20/A6/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="20/A6/PWM"/>
 <wire x1="165.1" y1="-114.3" x2="157.48" y2="-114.3" width="0.1524" layer="91"/>
 <label x="157.48" y="-114.3" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15729,14 +15729,14 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_SENS" gate="G$1" pin="4"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="15/A1/T"/>
+<pinref part="TEENSY" gate="G$1" pin="15/A1/T"/>
 <wire x1="165.1" y1="-101.6" x2="124.46" y2="-101.6" width="0.1524" layer="91"/>
 <label x="124.46" y="-101.6" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VI" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="VI"/>
+<pinref part="DC-DC" gate="G$1" pin="VI"/>
 <wire x1="195.58" y1="58.42" x2="160.02" y2="58.42" width="0.1524" layer="91"/>
 <label x="144.78" y="58.42" size="1.778" layer="95" rot="R180" xref="yes"/>
 <wire x1="160.02" y1="58.42" x2="149.86" y2="58.42" width="0.1524" layer="91"/>
@@ -15757,7 +15757,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="VCC" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="3.3V"/>
+<pinref part="TEENSY" gate="G$1" pin="3.3V"/>
 <wire x1="210.82" y1="-66.04" x2="248.92" y2="-66.04" width="0.1524" layer="91"/>
 <label x="248.92" y="-66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15774,7 +15774,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="53.34" y="-88.9" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="25/T/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="25/T/PWM"/>
 <wire x1="210.82" y1="-124.46" x2="215.9" y2="-124.46" width="0.1524" layer="91"/>
 <label x="215.9" y="-124.46" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15786,7 +15786,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="4"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="5/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="5/PWM"/>
 <wire x1="165.1" y1="-76.2" x2="124.46" y2="-76.2" width="0.1524" layer="91"/>
 <label x="124.46" y="-76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15803,7 +15803,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="6/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="6/PWM"/>
 <wire x1="165.1" y1="-78.74" x2="157.48" y2="-78.74" width="0.1524" layer="91"/>
 <label x="157.48" y="-78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15820,7 +15820,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="6"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="9/RX2/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="9/RX2/PWM"/>
 <wire x1="165.1" y1="-86.36" x2="124.46" y2="-86.36" width="0.1524" layer="91"/>
 <label x="124.46" y="-86.36" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15837,7 +15837,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="8/TX3"/>
+<pinref part="TEENSY" gate="G$1" pin="8/TX3"/>
 <wire x1="165.1" y1="-83.82" x2="157.48" y2="-83.82" width="0.1524" layer="91"/>
 <label x="157.48" y="-83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15849,7 +15849,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_CONTROL" gate="G$1" pin="3"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="28/A17"/>
+<pinref part="TEENSY" gate="G$1" pin="28/A17"/>
 <wire x1="210.82" y1="-116.84" x2="248.92" y2="-116.84" width="0.1524" layer="91"/>
 <label x="248.92" y="-116.84" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15866,7 +15866,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_SENS" gate="G$1" pin="6"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="17/A3/T"/>
+<pinref part="TEENSY" gate="G$1" pin="17/A3/T"/>
 <wire x1="165.1" y1="-106.68" x2="124.46" y2="-106.68" width="0.1524" layer="91"/>
 <label x="124.46" y="-106.68" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15878,7 +15878,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_SENS" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="16/A2/T"/>
+<pinref part="TEENSY" gate="G$1" pin="16/A2/T"/>
 <wire x1="165.1" y1="-104.14" x2="157.48" y2="-104.14" width="0.1524" layer="91"/>
 <label x="157.48" y="-104.14" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15890,7 +15890,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_SENS" gate="G$1" pin="4"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="27/A16"/>
+<pinref part="TEENSY" gate="G$1" pin="27/A16"/>
 <wire x1="210.82" y1="-119.38" x2="215.9" y2="-119.38" width="0.1524" layer="91"/>
 <label x="215.9" y="-119.38" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15902,7 +15902,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="162.56" y="-40.64" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="18/A4/T/SDA0"/>
+<pinref part="TEENSY" gate="G$1" pin="18/A4/T/SDA0"/>
 <wire x1="165.1" y1="-109.22" x2="157.48" y2="-109.22" width="0.1524" layer="91"/>
 <label x="157.48" y="-109.22" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15914,7 +15914,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="144.78" y="-38.1" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="19/A5/T/SCL0"/>
+<pinref part="TEENSY" gate="G$1" pin="19/A5/T/SCL0"/>
 <wire x1="165.1" y1="-111.76" x2="124.46" y2="-111.76" width="0.1524" layer="91"/>
 <label x="124.46" y="-111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15926,7 +15926,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="SERVOS" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="3/CAN-TX/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="3/CAN-TX/PWM"/>
 <wire x1="165.1" y1="-71.12" x2="124.46" y2="-71.12" width="0.1524" layer="91"/>
 <label x="124.46" y="-71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15938,7 +15938,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="SERVOS" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="4/CAN-RX/PWM"/>
+<pinref part="TEENSY" gate="G$1" pin="4/CAN-RX/PWM"/>
 <wire x1="165.1" y1="-73.66" x2="157.48" y2="-73.66" width="0.1524" layer="91"/>
 <label x="157.48" y="-73.66" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15950,12 +15950,12 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="53.34" y="45.72" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="VO"/>
+<pinref part="DC-DC" gate="G$1" pin="VO"/>
 <wire x1="215.9" y1="58.42" x2="226.06" y2="58.42" width="0.1524" layer="91"/>
 <label x="226.06" y="58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VIN"/>
+<pinref part="TEENSY" gate="G$1" pin="VIN"/>
 <wire x1="210.82" y1="-63.5" x2="218.44" y2="-63.5" width="0.1524" layer="91"/>
 <label x="218.44" y="-63.5" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15972,7 +15972,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="238.76" y="-40.64" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="30/A19/SDA1"/>
+<pinref part="TEENSY" gate="G$1" pin="30/A19/SDA1"/>
 <wire x1="210.82" y1="-111.76" x2="248.92" y2="-111.76" width="0.1524" layer="91"/>
 <label x="248.92" y="-111.76" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15994,14 +15994,14 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="20.32" y="-99.06" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="29/A18/SCL1"/>
+<pinref part="TEENSY" gate="G$1" pin="29/A18/SCL1"/>
 <wire x1="210.82" y1="-114.3" x2="215.9" y2="-114.3" width="0.1524" layer="91"/>
 <label x="215.9" y="-114.3" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="HALL_V0_&amp;_SPI_CS1" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="14/A0"/>
+<pinref part="TEENSY" gate="G$1" pin="14/A0"/>
 <wire x1="165.1" y1="-99.06" x2="157.48" y2="-99.06" width="0.1524" layer="91"/>
 <label x="157.48" y="-99.06" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16018,7 +16018,7 @@ http://www.jst-mfg.com&lt;p&gt;
 </net>
 <net name="HALL_U0_&amp;_SPI_MISO" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="12/MISO"/>
+<pinref part="TEENSY" gate="G$1" pin="12/MISO"/>
 <wire x1="165.1" y1="-93.98" x2="157.48" y2="-93.98" width="0.1524" layer="91"/>
 <label x="157.48" y="-93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16040,7 +16040,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="205.74" y="10.16" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="11/MOSI"/>
+<pinref part="TEENSY" gate="G$1" pin="11/MOSI"/>
 <wire x1="165.1" y1="-91.44" x2="124.46" y2="-91.44" width="0.1524" layer="91"/>
 <label x="124.46" y="-91.44" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16052,7 +16052,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR1_SENS" gate="G$1" pin="3"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="7/RX3"/>
+<pinref part="TEENSY" gate="G$1" pin="7/RX3"/>
 <wire x1="165.1" y1="-81.28" x2="124.46" y2="-81.28" width="0.1524" layer="91"/>
 <label x="124.46" y="-81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16064,7 +16064,7 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="MOTOR0_SENS" gate="G$1" pin="3"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="2"/>
+<pinref part="TEENSY" gate="G$1" pin="2"/>
 <wire x1="165.1" y1="-68.58" x2="157.48" y2="-68.58" width="0.1524" layer="91"/>
 <label x="157.48" y="-68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16076,7 +16076,7 @@ http://www.jst-mfg.com&lt;p&gt;
 </net>
 <net name="SPI_SCLK" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="13/SCK/LED"/>
+<pinref part="TEENSY" gate="G$1" pin="13/SCK/LED"/>
 <wire x1="165.1" y1="-96.52" x2="124.46" y2="-96.52" width="0.1524" layer="91"/>
 <label x="124.46" y="-96.52" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16101,7 +16101,7 @@ http://www.jst-mfg.com&lt;p&gt;
 </net>
 <net name="HALL_U1_&amp;_PI_TX" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="0/RX1/T"/>
+<pinref part="TEENSY" gate="G$1" pin="0/RX1/T"/>
 <wire x1="165.1" y1="-63.5" x2="157.48" y2="-63.5" width="0.1524" layer="91"/>
 <label x="157.48" y="-63.5" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16118,7 +16118,7 @@ http://www.jst-mfg.com&lt;p&gt;
 </net>
 <net name="HALL_V1_&amp;PI_RX" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="1/TX1/T"/>
+<pinref part="TEENSY" gate="G$1" pin="1/TX1/T"/>
 <wire x1="165.1" y1="-66.04" x2="124.46" y2="-66.04" width="0.1524" layer="91"/>
 <label x="124.46" y="-66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
