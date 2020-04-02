@@ -1,3 +1,6 @@
+#PinUsage
+##RPI Teensy v.2020.04
+
 #### IN Pins (PWM)
 * 6 pins total
 
@@ -16,16 +19,16 @@
 #### I2C Pins
 * 2 Pins
 
-|     I2C    | SCL0 | SDA0 | SCL1 & HALL_U0 | SDA1 & HALL_W0|
+|     I2C    | SCL0 | SDA0 | SCL1 | SDA1|
 |:----------:|:----:|:----:|:----:|:----:|
 | Teensy 3.2 |  19  |  18  |  29  |  30  |
-| Teensy 4.0 |  19  |  18  |  ?    |  ?  |
+| Teensy 4.0 |  19  |  18  |  24   | 25  |
 
 
 #### UART Pins(Hardware Serial)
 * 2 pins
 
-|    UART    | RX1 | TX1 |
+|    UART    | RX1 & HALL_U1| TX1 & HALL_V1 |
 |:----------:|:---:|:---:|
 | Teensy 3.2 |  0  |  1  |
 | Teensy 4.0 |  0  |  1  |
@@ -33,7 +36,7 @@
 #### SPI
 * 5 Pins
 
-|     SPI    | MISO | MOSI | SCK | CS0 | CS1 & HALL_W1 |
+|     SPI    | MISO & HALL_U0 | MOSI | SCK | CS0 & HALL_W0 | CS1 & HALL_V1 |
 |:----------:|:----:|:----:|-----|-----|-----|
 | Teensy 3.2 |  12  |  11  | 13  | 2   | 14   |
 | Teensy 4.0 |  12  |  11  | 13  | 2   | 14   |
@@ -61,14 +64,14 @@
 
 |     INH    | INH_U0 | INH_V0 | INH_W0 | INH_U1 | INH_V1 | INH_W1 |
 |:----------:|:------:|:------:|:------:|:------:|------:|------:|
-| Teensy 3.2 |   26   |   33   |   31   |    7   |    8   |    28   |
-| Teensy 4.0 |   29   |   ?    |   27   |    7   |    8   |           |
+| Teensy 3.2 |   26   |   33   |   31   |    25   |    8   |    28   |
+| Teensy 4.0 |   29   |   32    |   27   |   31   |    8   |    30  |
 
 #### HALL Pins
 * 6 Pins (They are interconnected)
 
-|     HALL    | HALL_U0 & SCL1 | HALL_V0 | HALL_W0 & SDA1 | HALL_U1 | HALL_V1 | HALL_W1 & CS1 |
+|     HALL    | HALL_U0 & MISO | HALL_V0 & CS1 | HALL_W0 & CS0 | HALL_U1 + RX | HALL_V1 + TX| HALL_W1 |
 |:----------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| Teensy 3.2 |    29   |    32   |    30   |    24   |    25   |    14   |
-| Teensy 4.0 |    24   |    25   |     ?   |    32   |    31   |    14   |
+| Teensy 3.2 |    12   |    14   |    2   |    1   |    0   |    7   |
+| Teensy 4.0 |    12   |    14   |     2   |    1   |    0   |    7   |
 
