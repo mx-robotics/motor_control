@@ -2365,8 +2365,8 @@
 <rectangle x1="58.1" y1="34.18" x2="58.3" y2="34.2" layer="22" rot="R90"/>
 <rectangle x1="58.08" y1="30.52" x2="58.28" y2="30.54" layer="22" rot="R90"/>
 <rectangle x1="58.08" y1="34.18" x2="58.28" y2="34.2" layer="22" rot="R90"/>
-<text x="4.68" y="34.12" size="1.27" layer="22" font="vector" rot="MR270">RPiTeensy
-v.2020-03</text>
+<text x="4.9975" y="35.0725" size="1.27" layer="22" font="vector" rot="MR270">RPiTeensyHat
+v.2020-04</text>
 <text x="7.62" y="46.6725" size="0.6096" layer="21" font="vector" align="bottom-right">IN_W0 10</text>
 <text x="7.62" y="44.1325" size="0.6096" layer="21" font="vector" align="bottom-right">IN_V0 22</text>
 <text x="7.62" y="41.5925" size="0.6096" layer="21" font="vector" align="bottom-right">IN_U0 23</text>
