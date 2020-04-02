@@ -15931,18 +15931,6 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="124.46" y="-71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="HALL_U1" class="0">
-<segment>
-<wire x1="10.16" y1="-63.5" x2="53.34" y2="-63.5" width="0.1524" layer="91"/>
-<label x="53.34" y="-63.5" size="1.778" layer="95" xref="yes"/>
-<pinref part="MOTOR1_SENS" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="0/RX1/T"/>
-<wire x1="165.1" y1="-63.5" x2="157.48" y2="-63.5" width="0.1524" layer="91"/>
-<label x="157.48" y="-63.5" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="SERVO_1" class="0">
 <segment>
 <wire x1="10.16" y1="30.48" x2="20.32" y2="30.48" width="0.1524" layer="91"/>
@@ -15975,20 +15963,6 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="VCC_RPI" gate="G$1" pin="1"/>
 <wire x1="10.16" y1="58.42" x2="53.34" y2="58.42" width="0.1524" layer="91"/>
 <label x="53.34" y="58.42" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="PI_TX" class="0">
-<segment>
-<pinref part="X1" gate="G$1" pin="TXD"/>
-<wire x1="200.66" y1="-30.48" x2="220.98" y2="-30.48" width="0.1524" layer="91"/>
-<label x="220.98" y="-30.48" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="PI_RX" class="0">
-<segment>
-<pinref part="X1" gate="G$1" pin="RXD"/>
-<wire x1="200.66" y1="-33.02" x2="205.74" y2="-33.02" width="0.1524" layer="91"/>
-<label x="205.74" y="-33.02" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="I2C1_SDA" class="0">
@@ -16059,18 +16033,6 @@ http://www.jst-mfg.com&lt;p&gt;
 <label x="236.22" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="HALL_V1" class="0">
-<segment>
-<wire x1="10.16" y1="-60.96" x2="20.32" y2="-60.96" width="0.1524" layer="91"/>
-<label x="20.32" y="-60.96" size="1.778" layer="95" xref="yes"/>
-<pinref part="MOTOR1_SENS" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="1/TX1/T"/>
-<wire x1="165.1" y1="-66.04" x2="124.46" y2="-66.04" width="0.1524" layer="91"/>
-<label x="124.46" y="-66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="SPI_MOSI" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="SPI_MOSI"/>
@@ -16135,6 +16097,40 @@ http://www.jst-mfg.com&lt;p&gt;
 <pinref part="VCC_RPI" gate="G$1" pin="2"/>
 <wire x1="10.16" y1="60.96" x2="22.86" y2="60.96" width="0.1524" layer="91"/>
 <label x="22.86" y="60.96" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="HALL_U1_&amp;_PI_TX" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="0/RX1/T"/>
+<wire x1="165.1" y1="-63.5" x2="157.48" y2="-63.5" width="0.1524" layer="91"/>
+<label x="157.48" y="-63.5" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X1" gate="G$1" pin="TXD"/>
+<wire x1="200.66" y1="-30.48" x2="220.98" y2="-30.48" width="0.1524" layer="91"/>
+<label x="220.98" y="-30.48" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="10.16" y1="-63.5" x2="53.34" y2="-63.5" width="0.1524" layer="91"/>
+<label x="53.34" y="-63.5" size="1.778" layer="95" xref="yes"/>
+<pinref part="MOTOR1_SENS" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="HALL_V1_&amp;PI_RX" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="1/TX1/T"/>
+<wire x1="165.1" y1="-66.04" x2="124.46" y2="-66.04" width="0.1524" layer="91"/>
+<label x="124.46" y="-66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X1" gate="G$1" pin="RXD"/>
+<wire x1="200.66" y1="-33.02" x2="205.74" y2="-33.02" width="0.1524" layer="91"/>
+<label x="205.74" y="-33.02" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="10.16" y1="-60.96" x2="20.32" y2="-60.96" width="0.1524" layer="91"/>
+<label x="20.32" y="-60.96" size="1.778" layer="95" xref="yes"/>
+<pinref part="MOTOR1_SENS" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>
