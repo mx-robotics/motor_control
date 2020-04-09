@@ -53,16 +53,17 @@ public:
 
 
     constexpr static uint16_t calculateDutyCycleW(uint16_t rotor_position,float modulation_index,uint16_t MAX_DUTY_CYCLE){
+        constexpr float angleScaler = 360.0f / LUTSize;
+        constexpr float deg_to_radians = 0.017453f;
         uint16_t IN_W_duty_cycle=0;
+
         float r1 = 0;
         float r2 = 0;
         float t7 = 0;
-        uint32_t t0 = 0;
-        uint32_t t1 = 0;
-        uint32_t t2 = 0;
-        float angle_scaler = 360.0f/LUTSize;
-        float angle = rotor_position * angle_scaler;
-        float deg_to_radians = 0.017453f;
+        float t0 = 0;
+        float t1 = 0;
+        float t2 = 0;
+        float angle = static_cast<float>(rotor_position) * angleScaler;
 
         if (angle >= 0 && angle < 60) {
 
@@ -145,8 +146,8 @@ public:
 
             t1 = r1 * (MAX_DUTY_CYCLE);
             t2 = r2 * (MAX_DUTY_CYCLE);
-            t0 = (MAX_DUTY_CYCLE / 2) * (1 - modulation_index * cos((angle - 300) * DEG_TO_RAD) +
-                                         (modulation_index / 6) * cos(3 * (angle - 300) * DEG_TO_RAD));
+            t0 = (MAX_DUTY_CYCLE / 2) * (1 - modulation_index * cos((angle - 300) * deg_to_radians) +
+                                         (modulation_index / 6) * cos(3 * (angle - 300) * deg_to_radians));
             t7 = MAX_DUTY_CYCLE - (t1 + t2 + t0);
 
             IN_W_duty_cycle = t1 + t2 + t0;
@@ -216,12 +217,12 @@ private:
     static constexpr auto LUT = LUTGenerator::generate();
     static constexpr ModulationIndexScalingParams modulationIndexParams = LUTGenerator::calculateModulationIndexScalingOffsetParameters();
 
-
 public:
 
     static SPWMDutyCycles calculateDutyCycles(Motor &x){ //@TODO should return a const ref as every non trivial return value should
         SPWMDutyCycles temp;
-       float modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
+
+        uint16_t modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
         int8_t fieldWeakening = -x.speedScalar; // gives the best results
         uint16_t base = (x.scaledRotaryEncoderPosition + ((fieldWeakening + angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
         /*
@@ -235,14 +236,16 @@ public:
         uint16_t LUTIndexW = base;
         uint16_t LUTIndexU = (base + (LUTSize / 3) ) % LUTSize;
         uint16_t LUTIndexV = (base + (2 * (LUTSize / 3)) ) % LUTSize;
-        temp.inDutyCycleW = LUT[LUTIndexW]* x.speedScalar * 0.01f + modulationIndexOffset;
-        temp.inDutyCycleU = LUT[LUTIndexU]* x.speedScalar *0.01f + modulationIndexOffset;
-        temp.inDutyCycleV = LUT[LUTIndexV]* x.speedScalar *0.01f + modulationIndexOffset;
+        float intermediateMultiplier = x.speedScalar * 0.01f;
+        temp.inDutyCycleW = static_cast<uint16_t >(LUT[LUTIndexW]* intermediateMultiplier)  + modulationIndexOffset;
+        temp.inDutyCycleU = static_cast<uint16_t >(LUT[LUTIndexU]* intermediateMultiplier) + modulationIndexOffset;
+        temp.inDutyCycleV = static_cast<uint16_t >(LUT[LUTIndexV]* intermediateMultiplier) + modulationIndexOffset;
+
         return temp;
 
     };
     inline static uint16_t scaleDutyCyclesToModulationIndex(float scalar){
-        return (modulationIndexParams.offsetParam_m*scalar + modulationIndexParams.offsetParam_c);
+        return static_cast<uint16_t >(modulationIndexParams.offsetParam_m*scalar + modulationIndexParams.offsetParam_c);
     }
 
 

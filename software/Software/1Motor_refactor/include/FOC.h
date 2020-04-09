@@ -17,6 +17,7 @@ public:
 
     inline static  uint8_t numberOfMotors = 0;
     Motor * motors[2];
+
     ADC *adc = new ADC();
     static constexpr uint16_t PWM_FREQ = 20000;
     static constexpr uint8_t ADC_PIN = A1;
