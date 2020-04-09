@@ -5,22 +5,21 @@
 #include "FOC.h"
 #include "utils.h"
 
-
+#include <arm_math.h>
 
 constexpr INHPins inhibitPins_{33, 24, 31};
 constexpr PWMPins initPins{21, 23, 22};
 constexpr ISPins isPins {A15,A16,A17};
 Motor x(inhibitPins_,initPins,10,isPins);
+volatile bool flag = false;
 void ftm0_isr(void)
 {
 
     FTM0_SC &= ~FTM_SC_TOF;
-
-
-   FOC::getInstance().doTheMagic2();
-
+    flag = true;
 
 }
+
 
 
 #define INT_FIRAT 1
@@ -28,13 +27,10 @@ void ftm0_isr(void)
 void setup() {
 
 
-
     FOC::getInstance().registerMotors(&x);
-    FOC::getInstance().initHardware();
     Serial.begin(9600);
     while (!Serial);
-
-
+    FOC::getInstance().initHardware();
 
 
 #if INT_FIRAT
@@ -45,15 +41,28 @@ void setup() {
     sei(); //Enable global interrupts
 
 #endif
+/*
+    while (1) {
+        for (int i = 0; i < 1489; ++i) {
+            delayMicroseconds(5);
+            FOC::getInstance().primitiveSpin(i);
+    }
+}
 
-
+    */
 
 
 }
 
 
 void loop() {
+    if(flag){
+        elapsedMicros k;
+        FOC::getInstance().doTheMagic2();
+        Serial.println(k);
+        flag = false;
 
+    }
     //Serial.println("POS");
     //@ 1:plot all 3 duty cycles to see if there are in unision
     //@ 2: test the modulo index offset calculation, plot it after scaling as well for debugging

@@ -159,7 +159,6 @@ void FOC::speedSweep(){
 
     }
     ++ctr;
-
     SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[0]);
     updatePWMPinsDutyCycle(dutyCycles, *motors[0]);
 
@@ -172,7 +171,7 @@ void FOC::run() {
     uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[0]);
     Serial.println(rotaryEncoderValue);
 }
-void FOC::doTheMagic2() {
+FASTRUN void FOC::doTheMagic2() {
 
     static uint16_t ctr = 0;
 
@@ -188,9 +187,9 @@ void FOC::doTheMagic2() {
                float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
                Serial.println(rps);
                motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
-               motors[i]->updateSpeedRPS(rps);
-               float speed_command = getSpeedFromSomewhere();
-               Serial.println(speed_command);
+               //motors[i]->updateSpeedRPS(rps);
+               float speed_command = 99;// getSpeedFromSomewhere();
+               //Serial.println(speed_command);
 
                //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
                motors[i]->updateSpeedScalar(speed_command);
@@ -200,8 +199,11 @@ void FOC::doTheMagic2() {
 
 
         }
+
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
         updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
+
+
     }
 
 
