@@ -99,12 +99,13 @@ public:
     }
 
     void updateRotaryEncoderPosition(uint16_t rotPos){
-        //Serial.println("Rotary Encoder Position: ");
+        //Serial.print("R");
         //Serial.println(rotPos);
+        scaledRotaryEncoderPosition = 1489 - rotPos;
+
         scaledRotaryEncoderPosition = 1489 - (rotPos % 1489);
         //Serial.println("Rotary Encoder Position: ");
         //Serial.println(scaledRotaryEncoderPosition);
-        //scaledRotaryEncoderPosition = rotPos;
         rotaryEncoderPosition = rotPos;
 
     }

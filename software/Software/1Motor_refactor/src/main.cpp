@@ -9,8 +9,16 @@
 
 constexpr INHPins inhibitPins_{33, 24, 31};
 constexpr PWMPins initPins{21, 23, 22};
+
+
+//constexpr INHPins inhibitPins_{33, 24, 3};
+//constexpr INHPins inhibitPins_2{0, 1, 2};
+//constexpr PWMPins initPins{21, 23, 22};
+//constexpr PWMPins initPins2{5, 6, 10};
 constexpr ISPins isPins {A15,A16,A17};
 Motor x(inhibitPins_,initPins,10,isPins);
+
+//Motor x(inhibitPins_,initPins,15,isPins);
 volatile bool flag = false;
 void ftm0_isr(void)
 {
@@ -58,8 +66,9 @@ void setup() {
 void loop() {
     if(flag){
         elapsedMicros k;
+        //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
         FOC::getInstance().doTheMagic2();
-        Serial.println(k);
+        //Serial.println(k);
         flag = false;
 
     }
