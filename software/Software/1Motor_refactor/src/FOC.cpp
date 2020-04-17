@@ -215,6 +215,7 @@ FASTRUN void FOC::doTheMagic2() {
 
         if (ctr == 1000) { //every 0.1 sec
                float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
+               Serial.println(rps);
                motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
                //motors[i]->updateSpeedRPS(rps);
                float speed_command = 88;// getSpeedFromSomewhere();
@@ -247,7 +248,7 @@ void FOC::primitiveSpin(uint16_t LUTindex) {
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
     uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
-    SPWMDutyCycles x{dutyCycleW, dutyCycleU, dutyCycleV };
+    SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU };
     updatePWMPinsDutyCycle(x, *motors[0]);
 
 
@@ -291,7 +292,7 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
     uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
-    SPWMDutyCycles x{dutyCycleW, dutyCycleU, dutyCycleV};
+    SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU};
     updatePWMPinsDutyCycle(x, motor);
 
 

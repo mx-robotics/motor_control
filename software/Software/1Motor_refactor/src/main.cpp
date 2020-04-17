@@ -70,7 +70,7 @@ void setup() {
 
 void loop() {
     if(flag){
-       //erial.println(RotaryEncoderCommunication::SPITransfer(x));
+       //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
        FOC::getInstance().doTheMagic2();
         flag = false;
 
