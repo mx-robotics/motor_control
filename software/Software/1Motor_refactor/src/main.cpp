@@ -65,7 +65,7 @@ void setup() {
 
 void loop() {
     if(flag){
-        elapsedMicros k;
+        //elapsedMicros k;
         //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
         FOC::getInstance().doTheMagic2();
         //Serial.println(k);

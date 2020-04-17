@@ -28,12 +28,12 @@ void FOC::activateInhibitPins(Motor &x) {
 void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
     if (motor.initPins.InitPinW == 21 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
 
-        FTM0_C6V = x.inDutyCycleW;
-        FTM0_C0V = x.inDutyCycleU;
-        FTM0_C1V = x.inDutyCycleV;
+        FTM0_C6V = x.inDutyCycleW;  // Teency pin 21 -> FTM0_CH6
+        FTM0_C0V = x.inDutyCycleV;  // Teency pin 22 (A8) -> FTM0_CH0
+        FTM0_C1V = x.inDutyCycleU;  // Teency pin 23 (A9) -> FTM0_CH1
 
     } else {
-        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3pardom
         FTM0_C7V = x.inDutyCycleU; //Teency pin 5 -> FTM0_CH7
         FTM0_C4V = x.inDutyCycleV; //Teency pin  6 -> FTM0_CH4
 
@@ -192,7 +192,7 @@ FASTRUN void FOC::doTheMagic2() {
                Serial.println(rps);
                motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
                //motors[i]->updateSpeedRPS(rps);
-               float speed_command = 44;// getSpeedFromSomewhere();
+               float speed_command = 72;// getSpeedFromSomewhere();
                //Serial.println(speed_command);
 
                //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
@@ -222,7 +222,7 @@ void FOC::primitiveSpin(uint16_t LUTindex) {
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
     uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
-    SPWMDutyCycles x{dutyCycleW, dutyCycleU, dutyCycleV };
+    SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU };
     updatePWMPinsDutyCycle(x, *motors[0]);
 
 
@@ -265,7 +265,7 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
     uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
-    SPWMDutyCycles x{dutyCycleW, dutyCycleU, dutyCycleV};
+    SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU};
     updatePWMPinsDutyCycle(x, motor);
 
     delay(500);

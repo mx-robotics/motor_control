@@ -12,8 +12,8 @@
 
 struct SPWMDutyCycles{
     uint16_t inDutyCycleW;
-    uint16_t inDutyCycleU;
     uint16_t inDutyCycleV;
+    uint16_t inDutyCycleU;
 
 };
 
@@ -224,8 +224,8 @@ public:
 
         uint16_t modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
         int8_t fieldWeakening = -x.speedScalar; // gives the best results
-        uint16_t base = (x.scaledRotaryEncoderPosition + angleOffset * x.direction + LUTSize) % LUTSize;
-        //uint16_t base = (x.scaledRotaryEncoderPosition + ((fieldWeakening + angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
+        //uint16_t base = (x.scaledRotaryEncoderPosition + angleOffset * x.direction + LUTSize) % LUTSize;
+        uint16_t base = (x.scaledRotaryEncoderPosition + ((fieldWeakening + angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
         /*
          * This part is tricky; there is a field-weakening and the best results has been found at -120 and + 80
          * To avoid an else-if check the fieldWeakening is set to 100 and with this -20 it is set to -120 or 80 according to the direction of the motor
@@ -235,12 +235,12 @@ public:
          *
          * */
         uint16_t LUTIndexW = base;
-        uint16_t LUTIndexU = (base + (LUTSize / 3) ) % LUTSize;
-        uint16_t LUTIndexV = (base + (2 * (LUTSize / 3)) ) % LUTSize;
+        uint16_t LUTIndexV = (base + (LUTSize / 3) ) % LUTSize;
+        uint16_t LUTIndexU = (base + (2 * (LUTSize / 3)) ) % LUTSize;
         float intermediateMultiplier = x.speedScalar * 0.01f;
         temp.inDutyCycleW = static_cast<uint16_t >(LUT[LUTIndexW]* intermediateMultiplier) + modulationIndexOffset;
-        temp.inDutyCycleU = static_cast<uint16_t >(LUT[LUTIndexU]* intermediateMultiplier) + modulationIndexOffset;
         temp.inDutyCycleV = static_cast<uint16_t >(LUT[LUTIndexV]* intermediateMultiplier) + modulationIndexOffset;
+        temp.inDutyCycleU = static_cast<uint16_t >(LUT[LUTIndexU]* intermediateMultiplier) + modulationIndexOffset;
 
         return temp;
 
