@@ -26,14 +26,40 @@ void FOC::activateInhibitPins(Motor &x) {
 
 
 void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
-    if (motor.initPins.InitPinW == 21 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
-
-        FTM0_C6V = x.inDutyCycleW;
+   // if (motor.initPins.InitPinW == 10 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
+#define ORDERING 1
+#if ORDERING == 1
         FTM0_C0V = x.inDutyCycleU;
         FTM0_C1V = x.inDutyCycleV;
-
-    } else {
         FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+#endif
+#if ORDERING == 2 // was somehwt wrking
+        FTM0_C0V = x.inDutyCycleU;
+        FTM0_C3V = x.inDutyCycleV;
+        FTM0_C1V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+#endif
+#if ORDERING == 3
+        FTM0_C1V = x.inDutyCycleU;
+        FTM0_C0V = x.inDutyCycleV;
+        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+#endif
+#if ORDERING == 4 // promising
+        FTM0_C1V = x.inDutyCycleU;
+        FTM0_C3V = x.inDutyCycleV;
+        FTM0_C0V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+#endif
+#if ORDERING == 5
+        FTM0_C3V = x.inDutyCycleU;
+        FTM0_C1V = x.inDutyCycleV;
+        FTM0_C0V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+#endif
+#if ORDERING == 6
+        FTM0_C3V = x.inDutyCycleU;
+        FTM0_C0V = x.inDutyCycleV;
+        FTM0_C1V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+#endif
+    if(numberOfMotors > 1) {
+        FTM0_C6V = x.inDutyCycleW;
         FTM0_C7V = x.inDutyCycleU; //Teency pin 5 -> FTM0_CH7
         FTM0_C4V = x.inDutyCycleV; //Teency pin  6 -> FTM0_CH4
 
@@ -83,9 +109,10 @@ void FOC::initPWMPins() {
     //counter reaches the modulo value, the overflow flag (TOF) becomes set at the next clock
     FTM0_MOD = (F_BUS / PWM_FREQ) / 2;
     // FTM0_C6SC |= FTM_CSC_CHIE
-    FTM0_C6SC = 0b00101000;
-    FTM0_C6V = 0; //50%
-    PORTD_PCR6 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 21 -> FTM0_CH6
+
+    FTM0_C3SC = 0b00101000;
+    FTM0_C3V = 0; //50%
+    PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
 
 
     FTM0_C0SC = 0b00101000;
@@ -102,10 +129,9 @@ void FOC::initPWMPins() {
         FTM0_C7V = 0; //50%
         PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
 
-
-        FTM0_C3SC = 0b00101000;
-        FTM0_C3V = 0; //50%
-        PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
+        FTM0_C6SC = 0b00101000;
+        FTM0_C6V = 0; //50%
+        PORTD_PCR6 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 21 -> FTM0_CH6
 
 
         FTM0_C4SC = 0b00101000;
@@ -188,11 +214,9 @@ FASTRUN void FOC::doTheMagic2() {
 
         if (ctr == 1000) { //every 0.1 sec
                float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
-               Serial.print("H");
-               Serial.println(rps);
                motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
                //motors[i]->updateSpeedRPS(rps);
-               float speed_command = 44;// getSpeedFromSomewhere();
+               float speed_command = 88;// getSpeedFromSomewhere();
                //Serial.println(speed_command);
 
                //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
@@ -261,6 +285,7 @@ uint16_t FOC::setSpeedFromADC() {
 
 int16_t FOC::calculateSensorOffset(Motor &motor,
                               const uint16_t LUTindex) { //the index is used as a parameter to maybe plot the sensor offset all over the motor range
+
     uint16_t LUTSize = SVPWM::getLutSize();
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
@@ -268,23 +293,26 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
     SPWMDutyCycles x{dutyCycleW, dutyCycleU, dutyCycleV};
     updatePWMPinsDutyCycle(x, motor);
 
-    delay(500);
 
+    //delayMicroseconds(10);
+    delay(10);
     Serial.print("\nCurrent stator flux index: ");
     Serial.println(LUTindex);
 
     uint16_t encoderVal = RotaryEncoderCommunication::SPITransfer(motor);
     uint16_t encoderValScaled = encoderVal % LUTSize;
-    Serial.print(" Modulo scaled encoder reading: ");
+    Serial.print("Modulo Scaled encoder reading: ");
     Serial.println(encoderValScaled);
 
-    uint16_t expectedRotorFlux = (LUTindex + LUTSize / 2) % LUTSize; // + 180
+    uint16_t expectedRotorFlux = (static_cast<uint >(LUTindex + LUTSize / 2.0f)) % LUTSize; // + 180
     Serial.print("Expected Rotor Flux position: ");
     Serial.println(expectedRotorFlux);
 
     int16_t sensorOffset = expectedRotorFlux - encoderValScaled;
-    Serial.print("Difference between calculated rotor flux and expected rotor flux ");
-    Serial.println((1489 - encoderValScaled) -expectedRotorFlux);
+    Serial.print("Difference between measured value and expected rotor flux ");
+    //Serial.println((1489 - encoderValScaled) -expectedRotorFlux);
+    Serial.println( sensorOffset);
+
     return sensorOffset;
     /**
      *We want to find the SensorOffset because:
@@ -319,8 +347,26 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
 }
 
 void FOC::testMotors(Motor( &x)) {
+    /*for(int k = 0; k<11; k++) {
+        uint16_t encoderValStart = RotaryEncoderCommunication::SPITransfer(x);
 
-    for (int j = 0; j < 1489 ; j+=20 ) { calculateSensorOffset(x,j); }
 
+        for (int j = 0; j < 1489; j += 1) { calculateSensorOffset(x, j); }
+        uint16_t encoderVal = RotaryEncoderCommunication::SPITransfer(x);
+        Serial.print(" STOP: ");
+        Serial.println(encoderVal);
+        Serial.print(" START: ");
+        Serial.println(encoderValStart);
+        Serial.println(encoderValStart - encoderVal);
+
+    }
+
+     */
+
+    for (int i = 0; i <1489 ; i+=50) {
+
+
+        calculateSensorOffset(x, i);
+    }
 
 }

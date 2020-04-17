@@ -15,7 +15,7 @@ class RotaryEncoderCommunication{
 private:
 
     static const SPISettings spiSettings; //i
-    static constexpr uint16_t CLK = 14; //i
+    static constexpr uint16_t CLK = 13; //i
 
 
 public:

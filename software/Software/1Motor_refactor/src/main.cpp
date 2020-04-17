@@ -7,16 +7,21 @@
 
 #include <arm_math.h>
 
-constexpr INHPins inhibitPins_{33, 24, 31};
-constexpr PWMPins initPins{21, 23, 22};
+constexpr INHPins inhibitPins_{33, 26, 31};
 
+//constexpr PWMPins initPins{22, 23, 10}; // working spin
+//constexpr PWMPins initPins{23, 22, 10};
+//constexpr PWMPins initPins{23, 10, 22};
+//constexpr PWMPins initPins{22, 10, 23};
+//constexpr PWMPins initPins{10, 23, 22};
+constexpr PWMPins initPins{10, 22, 23};
 
 //constexpr INHPins inhibitPins_{33, 24, 3};
 //constexpr INHPins inhibitPins_2{0, 1, 2};
 //constexpr PWMPins initPins{21, 23, 22};
 //constexpr PWMPins initPins2{5, 6, 10};
 constexpr ISPins isPins {A15,A16,A17};
-Motor x(inhibitPins_,initPins,10,isPins);
+Motor x(inhibitPins_,initPins,2,isPins);
 
 //Motor x(inhibitPins_,initPins,15,isPins);
 volatile bool flag = false;
@@ -52,26 +57,36 @@ void setup() {
 /*
     while (1) {
         for (int i = 0; i < 1489; ++i) {
-            delayMicroseconds(5);
+            delayMicroseconds(100);
             FOC::getInstance().primitiveSpin(i);
     }
 }
+*/
 
-    */
 
-
+    //FOC::getInstance().testMotors(x);
 }
 
 
 void loop() {
     if(flag){
-        elapsedMicros k;
-        //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
-        FOC::getInstance().doTheMagic2();
-        //Serial.println(k);
+       //erial.println(RotaryEncoderCommunication::SPITransfer(x));
+       FOC::getInstance().doTheMagic2();
         flag = false;
 
     }
+
+    /*for (int i = 0; i <1489 ; ++i) {
+
+        delayMicroseconds(50);
+
+        FOC::getInstance().primitiveSpin(i);
+
+        ;}
+    */
+
+    //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
+
     //Serial.println("POS");
     //@ 1:plot all 3 duty cycles to see if there are in unision
     //@ 2: test the modulo index offset calculation, plot it after scaling as well for debugging
