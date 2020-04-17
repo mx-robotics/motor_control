@@ -235,8 +235,8 @@ public:
          *
          * */
         uint16_t LUTIndexW = base;
-        uint16_t LUTIndexU = (base + (LUTSize / 3) ) % LUTSize;
-        uint16_t LUTIndexV = (base + (2 * (LUTSize / 3)) ) % LUTSize;
+        uint16_t LUTIndexV = (base + (LUTSize / 3) ) % LUTSize;
+        uint16_t LUTIndexU = (base + (2 * (LUTSize / 3)) ) % LUTSize;
         float intermediateMultiplier = x.speedScalar * 0.01f;
 
 

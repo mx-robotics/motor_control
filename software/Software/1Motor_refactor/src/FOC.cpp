@@ -30,8 +30,8 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
 #define ORDERING 1 // this works terribly with the new board and new motors
 #if ORDERING == 1
     FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
-    FTM0_C1V = x.inDutyCycleV; // Teency pin 22 -> FTM0_CH1
-    FTM0_C0V = x.inDutyCycleU;  // Teency pin 23 -> FTM0_CH0
+    FTM0_C0V = x.inDutyCycleV;  // Teency pin 23 -> FTM0_CH0
+    FTM0_C1V = x.inDutyCycleU; // Teency pin 22 -> FTM0_CH1
 
 #endif
 #if ORDERING == 2 // was somehwt wrking
