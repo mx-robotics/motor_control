@@ -8,20 +8,18 @@
 #include <arm_math.h>
 
 constexpr INHPins inhibitPins_{33, 26, 31};
-
-//constexpr PWMPins initPins{22, 23, 10}; // working spin
-//constexpr PWMPins initPins{23, 22, 10};
-//constexpr PWMPins initPins{23, 10, 22};
-//constexpr PWMPins initPins{22, 10, 23};
-//constexpr PWMPins initPins{10, 23, 22};
 constexpr PWMPins initPins{10, 22, 23};
-
-//constexpr INHPins inhibitPins_{33, 24, 3};
-//constexpr INHPins inhibitPins_2{0, 1, 2};
-//constexpr PWMPins initPins{21, 23, 22};
-//constexpr PWMPins initPins2{5, 6, 10};
 constexpr ISPins isPins {A15,A16,A17};
 Motor x(inhibitPins_,initPins,2,isPins);
+
+constexpr INHPins inhibitPins2{28, 8, 25};
+constexpr PWMPins initPins2{5, 6, 9};
+constexpr ISPins isPins2 {A15,A16,A17};
+
+Motor x2(inhibitPins2,initPins2,14,isPins);
+
+
+
 
 //Motor x(inhibitPins_,initPins,15,isPins);
 volatile bool flag = false;
@@ -41,6 +39,7 @@ void setup() {
 
 
     FOC::getInstance().registerMotors(&x);
+    FOC::getInstance().registerMotors(&x2);
     Serial.begin(9600);
     while (!Serial);
     FOC::getInstance().initHardware();
@@ -70,7 +69,7 @@ void setup() {
 
 void loop() {
     if(flag){
-       //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
+       //Serial.println(RotaryEncoderCommunication::SPITransfer(x2));
        FOC::getInstance().doTheMagic2();
         flag = false;
 

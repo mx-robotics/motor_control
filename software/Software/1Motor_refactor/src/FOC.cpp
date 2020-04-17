@@ -28,10 +28,11 @@ void FOC::activateInhibitPins(Motor &x) {
 void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
    // if (motor.initPins.InitPinW == 10 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
 #define ORDERING 1 // this works terribly with the new board and new motors
+    if(numberOfMotors < 2) {
 #if ORDERING == 1
-    FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
-    FTM0_C0V = x.inDutyCycleV;  // Teency pin 23 -> FTM0_CH0
-    FTM0_C1V = x.inDutyCycleU; // Teency pin 22 -> FTM0_CH1
+        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+        FTM0_C0V = x.inDutyCycleV;  // Teency pin 23 -> FTM0_CH0
+        FTM0_C1V = x.inDutyCycleU; // Teency pin 22 -> FTM0_CH1
 
 #endif
 #if ORDERING == 2 // was somehwt wrking
@@ -59,10 +60,13 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
         FTM0_C0V = x.inDutyCycleV;
         FTM0_C1V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
 #endif
-    if(numberOfMotors > 1) {
-        FTM0_C6V = x.inDutyCycleW;
-        FTM0_C7V = x.inDutyCycleU; //Teency pin 5 -> FTM0_CH7
-        FTM0_C4V = x.inDutyCycleV; //Teency pin  6 -> FTM0_CH4
+    }
+
+    else{
+        FTM0_C2V = x.inDutyCycleW; // Pin 9
+        FTM0_C4V = x.inDutyCycleV; // Pin 6
+        FTM0_C7V = x.inDutyCycleU; // Pin 5
+
 
 
     }
@@ -76,8 +80,8 @@ void FOC::initHardware() {
     RotaryEncoderCommunication::initSPI();
     initADCconversions();
 
-
-    for (int i = 0; i < numberOfMotors ; ++i) {
+    //starts from 1 intentionally, to just check the second motor
+    for (int i = 1; i < numberOfMotors ; ++i) {
         initInhibitPins(*motors[i]);
         activateInhibitPins(*motors[i]);
         RotaryEncoderCommunication::initMotorCSPins(*motors[i]);
@@ -110,30 +114,30 @@ void FOC::initPWMPins() {
     //counter reaches the modulo value, the overflow flag (TOF) becomes set at the next clock
     FTM0_MOD = (F_BUS / PWM_FREQ) / 2;
     // FTM0_C6SC |= FTM_CSC_CHIE
-
-    FTM0_C3SC = 0b00101000;
-    FTM0_C3V = 0; //50%
-    PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
-
-
-    FTM0_C0SC = 0b00101000;
-    FTM0_C0V = 0; //50%
-    PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
+    if (numberOfMotors < 2) {
+        FTM0_C3SC = 0b00101000;
+        FTM0_C3V = 0; //50%
+        PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
 
 
-    FTM0_C1SC = 0b00101000;
-    FTM0_C1V = 0; //50%
-    PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
+        FTM0_C0SC = 0b00101000;
+        FTM0_C0V = 0; //50%
+        PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
 
-    if (numberOfMotors > 1) {
+
+        FTM0_C1SC = 0b00101000;
+        FTM0_C1V = 0; //50%
+        PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
+    }
+
+    else{
         FTM0_C7SC = 0b00101000;
         FTM0_C7V = 0; //50%
         PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
 
-        FTM0_C6SC = 0b00101000;
-        FTM0_C6V = 0; //50%
-        PORTD_PCR6 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 21 -> FTM0_CH6
-
+        FTM0_C2SC = 0b00101000;
+        FTM0_C2V = 0;
+        PORTC_PCR3 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 9 -> FTM0_CH2
 
         FTM0_C4SC = 0b00101000;
         FTM0_C4V = 0; //50%
@@ -203,8 +207,8 @@ void FOC::run() {
 FASTRUN void FOC::doTheMagic2() {
 
     static uint16_t ctr = 0;
-
-    for (int i = 0; i < numberOfMotors ; ++i) {
+    //starts from 1 intentionally, to just check the second motor
+    for (int i = 1; i < numberOfMotors ; ++i) {
 
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
 
