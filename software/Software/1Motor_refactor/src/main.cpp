@@ -31,6 +31,8 @@ void ftm0_isr(void)
 
 
 #define INT_FIRAT 1
+#define PRIMITIVE_SPIN 0
+#define LOCK_MOTOR 0
 
 void setup() {
 
@@ -49,16 +51,19 @@ void setup() {
     sei(); //Enable global interrupts
 
 #endif
-/*
+#if PRIMITIVE_SPIN
     while (1) {
         for (int i = 0; i < 1489; ++i) {
-            delayMicroseconds(5);
-            FOC::getInstance().primitiveSpin(i);
+            delayMicroseconds(10);
+            FOC::getInstance().primitiveSpin(i,x);
     }
 }
 
-    */
+#endif
 
+#if LOCK_MOTOR
+    FOC::getInstance().primitiveSpin(110,x);
+#endif
 
 }
 
@@ -66,8 +71,8 @@ void setup() {
 void loop() {
     if(flag){
         //elapsedMicros k;
-        //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
-        FOC::getInstance().doTheMagic2();
+        Serial.println(RotaryEncoderCommunication::SPITransfer(x)%1489);
+        //FOC::getInstance().doTheMagic2();
         //Serial.println(k);
         flag = false;
 
