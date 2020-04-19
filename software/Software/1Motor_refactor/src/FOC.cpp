@@ -217,13 +217,14 @@ FASTRUN void FOC::doTheMagic2() {
 
 }
 
-void FOC::primitiveSpin(uint16_t LUTindex) {
+void FOC::primitiveSpin(uint16_t LUTindex, Motor &motor) {
+    // 10 microsec delays seems like ideal
     uint16_t LUTSize = SVPWM::getLutSize();
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
-    uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
-    uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
-    SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU };
-    updatePWMPinsDutyCycle(x, *motors[0]);
+    uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
+    uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
+    SPWMDutyCycles x{dutyCycleW,dutyCycleV,dutyCycleU};
+    updatePWMPinsDutyCycle(x, motor);
 
 
 }
