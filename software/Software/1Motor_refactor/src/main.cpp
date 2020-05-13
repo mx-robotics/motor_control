@@ -10,13 +10,13 @@
 constexpr INHPins inhibitPins_{33, 26, 31};
 constexpr PWMPins initPins{10, 22, 23};
 constexpr ISPins isPins {A15,A16,A17};
-Motor x(inhibitPins_,initPins,2,isPins);
+Motor x(inhibitPins_,initPins,14,isPins);
 
 constexpr INHPins inhibitPins2{28, 8, 25};
 constexpr PWMPins initPins2{5, 6, 9};
 constexpr ISPins isPins2 {A15,A16,A17};
 
-Motor x2(inhibitPins2,initPins2,14,isPins);
+Motor x2(inhibitPins2,initPins2,2,isPins);
 
 
 
@@ -34,6 +34,7 @@ void ftm0_isr(void)
 
 
 #define INT_FIRAT 1
+#define PRIMITIVE_SPIN 0
 
 void setup() {
 
@@ -53,6 +54,17 @@ void setup() {
     sei(); //Enable global interrupts
 
 #endif
+
+#if PRIMITIVE_SPIN
+    while (1) {
+        for (int i = 0; i < 1489; ++i) {
+            delayMicroseconds(12);
+            FOC::getInstance().primitiveSpin(i,x);
+    }
+}
+
+#endif
+
 /*
     while (1) {
         for (int i = 0; i < 1489; ++i) {
@@ -69,6 +81,7 @@ void setup() {
 
 void loop() {
     if(flag){
+       //Serial.println(RotaryEncoderCommunication::SPITransfer(x));
        //Serial.println(RotaryEncoderCommunication::SPITransfer(x2));
        FOC::getInstance().doTheMagic2();
         flag = false;

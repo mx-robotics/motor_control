@@ -73,7 +73,7 @@ public:
     int16_t fieldWeakening = -100; // best : 80 for -1;
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
-    uint16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening
+    int16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening
     uint16_t encoderCumulativeValue = 0;
 
     void setSensorOffset(uint16_t sensorOffset_) {
@@ -103,7 +103,14 @@ public:
         //Serial.println(rotPos);
         //scaledRotaryEncoderPosition = 1489 - rotPos;
         //scaledRotaryEncoderPosition = rotPos % 1489;
-        scaledRotaryEncoderPosition = 1489 - (rotPos % 1489);
+        //scaledRotaryEncoderPosition = 1489 - (rotPos % 1489);
+
+
+        scaledRotaryEncoderPosition = (rotPos % 1489);
+        scaledRotaryEncoderPosition =  (scaledRotaryEncoderPosition+220)%1489;
+
+
+
         //Serial.println("Rotary Encoder Position: ");
         //Serial.println(scaledRotaryEncoderPosition);
         rotaryEncoderPosition = rotPos;

@@ -47,7 +47,7 @@ public:
 
 
     void testMotors(Motor &x);
-    void primitiveSpin(uint16_t LUTindex);
+    void primitiveSpin(uint16_t LUTindex, Motor &motor);
     void speedSweep();
 
 

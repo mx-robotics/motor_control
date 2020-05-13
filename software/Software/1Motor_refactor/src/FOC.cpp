@@ -81,7 +81,7 @@ void FOC::initHardware() {
     initADCconversions();
 
     //starts from 1 intentionally, to just check the second motor
-    for (int i = 1; i < numberOfMotors ; ++i) {
+    for (int i = 0; i < numberOfMotors ; ++i) {
         initInhibitPins(*motors[i]);
         activateInhibitPins(*motors[i]);
         RotaryEncoderCommunication::initMotorCSPins(*motors[i]);
@@ -208,12 +208,12 @@ FASTRUN void FOC::doTheMagic2() {
 
     static uint16_t ctr = 0;
     //starts from 1 intentionally, to just check the second motor
-    for (int i = 1; i < numberOfMotors ; ++i) {
+    for (int i = 0; i < 1 ; ++i) {
 
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
 
-        motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue);
-        //Serial.println(rotaryEncoderValue);
+        motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue); //also accounts for scaling
+        Serial.println(rotaryEncoderValue);
 
         motors[i]->cumulativeAdd(rotaryEncoderValue);
 
@@ -222,7 +222,7 @@ FASTRUN void FOC::doTheMagic2() {
                Serial.println(rps);
                motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
                //motors[i]->updateSpeedRPS(rps);
-               float speed_command = 88;// getSpeedFromSomewhere();
+               float speed_command = 95;// getSpeedFromSomewhere();
                //Serial.println(speed_command);
 
                //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
@@ -247,13 +247,14 @@ FASTRUN void FOC::doTheMagic2() {
 
 }
 
-void FOC::primitiveSpin(uint16_t LUTindex) {
+void FOC::primitiveSpin(uint16_t LUTindex, Motor &motor) {
+    // 10 microsec delays seems like ideal
     uint16_t LUTSize = SVPWM::getLutSize();
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
-    uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
-    uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
-    SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU };
-    updatePWMPinsDutyCycle(x, *motors[0]);
+    uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
+    uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
+    SPWMDutyCycles x{dutyCycleW,dutyCycleV,dutyCycleU};
+    updatePWMPinsDutyCycle(x, motor);
 
 
 }
