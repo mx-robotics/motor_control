@@ -63,6 +63,10 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
     }
 
     else{
+        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3
+        FTM0_C0V = x.inDutyCycleV;  // Teency pin 23 -> FTM0_CH0
+        FTM0_C1V = x.inDutyCycleU; // Teency pin 22 -> FTM0_CH1
+
         FTM0_C2V = x.inDutyCycleW; // Pin 9
         FTM0_C4V = x.inDutyCycleV; // Pin 6
         FTM0_C7V = x.inDutyCycleU; // Pin 5
@@ -131,6 +135,20 @@ void FOC::initPWMPins() {
     }
 
     else{
+        FTM0_C3SC = 0b00101000;
+        FTM0_C3V = 0; //50%
+        PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
+
+
+        FTM0_C0SC = 0b00101000;
+        FTM0_C0V = 0; //50%
+        PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
+
+
+        FTM0_C1SC = 0b00101000;
+        FTM0_C1V = 0; //50%
+        PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
+
         FTM0_C7SC = 0b00101000;
         FTM0_C7V = 0; //50%
         PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7

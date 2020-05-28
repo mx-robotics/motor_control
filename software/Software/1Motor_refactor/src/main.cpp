@@ -33,8 +33,8 @@ void ftm0_isr(void)
 
 
 
-#define INT_FIRAT 1
-#define PRIMITIVE_SPIN 0
+#define INT_FIRAT 0
+#define PRIMITIVE_SPIN 1
 
 void setup() {
 
@@ -59,6 +59,7 @@ void setup() {
     while (1) {
         for (int i = 0; i < 1489; ++i) {
             delayMicroseconds(12);
+            FOC::getInstance().primitiveSpin(i,x2);
             FOC::getInstance().primitiveSpin(i,x);
     }
 }
