@@ -28,6 +28,20 @@ void FOC::activateInhibitPins(Motor &x) {
 void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
 
 #if defined(NEW_BOARD)
+    if (motor.initPins.InitPinW == 10 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
+
+        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3pardom
+        FTM0_C0V = x.inDutyCycleV;  // Teency pin 22 (A8) -> FTM0_CH0
+        FTM0_C1V = x.inDutyCycleU;  // Teency pin 23 (A9) -> FTM0_CH1
+
+    } else {
+
+        FTM0_C7V = x.inDutyCycleU; //Teency pin 5 -> FTM0_CH7
+        FTM0_C4V = x.inDutyCycleV; //Teency pin  6 -> FTM0_CH4
+        FTM0_C2V = x.inDutyCycleW; // Teensy pin 9 -> FTM0_CH2
+
+
+    }
 #else
 
     if (motor.initPins.InitPinW == 21 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
@@ -101,7 +115,7 @@ void FOC::initPWMPins() {
         FTM0_C1V = 0; //50%
         PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
 
-    if(numberOfMotors > 1) {
+    if (numberOfMotors > 1) {
         FTM0_C7SC = 0b00101000;
         FTM0_C7V = 0; //50%
         PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
