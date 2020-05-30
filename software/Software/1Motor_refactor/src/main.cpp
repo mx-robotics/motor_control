@@ -10,7 +10,16 @@
 constexpr INHPins inhibitPins_{33, 24, 31};
 constexpr PWMPins initPins{21, 23, 22};
 #if defined(NEW_BOARD)
+constexpr INHPins inhibitPins_{33, 26, 31};
+constexpr PWMPins initPins{10, 22, 23};
+constexpr ISPins isPins {A15,A16,A17};
+Motor motor0(inhibitPins_,initPins,14,isPins);
 
+constexpr INHPins inhibitPins2{28, 8, 25};
+constexpr PWMPins initPins2{5, 6, 9};
+constexpr ISPins isPins2 {A15,A16,A17};
+
+Motor motor1(inhibitPins2,initPins2,2,isPins2);
 
 #else
 
