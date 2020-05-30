@@ -57,7 +57,7 @@ void setup() {
     Serial.begin(9600);
     //while (!Serial);
     delay(5000);
-    FOC::getInstance().initHardware();
+    FOC::getInstance().initHardware(14);
 
 
 #if INT_FIRAT

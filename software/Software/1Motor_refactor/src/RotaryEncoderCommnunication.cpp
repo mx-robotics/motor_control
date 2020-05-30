@@ -6,9 +6,9 @@
 
 const SPISettings RotaryEncoderCommunication::spiSettings(10000000, MSBFIRST, SPI_MODE1);
 
-void RotaryEncoderCommunication::initSPI() {
+void RotaryEncoderCommunication::initSPI(uint8_t SPI_CLK) {
     SPI.begin();
-    SPI.setSCK(RotaryEncoderCommunication::CLK);
+    SPI.setSCK(SPI_CLK);
 
 }
 

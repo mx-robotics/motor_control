@@ -15,12 +15,11 @@ class RotaryEncoderCommunication{
 private:
 
     static const SPISettings spiSettings; //i
-    static constexpr uint16_t CLK = 14; //i
 
 
 public:
     static uint16_t SPITransfer(const Motor &x);
-    static void initSPI();
+    static void initSPI(uint8_t SPI_CLK);
     static void initMotorCSPins(const Motor &x);
 
 };

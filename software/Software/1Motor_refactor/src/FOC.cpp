@@ -43,10 +43,10 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
 
 }
 
-void FOC::initHardware() {
+void FOC::initHardware(uint8_t SPI_CLK) {
 
     initPWMPins();
-    RotaryEncoderCommunication::initSPI();
+    RotaryEncoderCommunication::initSPI(SPI_CLK);
     initADCconversions();
 
 

@@ -28,7 +28,7 @@ public:
     void initInhibitPins(Motor &x) ;
     void activateInhibitPins(Motor &x);
     void updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor);
-    void initHardware();
+    void initHardware(uint8_t SPI_CLK);
     void initPWMPins();
     void initADCconversions() ;
 
