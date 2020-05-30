@@ -9,7 +9,10 @@
 
 constexpr INHPins inhibitPins_{33, 24, 31};
 constexpr PWMPins initPins{21, 23, 22};
+#if defined(NEW_BOARD)
 
+
+#else
 
 //constexpr INHPins inhibitPins_{33, 24, 3};
 //constexpr INHPins inhibitPins_2{0, 1, 2};
@@ -18,6 +21,7 @@ constexpr PWMPins initPins{21, 23, 22};
 constexpr ISPins isPins {A15,A16,A17};
 Motor x(inhibitPins_,initPins,10,isPins);
 
+#endif
 //Motor x(inhibitPins_,initPins,15,isPins);
 volatile bool flag = false;
 void ftm0_isr(void)
@@ -30,8 +34,8 @@ void ftm0_isr(void)
 
 
 
-#define INT_FIRAT 1
-#define PRIMITIVE_SPIN 0
+#define INT_FIRAT 0
+#define PRIMITIVE_SPIN 1
 #define LOCK_MOTOR 0
 
 void setup() {
@@ -39,7 +43,8 @@ void setup() {
 
     FOC::getInstance().registerMotors(&x);
     Serial.begin(9600);
-    while (!Serial);
+    //while (!Serial);
+    delay(5000);
     FOC::getInstance().initHardware();
 
 
