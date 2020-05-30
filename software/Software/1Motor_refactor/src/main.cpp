@@ -48,9 +48,12 @@ void ftm0_isr(void)
 #define LOCK_MOTOR 0
 
 void setup() {
-
-
+#if defined(NEW_BOARD)
+    FOC::getInstance().registerMotors(&motor0);
+    FOC::getInstance().registerMotors(&motor1);
+#else
     FOC::getInstance().registerMotors(&x);
+#endif
     Serial.begin(9600);
     //while (!Serial);
     delay(5000);
