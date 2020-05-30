@@ -26,6 +26,10 @@ void FOC::activateInhibitPins(Motor &x) {
 
 
 void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
+
+#if defined(NEW_BOARD)
+#else
+
     if (motor.initPins.InitPinW == 21 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
 
         FTM0_C6V = x.inDutyCycleW;  // Teency pin 21 -> FTM0_CH6
@@ -39,7 +43,7 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
 
 
     }
-
+#endif
 
 }
 
@@ -83,15 +87,43 @@ void FOC::initPWMPins() {
     //counter reaches the modulo value, the overflow flag (TOF) becomes set at the next clock
     FTM0_MOD = (F_BUS / PWM_FREQ) / 2;
     // FTM0_C6SC |= FTM_CSC_CHIE
+
+#if defined(NEW_BOARD)
+        FTM0_C3SC = 0b00101000;
+        FTM0_C3V = 0; //50%
+        PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
+
+        FTM0_C0SC = 0b00101000;
+        FTM0_C0V = 0; //50%
+        PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
+
+        FTM0_C1SC = 0b00101000;
+        FTM0_C1V = 0; //50%
+        PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
+
+    if(numberOfMotors > 1) {
+        FTM0_C7SC = 0b00101000;
+        FTM0_C7V = 0; //50%
+        PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
+
+        FTM0_C4SC = 0b00101000;
+        FTM0_C4V = 0; //50%
+        PORTD_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 6 -> FTM0_CH4
+
+        FTM0_C2SC = 0b00101000;
+        FTM0_C2V = 0;
+        PORTC_PCR3 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 9 -> FTM0_CH2
+    }
+
+#else
+
     FTM0_C6SC = 0b00101000;
     FTM0_C6V = 0; //50%
     PORTD_PCR6 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 21 -> FTM0_CH6
 
-
     FTM0_C0SC = 0b00101000;
     FTM0_C0V = 0; //50%
     PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
-
 
     FTM0_C1SC = 0b00101000;
     FTM0_C1V = 0; //50%
@@ -102,11 +134,9 @@ void FOC::initPWMPins() {
         FTM0_C7V = 0; //50%
         PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
 
-
         FTM0_C3SC = 0b00101000;
         FTM0_C3V = 0; //50%
         PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
-
 
         FTM0_C4SC = 0b00101000;
         FTM0_C4V = 0; //50%
@@ -114,7 +144,7 @@ void FOC::initPWMPins() {
 
     }
 
-
+#endif
     FTM0_CNTIN = 0x00;
 
 
