@@ -3,20 +3,34 @@
 //
 
 #include "FOC.h"
+
+/**
+ * Singleton
+ * @TODO : check Meyer's Singleton
+ * @return
+ */
 FOC &FOC::getInstance() {
     static FOC instance;
     return instance;
 
 
 }
-
+/**
+ * Configure Inhibit Pins as Output.
+ * Done only once, called at FOC::initHardware
+ * @param x - motor
+ */
 void FOC::initInhibitPins(Motor &x) {
     pinMode(x.inhibitPins.InhibitPinW, OUTPUT);
     pinMode(x.inhibitPins.InhibitPinU, OUTPUT);
     pinMode(x.inhibitPins.InhibitPinV, OUTPUT);
 
 }
-
+/**
+ * Set Inhibit Pins HIGH.
+ * Done only once on continuous SVPWM schemes , called at FOC::initHardware
+ * @param x - motoor
+ */
 void FOC::activateInhibitPins(Motor &x) {
     digitalWriteFast(x.inhibitPins.InhibitPinW, HIGH);
     digitalWriteFast(x.inhibitPins.InhibitPinU, HIGH);
@@ -24,7 +38,12 @@ void FOC::activateInhibitPins(Motor &x) {
 
 }
 
-
+/**
+ * Updates low level PWM registers with new duty cycle values.
+ * Called every interrupt cycle
+ * @param x - SVPWM duty cycles struct
+ * @param motor - motor
+ */
 void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
 
 #if defined(NEW_BOARD)
@@ -60,7 +79,17 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
 #endif
 
 }
-
+/**
+ * Initializes all low lvl hardware related stuff.
+ *  1- PWM Pins
+ *  2- SPI
+ *  3- ADC
+ *  4- InitPins
+ *  5- CS Pins for SPI
+ *
+ *  Called only once, at the begining, after registering the Motors
+ * @param SPI_CLK
+ */
 void FOC::initHardware(uint8_t SPI_CLK) {
 
     initPWMPins();
@@ -78,13 +107,22 @@ void FOC::initHardware(uint8_t SPI_CLK) {
 
 }
 
+/**
+ * @TODO : not used right now, find a way to calculate sensor offset (pyhsical position vs rotor flux position)
+ * @param LUTindex
+ */
 void FOC::initMotorParams(const uint16_t LUTindex) {
     int16_t sensorOffset = calculateSensorOffset(*motors[0],
                                                  LUTindex); // this calculation can be done only once and then hardcoded until there is a motor change.
     motors[0]->setSensorOffset(sensorOffset);
 
 }
-
+/**
+ * Low level function for initializing PWM Pins.
+ * - Center aligned PWM - Up Down Counter
+ * - TOF interrupt
+ * @TODO: try other interrupt options to have more time
+ */
 void FOC::initPWMPins() {
     FTM0_SC = 0; // required for other setup
 
@@ -216,7 +254,19 @@ void FOC::run() {
     Serial.println(rotaryEncoderValue);
 }
 
-
+/***
+ * The main function that compiles all the functionality. It is executed every interrupt cycle (20 kHz).
+ * The procedure is as follows:
+ * 1- Read the rotary encoder value
+ * 2- Update the motors related attributes
+ * 3- Every 0.1 sec:
+ *      - Calculate the velocity
+ *      - get a target_speed form somewhere ( 0..100)
+ *      - feed that to PID and get the speed_command
+ * 4- Calculate duty cycles (based on rotary encoder position and speed command)
+ * 5- Feed that PWM registers
+ * @return
+ */
 FASTRUN void FOC::doTheMagic2() {
 
     static uint16_t ctr = 0;
@@ -260,7 +310,15 @@ FASTRUN void FOC::doTheMagic2() {
 
 
 }
-
+/**
+ * Initial step of testing any motor.
+ * Simply creates a wave form for the motor to follow. No sensor involved. If the Pins and motor pole count is correct
+ * the motor should spin.
+ * - This function should be called in a loop with incrementing LUT indexes.
+ * - A delay between function calls is necessary (10 micro seconds seems to be okay for any motor)
+ * @param LUTindex
+ * @param motor
+ */
 void FOC::primitiveSpin(uint16_t LUTindex, Motor &motor) {
     // 10 microsec delays seems like ideal
     uint16_t LUTSize = SVPWM::getLutSize();
@@ -272,7 +330,11 @@ void FOC::primitiveSpin(uint16_t LUTindex, Motor &motor) {
 
 
 }
-
+/**
+ * FOC class has a list of motor pointers, this function adds motor objects to this array.
+ * and increases motor count.
+ * @param m_ptr
+ */
 
 void FOC::registerMotors(Motor * m_ptr){
     motors[numberOfMotors++] = m_ptr;
@@ -280,7 +342,10 @@ void FOC::registerMotors(Motor * m_ptr){
 
 
 }
-
+/**
+ * Low level function to activate ADC peripheral
+ * called once at FOC::initHardware
+ */
 
 void FOC::initADCconversions() {
 
@@ -292,7 +357,10 @@ void FOC::initADCconversions() {
     adc->startContinuous(ADC_PIN);
 
 }
-
+/**
+ * Simple function to get speed values from an Potentiometer
+ * @return
+ */
 uint16_t FOC::setSpeedFromADC() {
 
     if (adc->adc0->isComplete()) {

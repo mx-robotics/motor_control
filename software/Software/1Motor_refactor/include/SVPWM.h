@@ -33,7 +33,12 @@ public:
     static constexpr uint16_t PWM_FREQ = 20000;
     static constexpr uint16_t MAX_DUTY_CYCLE = (F_BUS / PWM_FREQ) / 2;
 
-
+    /**
+     * Generates the Look Up Table for PWM duty cycles
+     * CalculateDutyCycleW can be re-implemented for other SVPWM schemes such as symmetric, discontinuous etc.
+     * - constexpr function, called once at compile time
+     * @return
+     */
     constexpr static  std::array<uint16_t, LUTSize> generate() {
 
         std::array <uint16_t, LUTSize> temp_table{};
@@ -51,7 +56,16 @@ public:
         return temp_table;
     }
 
-
+    /**
+     *
+     * @param rotor_position - scaled (modulo'ed) encoder value that represents rotor flux. This is then modified to
+     * a degree equivalent.
+     * @param modulation_index - determines the power transferred to the Motor. Right now all tables are generated for
+     * max power and then scaled down accordingly when needed.
+     *
+     * @param MAX_DUTY_CYCLE - required for calculation
+     * @return The duty cycle of one phase
+     */
     constexpr static uint16_t calculateDutyCycleW(uint16_t rotor_position,float modulation_index,uint16_t MAX_DUTY_CYCLE){
         constexpr float angleScaler = 360.0f / LUTSize;
         constexpr float deg_to_radians = 0.017453f;
@@ -161,7 +175,14 @@ public:
 
     }
 
-
+    /***
+     * LUT PWM values are calculated for maximum modulation index (max power). Due to complex nature of SVPWM,
+     * a simple scaling doesnt work. Simply multiplying the full duty cycle with a scalar (0.5 for example) doesnt procude
+     * the correct duty cycles. After this multiplication an offset need to be added to the scaled down duty cycle
+     * This offset is a linear affine function of the scalar. The parameters of this functions are calculated here.
+     * - constexpr function, called at compile time once.
+     * @return
+     */
     static  constexpr ModulationIndexScalingParams calculateModulationIndexScalingOffsetParameters() {
 
             uint16_t rotor_position = 200;
@@ -209,7 +230,11 @@ public:
 
 
 };
-
+/***
+ * Space Vector Pulse Width Modulation(SVPWM) class -
+ * All attributes are initialized at compile time.
+ * Responsible for fetching correct value from the LUT
+ */
 class SVPWM {
 private:
     static constexpr uint16_t LUTSize = LUTGenerator::LUTSize;
@@ -218,8 +243,32 @@ private:
     static constexpr ModulationIndexScalingParams modulationIndexParams = LUTGenerator::calculateModulationIndexScalingOffsetParameters();
 
 public:
-
-    static SPWMDutyCycles calculateDutyCycles(Motor &x){ //@TODO should return a const ref as every non trivial return value should
+    /***
+     * This function does the actual work and consists of 4 steps:
+     * 1- Calculates modulationIndexOffset : There is an offset for different modulation indices. This is calculate by
+     *  the speedScalar (0 - 100)
+     * 2 - Calculate field weakening : To achieve higher speeds field weakening - a small shift on the LUT index is required.
+     *  This can be skipped entirely and is just an optimisation. For the old motors, instead of a fix field weakening,
+     *  a speed scalar based index shift produces better results. Field weakening seems to be slightly different for different
+     *  directions, hence * x.direction - 20
+     *
+     * 3- Base index calculation : By combining
+     *      - scaledRotaryEncoderPosition - Corresponds to rotor flux angle @TODO : automate calculating this
+     *      - fieldWeakening : Explained above, an optimisation
+     *      - angleOffset : +90 -90 degrees (1/4 of the entire LUT range) to produces torque
+     *  the LUT index that gives the optimal PWM Duty cycle value is calculated.  "+ LUTSize) % LUTSize " is required since
+     *  adding the angleOffset can produce a negative index.
+     *
+     * 4 - Calculation other phase's indices : By simply adding 120 ° and 240° (LUTSize/3 and LUTSize*2/3) other phase
+     * indices are acquired
+     *
+     * 5 - Scaling down the duty cycles for lower modulation indices : This is done by multiplying full duty cycle first
+     * and then adding the modulationIndexOffset.
+     *
+     * @param x - motor object
+     * @return SVPWM duty cycles for each phase of a motor
+     */
+    static SPWMDutyCycles calculateDutyCycles(Motor &x){
         SPWMDutyCycles temp;
 
         uint16_t modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
@@ -230,7 +279,7 @@ public:
          * This part is tricky; there is a field-weakening and the best results has been found at -120 and + 80
          * To avoid an else-if check the fieldWeakening is set to 100 and with this -20 it is set to -120 or 80 according to the direction of the motor
          * It is very peculiar that the implicit Sensor Offet in the scaledRotaryEncoderPosition is different in each direction, one direction has a 40 degrees offset compared to the other
-         * This issue clearly shows itself with the max speed difference if left unattended. With the current fieldWeakening parameter themax speed is around 13.50 in each direction
+         * This issue clearly shows itself with the max speed difference if left unattended. With the current fieldWeakening parameter the max speed is around 13.50 in each direction
          *
          *
          * */
@@ -245,6 +294,12 @@ public:
         return temp;
 
     };
+    /***
+     * Calculates the offset required for the correct duty cycles after multiplying the full duty cycles with
+     * the speed scalar
+     * @param scalar - speed scalar (0..100)
+     * @return
+     */
     inline static uint16_t scaleDutyCyclesToModulationIndex(float scalar){
         return static_cast<uint16_t >(modulationIndexParams.offsetParam_m*scalar + modulationIndexParams.offsetParam_c);
     }

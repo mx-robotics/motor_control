@@ -12,7 +12,7 @@ class SteeringServoController {
     SteeringServoController( ServoPins servoPins ):servoPins(servoPins){}
     const ServoPins servoPins;
 public:
-    void controlSteeringServo(float_t angle); // not implemented yet, not necessary with diff drive
+    void controlSteeringServo(float_t angle); // not implemented yet
 
 
 

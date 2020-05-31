@@ -5,7 +5,11 @@
 #ifndef INC_1MOTOR_REFACTOR_PID_H
 #define INC_1MOTOR_REFACTOR_PID_H
 #include "Motor.h"
-
+/**
+ * PID CONTROLLER class
+ * @TODO: In development, add a feed forward term for better results.
+ *
+ */
 class SpeedPIDController {
     inline static float kP = 0;
     inline static float kI = 0;
