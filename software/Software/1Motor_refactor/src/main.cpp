@@ -10,14 +10,14 @@
 #if defined(NEW_BOARD)
 constexpr INHPins inhibitPins_{33, 26, 31};
 constexpr PWMPins initPins{10, 22, 23};
-constexpr ISPins isPins {A15,A16,A17};
-Motor motor0(inhibitPins_,initPins,14,isPins);
+constexpr ISPins isPins{A15, A16, A17};
+Motor motor0(inhibitPins_, initPins, 2, isPins);
 
 constexpr INHPins inhibitPins2{28, 8, 25};
 constexpr PWMPins initPins2{5, 6, 9};
-constexpr ISPins isPins2 {A15,A16,A17};
+constexpr ISPins isPins2{A15, A16, A17};
 
-Motor motor1(inhibitPins2,initPins2,2,isPins2);
+Motor motor1(inhibitPins2, initPins2, 14, isPins2);
 
 #else
 
@@ -28,8 +28,8 @@ Motor motor0(inhibitPins_,initPins,10,isPins);
 #endif
 
 volatile bool flag = false;
-void ftm0_isr(void)
-{
+
+void ftm0_isr(void) {
 
     FTM0_SC &= ~FTM_SC_TOF;
     flag = true;
@@ -37,23 +37,25 @@ void ftm0_isr(void)
 }
 
 
-
-#define INT_FIRAT 0
-#define PRIMITIVE_SPIN 1
+#define INT_FIRAT 1
+#define PRIMITIVE_SPIN 0
 #define LOCK_MOTOR 0
+#define SPEED_SWEEP 1
 
 void setup() {
 #if defined(NEW_BOARD)
     FOC::getInstance().registerMotors(&motor0);
+    motor0.setAngleOffset(80);
     FOC::getInstance().registerMotors(&motor1);
+    motor1.setAngleOffset(20);
+
 #else
     FOC::getInstance().registerMotors(&x);
 #endif
     Serial.begin(9600);
-    //while (!Serial);
-    delay(5000);
+    while (!Serial);
+    delay(1000);
     FOC::getInstance().initHardware(13);
-
 
 #if INT_FIRAT
 
@@ -67,28 +69,40 @@ void setup() {
     while (1) {
         for (int i = 0; i < 1489; ++i) {
             delayMicroseconds(10);
-            FOC::getInstance().primitiveSpin(i,motor0);
+            //Serial.println("asdasd");
+            //delayMicroseconds(8);
+            Serial.print(i);
+            Serial.print(" ");
+            //FOC::getInstance().primitiveSpin(i,motor0);
+            //Serial.println(RotaryEncoderCommunication::SPITransfer(motor0) % 1489);
             FOC::getInstance().primitiveSpin(i,motor1);
+            Serial.println(RotaryEncoderCommunication::SPITransfer(motor1) % 1489);
     }
 }
 
 #endif
 
 #if LOCK_MOTOR
-    FOC::getInstance().primitiveSpin(110,x);
+    while(1) {
+        FOC::getInstance().primitiveSpin(410, motor0);
+        Serial.println(RotaryEncoderCommunication::SPITransfer(motor0) % 1489);
+        delay(5000);
+    }
 #endif
 
 }
 
 
 void loop() {
-    if(flag){
-        //elapsedMicros k;
-        Serial.println(RotaryEncoderCommunication::SPITransfer(motor0)%1489);
-        //FOC::getInstance().doTheMagic2();
-        //Serial.println(k);
-        flag = false;
+    if (flag) {
 
+
+        flag = false;
+#if SPEED_SWEEP
+        FOC::getInstance().speedSweep();
+#else
+        FOC::getInstance().doTheMagic2();
+#endif
     }
     //Serial.println("POS");
     //@ 1:plot all 3 duty cycles to see if there are in unision

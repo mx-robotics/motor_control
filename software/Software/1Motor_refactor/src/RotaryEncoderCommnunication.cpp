@@ -23,18 +23,21 @@ void RotaryEncoderCommunication::initSPI(uint8_t SPI_CLK) {
  * @return - 14 bit rotary encoder position
  */
 uint16_t RotaryEncoderCommunication::SPITransfer(const Motor &x) {
-
     SPI.beginTransaction(spiSettings);
+    delayMicroseconds(1);
     //SPI settings according to sensor datasheet: clock: max. 10MHz | MSB first | SPI Mode 1  | CPOL=0, CPHA= 1
     digitalWriteFast(x.CSPin, LOW); //SPI Mode 1 -> information gest sampled with falling endge
-    uint16_t rotaryEncoderValue = SPI.transfer16(0xFFFF) & 0x3FFFu;
+
+    uint16_t rotaryEncoderValue0 = SPI.transfer16(0xFFFF) & 0x3FFFu;
+
+
+
     //command bit15 = 1 (parity) | bit14 = 1 (read) | adresss 0x000 -> B11000000 00000000 = 0xC0000;
+
     digitalWriteFast(x.CSPin, HIGH); //SPI Mode 1 -> receive information with rising edge
 
     SPI.endTransaction();
-
-
-    return rotaryEncoderValue;
+    return rotaryEncoderValue0;
 
 }
 

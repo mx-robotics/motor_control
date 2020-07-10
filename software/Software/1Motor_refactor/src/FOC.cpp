@@ -217,32 +217,53 @@ uint16_t FOC::getSpeedFromSomewhere(){
 
 void FOC::speedSweep(){
     static uint16_t ctr = 0;
-    static float speed_ctr = 0;
-    uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[0]);
-    motors[0]->updateRotaryEncoderPosition(rotaryEncoderValue);
-    motors[0]->cumulativeAdd(rotaryEncoderValue);
+    static uint16_t speed_ctr = 5;
+    static uint16_t prev = 0;
+
+    uint16_t rotaryEncoderValue0 = RotaryEncoderCommunication::SPITransfer(*motors[1]);
+    //Serial.print(rotaryEncoderValue0);
+    //Serial.print(" ");
+    uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[1]);
+    //Serial.println(rotaryEncoderValue);
+
+
+
+    uint16_t diff = abs(prev - rotaryEncoderValue);
+    if(diff > 30 && diff < 16365){
+        //Serial.print("d : ");
+        //Serial.println(diff);
+        rotaryEncoderValue = rotaryEncoderValue0;
+    }
+
+
+    prev = rotaryEncoderValue;
+    motors[1]->updateRotaryEncoderPosition(rotaryEncoderValue);
+    motors[1]->cumulativeAdd(rotaryEncoderValue);
 
     if(ctr == 1000) {
-        uint8_t my_buff[8];
+        //uint8_t my_buff[8];
         float targetSpeed = speed_ctr; //getSpeedFromSomewhere();
-        motors[0]->updateSpeedScalar(targetSpeed);
-        float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[0]);
-        motors[0]->setEncoderCumulativeValueToZero();
-        memcpy( my_buff, &targetSpeed, 4);
-        memcpy( my_buff +4, &rps, 4);
-        Serial.write(my_buff,8);
-
+        motors[1]->updateSpeedScalar(targetSpeed);
+        float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[1]);
+        motors[1]->setEncoderCumulativeValueToZero();
+        //memcpy( my_buff, &targetSpeed, 4);
+        //memcpy( my_buff +4, &rps, 4);
+        //Serial.write(my_buff,8);
+        Serial.print(speed_ctr);
+        Serial.print(" ");
+        Serial.println(rps);
         speed_ctr+=1;
         if (speed_ctr >= 100){
-            speed_ctr = 0;
+            delayMicroseconds(500);
+            speed_ctr = 5;
         }
 
         ctr = 0;
 
     }
     ++ctr;
-    SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[0]);
-    updatePWMPinsDutyCycle(dutyCycles, *motors[0]);
+    SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[1]);
+    updatePWMPinsDutyCycle(dutyCycles, *motors[1]);
 
 
 
@@ -270,24 +291,37 @@ void FOC::run() {
 FASTRUN void FOC::doTheMagic2() {
 
     static uint16_t ctr = 0;
+    static uint16_t prev = 0;
+    for (int i = 1; i < numberOfMotors ; ++i) {
 
-    for (int i = 0; i < numberOfMotors ; ++i) {
-
+        uint16_t rotaryEncoderValue0 = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+        //Serial.print(rotaryEncoderValue0);
+        //Serial.print(" ");
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+        //Serial.println(rotaryEncoderValue);
+
+
+
+        uint16_t diff = abs(prev - rotaryEncoderValue);
+        if(diff > 30 && diff < 16365){
+            Serial.print("d : ");
+            Serial.println(diff);
+            rotaryEncoderValue = rotaryEncoderValue0;
+        }
+
+
+        prev = rotaryEncoderValue;
 
         motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue);
-        //Serial.println(rotaryEncoderValue);
 
         motors[i]->cumulativeAdd(rotaryEncoderValue);
 
         if (ctr == 1000) { //every 0.1 sec
                float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
-               Serial.print("H");
-               Serial.println(rps);
                motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
                //motors[i]->updateSpeedRPS(rps);
-               float speed_command = 72;// getSpeedFromSomewhere();
-               //Serial.println(speed_command);
+               float speed_command = 100;// getSpeedFromSomewhere();
+               Serial.println(rps);
 
                //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 2);
                motors[i]->updateSpeedScalar(speed_command);

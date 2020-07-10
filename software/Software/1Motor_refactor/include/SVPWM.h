@@ -272,9 +272,10 @@ public:
         SPWMDutyCycles temp;
 
         uint16_t modulationIndexOffset =  scaleDutyCyclesToModulationIndex(x.speedScalar);
-        int8_t fieldWeakening = -x.speedScalar; // gives the best results
+        //int8_t fieldWeakening = -x.speedScalar; // gives the best results
         //uint16_t base = (x.scaledRotaryEncoderPosition + angleOffset * x.direction + LUTSize) % LUTSize;
-        uint16_t base = (x.scaledRotaryEncoderPosition + ((fieldWeakening + angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
+        uint16_t base = (x.scaledRotaryEncoderPosition + angleOffset * 1  + x.angleOffset +  LUTSize) % LUTSize;
+        //uint16_t base = (x.scaledRotaryEncoderPosition + ((fieldWeakening + 600+ angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
         /*
          * This part is tricky; there is a field-weakening and the best results has been found at -120 and + 80
          * To avoid an else-if check the fieldWeakening is set to 100 and with this -20 it is set to -120 or 80 according to the direction of the motor

@@ -78,6 +78,7 @@ public:
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
     int16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening
     uint16_t encoderCumulativeValue = 0;
+    int16_t angleOffset = 0;
 
     /**
      * This function is supposed to set the sensor offset at initialization after calculating the sensor offset.
@@ -92,7 +93,10 @@ public:
     void setEncoderCumulativeValueToZero(){
         encoderCumulativeValue = 0;
     }
+    void setAngleOffset(int16_t _angleOffset){
+        angleOffset = _angleOffset;
 
+    }
     /**
      * This function cumulatively adds the difference between rotary encoder position readings to calculate RPM later on.
      * The encoder values overflow after 16384 so this is taken care of.
@@ -100,16 +104,14 @@ public:
      * @param rotPos : raw 14 bit rotary encoder reading from SPI
      */
      void cumulativeAdd(uint16_t rotPos){
+
         uint16_t diff = abs(rotPos - previousRotaryEncoderValue);
-        if(diff < 2){
-            diff = 0;
-        }
-        if(diff > 100){
+        if(diff > 16200){
             diff = 16384 - diff;
         }
+
          previousRotaryEncoderValue = rotPos;
          encoderCumulativeValue += diff;
-
 
 
 
@@ -127,9 +129,7 @@ public:
      * @param rotPos Raw 14 bit Encoder Value reading
      */
     void updateRotaryEncoderPosition(uint16_t rotPos){
-        //scaledRotaryEncoderPosition = 1489 - rotPos;
-
-        scaledRotaryEncoderPosition = 1489 - (rotPos % 1489);
+        scaledRotaryEncoderPosition = (rotPos  % 1489);
         rotaryEncoderPosition = rotPos;
 
     }
