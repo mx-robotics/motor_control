@@ -1,5 +1,0 @@
-/home/firat/projects/motor_control/software/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/rebuild_cache.dir
-/home/firat/projects/motor_control/software/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Production.dir
-/home/firat/projects/motor_control/software/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/edit_cache.dir
-/home/firat/projects/motor_control/software/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Debug.dir
-/home/firat/projects/motor_control/software/Software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir
