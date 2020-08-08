@@ -99,6 +99,7 @@ public:
             //direction = -1;
 
         }
+
         return abs(command);
 
         //command < 0 ? direction = -1 : direction = 1;

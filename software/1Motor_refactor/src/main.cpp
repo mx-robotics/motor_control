@@ -42,13 +42,15 @@ void ftm0_isr(void) {
 #define PRIMITIVE_SPIN 0
 #define LOCK_MOTOR 0
 #define SPEED_SWEEP 0
+#define SPEED_SWEEP 0
 
 void setup() {
 #if defined(NEW_BOARD)
     FOC::getInstance().registerMotors(&motor0); // 80
     motor0.setAngleOffset(120);
     FOC::getInstance().registerMotors(&motor1);
-    motor1.setAngleOffset(30); // - 110 is da best for direction, - 20 for the other one
+    motor1.setAngleOffset(-70); // - 110 is da best for direction, - 10 for the other one
+
 
 #else
     FOC::getInstance().registerMotors(&x);
@@ -103,6 +105,8 @@ void loop() {
         FOC::getInstance().speedSweep();
 #else
         FOC::getInstance().doTheMagic2();
+        //uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(motor1);
+        //Serial.println(rotaryEncoderValue);
 #endif
     }
     //Serial.println("POS");

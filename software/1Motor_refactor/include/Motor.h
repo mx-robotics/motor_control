@@ -68,14 +68,14 @@ public:
     const PWMPins initPins;
     const uint8_t CSPin;
     const ISPins IsPins;
-    Direction direction = Direction::CW;
+    Direction direction = Direction::CCW;
     float speedRPS = 0;
     float torque = 0;
-    float speedScalar= 80; // actual speed command 0.. 100
+    float speedScalar= 0; // actual speed command 0.. 100
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
     int16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening
-    uint16_t encoderCumulativeValue = 0;
+    int32_t encoderCumulativeValue = 0;
     int16_t angleOffset = 0;
     uint16_t PIDCounter = 0;
 
@@ -96,6 +96,7 @@ public:
      */
 
     void setEncoderCumulativeValueToZero(){
+        //Serial.println(encoderCumulativeValue);
         encoderCumulativeValue = 0;
     }
     void setAngleOffset(int16_t _angleOffset){
@@ -119,6 +120,35 @@ public:
          encoderCumulativeValue += diff;
 
 
+
+    }
+
+    void cumulativeAdd2(uint16_t rotaryEncoderMeasurement){
+
+        int16_t diff = rotaryEncoderMeasurement - previousRotaryEncoderValue;
+
+        if(previousRotaryEncoderValue < 2000 && rotaryEncoderMeasurement > 14000){ // OVERFLOW ROT POS INCREASING
+         /*   Serial.println(diff);
+            Serial.println(previousRotaryEncoderValue);
+            Serial.println(rotaryEncoderMeasurement);
+            Serial.print("New diff");
+
+*/
+            diff -= 16384;
+  /*          Serial.println(diff);
+
+            Serial.println("____");
+*/
+        }
+        if(rotaryEncoderMeasurement < 2000 &&  previousRotaryEncoderValue > 14000){ // OVERFLOW ROT POS DECREASING
+            diff += 16384;
+            Serial.println(diff);
+            Serial.println(previousRotaryEncoderValue);
+            Serial.println(rotaryEncoderMeasurement);
+            Serial.println("2____");
+        }
+        previousRotaryEncoderValue = rotaryEncoderMeasurement;
+        encoderCumulativeValue += diff;
 
     }
     /**

@@ -19,6 +19,7 @@ class VelocityCalculation {
     static constexpr float rotaryEncoderMaxValue = 16384.0f;
     static constexpr uint8_t overflowTreshold = 100;
     static uint32_t encoderCumulativeValue;
+    static inline uint32_t previousRotaryEncoderValue;
 
 
     /***
@@ -57,12 +58,36 @@ public:
      * @return - rotation per sec
      */
     static float getRotationsPerSecond2(Motor & m){
-        float_t retVal =(m.encoderCumulativeValue/rotaryEncoderMaxValue) * (2000 / measurementPeriodinMs);
+        float_t retVal =(m.encoderCumulativeValue/rotaryEncoderMaxValue) * 20;
         return retVal;
     }
     static float getRotationsPerMinute(Motor &motor) {
         return getRotationsPerSecond(motor) * 60;
     }
+
+    static float getRotationsPerSecond3(Motor & m){
+        int32_t diff = m.rotaryEncoderPosition - previousRotaryEncoderValue;
+        Serial.print("rotPos : ");
+        Serial.println(m.rotaryEncoderPosition);
+        Serial.print("prev  : ");
+        Serial.println(previousRotaryEncoderValue);
+       if(previousRotaryEncoderValue < 5000 &&  m.rotaryEncoderPosition > 11000){ // OVERFLOW ROT POS INCREASING
+
+            diff -= 16384;
+
+        }
+       Serial.print("diff  ");
+        Serial.println(diff);
+
+        if(m.rotaryEncoderPosition < 5000 &&  previousRotaryEncoderValue > 11000){ // OVERFLOW ROT POS DECREASING
+            diff += 16384;
+
+        }
+        float_t retVal = diff/16384.0f * 20.0f;
+        previousRotaryEncoderValue = m.rotaryEncoderPosition;
+        return retVal;
+    }
+
     /**
      * @TODO NOT BEING USED RN, FINSIH DEV OR REMOVE
      * @param motor

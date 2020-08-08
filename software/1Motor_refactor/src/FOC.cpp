@@ -291,7 +291,7 @@ void FOC::run() {
 FASTRUN void FOC::doTheMagic2() {
 
     static uint16_t prev = 0;
-    for (int i = 0; i < 1 /* numberOfMotors */ ; ++i) {
+    for (int i = 1; i < 2 /* numberOfMotors */ ; ++i) {
 
         uint16_t rotaryEncoderValue0 = RotaryEncoderCommunication::SPITransfer(*motors[i]);
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
@@ -308,12 +308,24 @@ FASTRUN void FOC::doTheMagic2() {
         motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue);
         motors[i]->cumulativeAdd(rotaryEncoderValue);
 
-        if (motors[i]->PIDCounter == 1000) { //every 0.05 sec
+        if (motors[i]->PIDCounter == 1000) { //every 0.25 sec
                float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
                motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
                motors[i]->updateSpeedRPS(rps);
-               //float speed_command = 60;// getSpeedFromSomewhere();
-               float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 60);
+            Serial.print("rps1 :");
+
+            Serial.println(rps);
+
+            /*Serial.println(rotaryEncoderValue);
+            Serial.print("diff : ");
+
+            Serial.println(rotaryEncoderValue - prev2);
+            prev2 = rotaryEncoderValue;
+             */
+            float_t rps2 = VelocityCalculation::getRotationsPerSecond3(*motors[i]);
+            Serial.println(rps2);
+            float speed_command = 70;// getSpeedFromSomewhere();
+               //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 30);
                motors[i]->updateSpeedScalar(speed_command);
                motors[i]->setPIDCounterToZero();
 
