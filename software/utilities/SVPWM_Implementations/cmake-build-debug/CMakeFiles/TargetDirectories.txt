@@ -1,0 +1,3 @@
+/home/firat/projects/SVPWM_Implementations/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/firat/projects/SVPWM_Implementations/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/firat/projects/SVPWM_Implementations/cmake-build-debug/CMakeFiles/SVPWM_Implementations.dir

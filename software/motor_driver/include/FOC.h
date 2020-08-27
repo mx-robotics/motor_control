@@ -19,7 +19,7 @@ struct CommandParameters{
     int32_t angle;
     float rps;
     Direction direction;
-}
+};
 
 
 class FOC {

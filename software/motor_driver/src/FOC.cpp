@@ -15,6 +15,7 @@ FOC &FOC::getInstance() {
 
 
 }
+
 /**
  * Configure Inhibit Pins as Output.
  * Done only once, called at FOC::initHardware
@@ -26,6 +27,7 @@ void FOC::initInhibitPins(Motor &x) {
     pinMode(x.inhibitPins.InhibitPinV, OUTPUT);
 
 }
+
 /**
  * Set Inhibit Pins HIGH.
  * Done only once on continuous SVPWM schemes , called at FOC::initHardware
@@ -79,6 +81,7 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
 #endif
 
 }
+
 /**
  * Initializes all low lvl hardware related stuff.
  *  1- PWM Pins
@@ -97,12 +100,11 @@ void FOC::initHardware(uint8_t SPI_CLK) {
     //initADCconversions();
 
 
-    for (int i = 0; i < numberOfMotors ; ++i) {
+    for (int i = 0; i < numberOfMotors; ++i) {
         initInhibitPins(*motors[i]);
         activateInhibitPins(*motors[i]);
         RotaryEncoderCommunication::initMotorCSPins(*motors[i]);
     }
-
 
 
 }
@@ -117,6 +119,7 @@ void FOC::initMotorParams(const uint16_t LUTindex) {
     motors[0]->setAngleOffset(sensorOffset);
 
 }
+
 /**
  * Low level function for initializing PWM Pins.
  * - Center aligned PWM - Up Down Counter
@@ -141,17 +144,17 @@ void FOC::initPWMPins() {
     // FTM0_C6SC |= FTM_CSC_CHIE
 
 #if defined(NEW_BOARD)
-        FTM0_C3SC = 0b00101000;
-        FTM0_C3V = 0; //50%
-        PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
+    FTM0_C3SC = 0b00101000;
+    FTM0_C3V = 0; //50%
+    PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
 
-        FTM0_C0SC = 0b00101000;
-        FTM0_C0V = 0; //50%
-        PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
+    FTM0_C0SC = 0b00101000;
+    FTM0_C0V = 0; //50%
+    PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
 
-        FTM0_C1SC = 0b00101000;
-        FTM0_C1V = 0; //50%
-        PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
+    FTM0_C1SC = 0b00101000;
+    FTM0_C1V = 0; //50%
+    PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
 
     if (numberOfMotors > 1) {
         FTM0_C7SC = 0b00101000;
@@ -169,32 +172,32 @@ void FOC::initPWMPins() {
 
 #else
 
-    FTM0_C6SC = 0b00101000;
-    FTM0_C6V = 0; //50%
-    PORTD_PCR6 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 21 -> FTM0_CH6
+        FTM0_C6SC = 0b00101000;
+        FTM0_C6V = 0; //50%
+        PORTD_PCR6 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 21 -> FTM0_CH6
 
-    FTM0_C0SC = 0b00101000;
-    FTM0_C0V = 0; //50%
-    PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
+        FTM0_C0SC = 0b00101000;
+        FTM0_C0V = 0; //50%
+        PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
 
-    FTM0_C1SC = 0b00101000;
-    FTM0_C1V = 0; //50%
-    PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
+        FTM0_C1SC = 0b00101000;
+        FTM0_C1V = 0; //50%
+        PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
 
-    if (numberOfMotors > 1) {
-        FTM0_C7SC = 0b00101000;
-        FTM0_C7V = 0; //50%
-        PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
+        if (numberOfMotors > 1) {
+            FTM0_C7SC = 0b00101000;
+            FTM0_C7V = 0; //50%
+            PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
 
-        FTM0_C3SC = 0b00101000;
-        FTM0_C3V = 0; //50%
-        PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
+            FTM0_C3SC = 0b00101000;
+            FTM0_C3V = 0; //50%
+            PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
 
-        FTM0_C4SC = 0b00101000;
-        FTM0_C4V = 0; //50%
-        PORTD_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 6 -> FTM0_CH4
+            FTM0_C4SC = 0b00101000;
+            FTM0_C4V = 0; //50%
+            PORTD_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 6 -> FTM0_CH4
 
-    }
+        }
 
 #endif
     FTM0_CNTIN = 0x00;
@@ -208,7 +211,7 @@ void FOC::initPWMPins() {
 
 }
 
-uint16_t FOC::getSpeedFromSomewhere(){
+uint16_t FOC::getSpeedFromSomewhere() {
     return setSpeedFromADC();
 
 } //@TODO get speed from ADC, serial port etc, interrupt driven maybe
@@ -226,7 +229,7 @@ void FOC::speedSweep2() {
         uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
 
         uint16_t diff = abs(prev - rotaryEncoderValue);
-        if(diff > 30 && diff < 16365){
+        if (diff > 30 && diff < 16365) {
             Serial.print("d : ");
             Serial.println(diff);
             rotaryEncoderValue = rotaryEncoderValue0;
@@ -240,24 +243,22 @@ void FOC::speedSweep2() {
             motors[i]->updateSpeedRPS(rps);
             motors[i]->updateSpeedScalar(speed_command);
             motors[i]->setPIDCounterToZero();
-            if(speed_increase_counter < values_to_add_up){
+            if (speed_increase_counter < values_to_add_up) {
                 speed_cumulative_value += rps;
-            }
-            else if(speed_increase_counter == values_to_add_up){
-                float average = speed_cumulative_value/values_to_add_up;
+            } else if (speed_increase_counter == values_to_add_up) {
+                float average = speed_cumulative_value / values_to_add_up;
                 Serial.print("Command : ");
                 Serial.print(speed_command);
                 Serial.print("  RPS : ");
                 Serial.println(average);
-                speed_command+=1.0f;
+                speed_command += 1.0f;
                 speed_cumulative_value = 0.0f;
 
 
-            }
-            else if(speed_increase_counter == (values_to_add_up + 5)){
+            } else if (speed_increase_counter == (values_to_add_up + 5)) {
                 speed_increase_counter = 0;
             }
-            if(speed_command > 100){
+            if (speed_command > 100) {
                 speed_command = 10.0f;
             }
             speed_increase_counter++;
@@ -272,7 +273,7 @@ void FOC::speedSweep2() {
     }
 }
 
-void FOC::speedSweep(){
+void FOC::speedSweep() {
     static uint16_t ctr = 0;
     static uint16_t speed_ctr = 5;
     static uint16_t prev = 0;
@@ -286,7 +287,7 @@ void FOC::speedSweep(){
 
 
     uint16_t diff = abs(prev - rotaryEncoderValue);
-    if(diff > 30 && diff < 16365){
+    if (diff > 30 && diff < 16365) {
         //Serial.print("d : ");
         //Serial.println(diff);
         rotaryEncoderValue = rotaryEncoderValue0;
@@ -297,7 +298,7 @@ void FOC::speedSweep(){
     motors[1]->updateRotaryEncoderPosition(rotaryEncoderValue);
     motors[1]->cumulativeAdd(rotaryEncoderValue);
 
-    if(ctr == 1000) {
+    if (ctr == 1000) {
         //uint8_t my_buff[8];
         float targetSpeed = speed_ctr; //getSpeedFromSomewhere();
         motors[1]->updateSpeedScalar(targetSpeed);
@@ -309,8 +310,8 @@ void FOC::speedSweep(){
         Serial.print(speed_ctr);
         Serial.print(" ");
         Serial.println(rps);
-        speed_ctr+=1;
-        if (speed_ctr >= 100){
+        speed_ctr += 1;
+        if (speed_ctr >= 100) {
             delayMicroseconds(500);
             speed_ctr = 5;
         }
@@ -321,7 +322,6 @@ void FOC::speedSweep(){
     ++ctr;
     SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[1]);
     updatePWMPinsDutyCycle(dutyCycles, *motors[1]);
-
 
 
 }
@@ -351,16 +351,16 @@ FASTRUN void FOC::doTheMagic2() {
         //uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
         //Serial.println(rotaryEncoderValue);
 
-    /*    uint16_t diff = abs(prev - rotaryEncoderValue);
-        if(diff > 30 && diff < 16365){
-            Serial.print("d : ");
-            Serial.println(diff);
-            rotaryEncoderValue = rotaryEncoderValue0;
-        }
-        prev = rotaryEncoderValue;
-*/
+        /*    uint16_t diff = abs(prev - rotaryEncoderValue);
+            if(diff > 30 && diff < 16365){
+                Serial.print("d : ");
+                Serial.println(diff);
+                rotaryEncoderValue = rotaryEncoderValue0;
+            }
+            prev = rotaryEncoderValue;
+    */
         motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue0);
-    //    motors[i]->cumulativeAdd(rotaryEncoderValue);
+        //    motors[i]->cumulativeAdd(rotaryEncoderValue);
 
         if (motors[i]->PIDCounter == 1000) { //every 0.25 sec
 
@@ -369,9 +369,9 @@ FASTRUN void FOC::doTheMagic2() {
             motors[i]->updateSpeedRPS(rps2);
 
             float speed_command = 60;// getSpeedFromSomewhere();
-               //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 30);
-               motors[i]->updateSpeedScalar(speed_command);
-               motors[i]->setPIDCounterToZero();
+            //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 30);
+            motors[i]->updateSpeedScalar(speed_command);
+            motors[i]->setPIDCounterToZero();
 
 
         }
@@ -384,6 +384,7 @@ FASTRUN void FOC::doTheMagic2() {
 
 
 }
+
 /**
  * Initial step of testing any motor.
  * Simply creates a wave form for the motor to follow. No sensor involved. If the Pins and motor pole count is correct
@@ -399,23 +400,24 @@ void FOC::primitiveSpin(uint16_t LUTindex, Motor &motor) {
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
     uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
-    SPWMDutyCycles x{dutyCycleW,dutyCycleV,dutyCycleU};
+    SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU};
     updatePWMPinsDutyCycle(x, motor);
 
 
 }
+
 /**
  * FOC class has a list of motor pointers, this function adds motor objects to this array.
  * and increases motor count.
  * @param m_ptr
  */
 
-void FOC::registerMotors(Motor * m_ptr){
+void FOC::registerMotors(Motor *m_ptr) {
     motors[numberOfMotors++] = m_ptr;
 
 
-
 }
+
 /**
  * Low level function to activate ADC peripheral
  * called once at FOC::initHardware
@@ -431,6 +433,7 @@ void FOC::initADCconversions() {
     adc->startContinuous(ADC_PIN);
 
 }
+
 /**
  * Simple function to get speed values from an Potentiometer
  * @return
@@ -439,7 +442,7 @@ uint16_t FOC::setSpeedFromADC() {
 
     if (adc->adc0->isComplete()) {
         uint_fast16_t value1 = adc->analogReadContinuous(ADC_PIN);
-        value1 =   (value1  / static_cast<float_t > (adc->adc0->getMaxValue())) * 100;
+        value1 = (value1 / static_cast<float_t > (adc->adc0->getMaxValue())) * 100;
         return value1;
     }
     return 0;
@@ -447,7 +450,7 @@ uint16_t FOC::setSpeedFromADC() {
 }
 
 int16_t FOC::calculateSensorOffset(Motor &motor,
-                              const uint16_t LUTindex) { //the index is used as a parameter to maybe plot the sensor offset all over the motor range
+                                   const uint16_t LUTindex) { //the index is used as a parameter to maybe plot the sensor offset all over the motor range
     uint16_t LUTSize = SVPWM::getLutSize();
     uint16_t dutyCycleW = SVPWM::getLUT()[LUTindex];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
@@ -471,7 +474,7 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
 
     int16_t sensorOffset = expectedRotorFlux - encoderValScaled;
     Serial.print("Difference between calculated rotor flux and expected rotor flux ");
-    Serial.println((1489 - encoderValScaled) -expectedRotorFlux);
+    Serial.println((1489 - encoderValScaled) - expectedRotorFlux);
     return sensorOffset;
     /**
      *We want to find the SensorOffset because:
@@ -507,40 +510,37 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
 
 void FOC::testMotors(Motor( &x)) {
 
-    for (int j = 0; j < 1489 ; j+=20 ) { calculateSensorOffset(x,j); }
+    for (int j = 0; j < 1489; j += 20) { calculateSensorOffset(x, j); }
 
 
 }
 
 
-
 CommandParameters FOC::setVelandSteeringAngleFromSerial() {
-    CommandParameters res;
-    int index=0;
+    CommandParameters res{0, 0, Direction::STOP};
+    int index = 0;
     byte transmit_buffer[10];
-    while (Serial.available()){
+    while (Serial.available()) {
         transmit_buffer[index] = Serial.read();  // will not be -1
         index++;
 
     }
-    if(index != 0){
-        if(transmit_buffer[0] == 'B'){
+    if (index != 0) {
+        if (transmit_buffer[0] == 'B') {
             res.direction = Direction::CCW;
-        }
-        else if(transmit_buffer[0] == 'F'){
+        } else if (transmit_buffer[0] == 'F') {
             res.direction = Direction::CW;
 
-        }
-        else{
+        } else {
             res.direction = Direction::STOP;
         }
-        uint16_t parsedInt = utils::parse3DigitIntFromString(transmit_buffer+1);
+        uint16_t parsedInt = utils::parse3DigitIntFromString(transmit_buffer + 1);
         Serial.println(parsedInt);
-        res.rps = static_cast<float>(parsedInt)/100.f;
-        parsedInt = utils::parse3DigitIntFromString(transmit_buffer+4);
+        res.rps = static_cast<float>(parsedInt) / 100.f;
+        parsedInt = utils::parse3DigitIntFromString(transmit_buffer + 4);
         res.angle = parsedInt;
 
     }
-
-    }
+    return res; // fix the return if you cant retrieve the message, maybe update a paramter
 }
+

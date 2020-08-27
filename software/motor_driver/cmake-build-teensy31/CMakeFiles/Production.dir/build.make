@@ -63,10 +63,10 @@ RM = /snap/clion/124/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/firat/projects/motor_control/software/1Motor_refactor
+CMAKE_SOURCE_DIR = /home/firat/projects/motor_control/software/motor_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/firat/projects/motor_control/software/1Motor_refactor/cmake-build-teensy31
+CMAKE_BINARY_DIR = /home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31
 
 # Utility rule file for Production.
 
@@ -74,7 +74,7 @@ CMAKE_BINARY_DIR = /home/firat/projects/motor_control/software/1Motor_refactor/c
 include CMakeFiles/Production.dir/progress.make
 
 CMakeFiles/Production:
-	cd /home/firat/projects/motor_control/software/1Motor_refactor && platformio -c clion run -eteensy31
+	cd /home/firat/projects/motor_control/software/motor_driver && platformio -c clion run -eteensy31
 
 Production: CMakeFiles/Production
 Production: CMakeFiles/Production.dir/build.make
@@ -91,6 +91,6 @@ CMakeFiles/Production.dir/clean:
 .PHONY : CMakeFiles/Production.dir/clean
 
 CMakeFiles/Production.dir/depend:
-	cd /home/firat/projects/motor_control/software/1Motor_refactor/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firat/projects/motor_control/software/1Motor_refactor /home/firat/projects/motor_control/software/1Motor_refactor /home/firat/projects/motor_control/software/1Motor_refactor/cmake-build-teensy31 /home/firat/projects/motor_control/software/1Motor_refactor/cmake-build-teensy31 /home/firat/projects/motor_control/software/1Motor_refactor/cmake-build-teensy31/CMakeFiles/Production.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firat/projects/motor_control/software/motor_driver /home/firat/projects/motor_control/software/motor_driver /home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31 /home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31 /home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Production.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Production.dir/depend
 
