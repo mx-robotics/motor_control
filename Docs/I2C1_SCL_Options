@@ -1,0 +1,28 @@
+####Option 1: Sacrifise HWSerial-UART (Best option imo)
+
+This way, we can connect to the Pi/UpBoard via I2C to any number of Teensyies and we can **still** have native USB connection if needed.
+
+(+) UART is not a bus so even if we keep it to communicate with Pi/UpBoard we will still use I2C to communicate with other Teensys. 
+(-) UART is very easy to use on 1-to-1 communications.
+
+
+#### Option 2: Sacrifise SPI_MOSI ( RISKY but viable)
+It is possible to get rid of SPI MOSI, which will but the sensor to a read only mode that only sends angle info when prompted.
+
+(+)Lets us keep everything and also all the functionality
+(-) It should work but dont have the means to try it.
+
+![](/home/firat/Documents/AMSpicture.png  "")
+
+#### Option 3: Sacrife IMU connection to MCU (Complex communication scheme)
+We can directly connect the IMU to the Pi/Upboard and do the computation there. We cancel the second I2C, use the first one to communicate between Teensys.
+
+IMU (I2C_1) -> Pi/UpBoard -> (UART) -> Teensy1 -> (I2C_2) -> Teensy2
+(-) We sacrife a functionality that might be necessary.
+(+) Second Teensy doesnt need a second IMU
+
+#### Option 4: Put the second Teensy and IMU to the same I2C bus. ( BAD IDEA, Complex communication scheme )
+
+We cancel second I2C. The commnication looks like this:
+
+Pi/UpBoard -> (UART) - > 1. Teensy -> (I2C) -> IMU -> (I2C) -> 2. Teensy

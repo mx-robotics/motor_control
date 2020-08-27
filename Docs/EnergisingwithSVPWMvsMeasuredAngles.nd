@@ -1,0 +1,9 @@
+| LUT index            | 1350 | 110  | 360  | 610  | 850  | 1100 |
+| -------------------- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Measure Sensor value | 100  | 350  | 600  | 850  | 1080 | 1340 |
+
+This table shows the measured rotary encoder values with the given LUT index. The results are surprisingly aligned. As the index increases, the measured position increases as well with good accuracy. It is not clear yet how this actually corresponds to rotor flux angle but it will be deduced. 
+
+The next thing to do would be check those values with the new board and see if they match. If they do, proceed with the new motor to check out the same thing. 
+
+Another course to purse is getting the primitive spin working with 10 micro seconds with the new board. This seems to be working just fine with both new and old motors with the old board and with any given configuration. If this doesnt go well with the new one, well you have an electrical problem, maybe checking the wavefrom output forms from the new board will be necessary.
