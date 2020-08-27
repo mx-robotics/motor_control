@@ -6,13 +6,19 @@
 #define INC_1MOTOR_REFACTOR_STEERINGSERVOCONTROLLER_H
 
 #include "Motor.h"
-
+#include <PWMServo.h>
 class SteeringServoController {
 
-    SteeringServoController( ServoPins servoPins ):servoPins(servoPins){}
-    const ServoPins servoPins;
+    static PWMServo myservo;  // create servo object to control a servo
 public:
-    void controlSteeringServo(float_t angle); // not implemented yet
+    static void controlSteeringServo(int32_t angle){
+        myservo.write(angle);
+
+    }
+    static void attachServoPins(ServoPins servoPins){
+        myservo.attach(servoPins.servoPin1);
+        //myservo.attach(servoPins.servoPin2);
+    }
 
 
 
