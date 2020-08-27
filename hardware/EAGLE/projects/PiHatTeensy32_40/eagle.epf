@@ -275,5 +275,5 @@ Type="Control Panel"
 Number=0
 
 [Desktop]
-Screen="4480 1440"
+Screen="5120 1440"
 Window="Win_1"
