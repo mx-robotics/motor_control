@@ -94,7 +94,7 @@ void FOC::initHardware(uint8_t SPI_CLK) {
 
     initPWMPins();
     RotaryEncoderCommunication::initSPI(SPI_CLK);
-    initADCconversions();
+    //initADCconversions();
 
 
     for (int i = 0; i < numberOfMotors ; ++i) {
@@ -213,7 +213,64 @@ uint16_t FOC::getSpeedFromSomewhere(){
 
 } //@TODO get speed from ADC, serial port etc, interrupt driven maybe
 
+void FOC::speedSweep2() {
+    static uint16_t prev = 0;
+    static uint32_t speed_increase_counter = 0;
+    static float speed_command = 10.f;
+    static float speed_cumulative_value = 0.f;
+    static const uint32_t values_to_add_up = 40;
 
+    for (int i = 1; i < 2 /* numberOfMotors */ ; ++i) {
+
+        uint16_t rotaryEncoderValue0 = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+        uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+
+        uint16_t diff = abs(prev - rotaryEncoderValue);
+        if(diff > 30 && diff < 16365){
+            Serial.print("d : ");
+            Serial.println(diff);
+            rotaryEncoderValue = rotaryEncoderValue0;
+        }
+        prev = rotaryEncoderValue;
+
+        motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue);
+
+        if (motors[i]->PIDCounter == 1000) { //20 times a sec
+            float_t rps = VelocityCalculation::getRotationsPerSecond3(*motors[i]);
+            motors[i]->updateSpeedRPS(rps);
+            motors[i]->updateSpeedScalar(speed_command);
+            motors[i]->setPIDCounterToZero();
+            if(speed_increase_counter < values_to_add_up){
+                speed_cumulative_value += rps;
+            }
+            else if(speed_increase_counter == values_to_add_up){
+                float average = speed_cumulative_value/values_to_add_up;
+                Serial.print("Command : ");
+                Serial.print(speed_command);
+                Serial.print("  RPS : ");
+                Serial.println(average);
+                speed_command+=1.0f;
+                speed_cumulative_value = 0.0f;
+
+
+            }
+            else if(speed_increase_counter == (values_to_add_up + 5)){
+                speed_increase_counter = 0;
+            }
+            if(speed_command > 100){
+                speed_command = 10.0f;
+            }
+            speed_increase_counter++;
+
+
+        }
+
+        SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
+        updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
+        motors[i]->incrementPIDCounter();
+
+    }
+}
 
 void FOC::speedSweep(){
     static uint16_t ctr = 0;
@@ -269,11 +326,6 @@ void FOC::speedSweep(){
 
 }
 
-void FOC::run() {
-
-    uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[0]);
-    Serial.println(rotaryEncoderValue);
-}
 
 /***
  * The main function that compiles all the functionality. It is executed every interrupt cycle (20 kHz).
@@ -290,41 +342,33 @@ void FOC::run() {
  */
 FASTRUN void FOC::doTheMagic2() {
 
-    static uint16_t prev = 0;
-    for (int i = 1; i < 2 /* numberOfMotors */ ; ++i) {
+    //static uint16_t prev = 0;
+    for (int i = 0; i < 2 /* numberOfMotors */ ; ++i) {
 
         uint16_t rotaryEncoderValue0 = RotaryEncoderCommunication::SPITransfer(*motors[i]);
-        uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+//        uint16_t rotaryEncoderValue1 = RotaryEncoderCommunication::SPITransfer(*motors[i]);
+
+        //uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(*motors[i]);
         //Serial.println(rotaryEncoderValue);
 
-        uint16_t diff = abs(prev - rotaryEncoderValue);
+    /*    uint16_t diff = abs(prev - rotaryEncoderValue);
         if(diff > 30 && diff < 16365){
             Serial.print("d : ");
             Serial.println(diff);
             rotaryEncoderValue = rotaryEncoderValue0;
         }
         prev = rotaryEncoderValue;
-
-        motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue);
-        motors[i]->cumulativeAdd(rotaryEncoderValue);
+*/
+        motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue0);
+    //    motors[i]->cumulativeAdd(rotaryEncoderValue);
 
         if (motors[i]->PIDCounter == 1000) { //every 0.25 sec
-               float_t rps = VelocityCalculation::getRotationsPerSecond2(*motors[i]);
-               motors[i]->setEncoderCumulativeValueToZero(); // sets to zero
-               motors[i]->updateSpeedRPS(rps);
-            Serial.print("rps1 :");
 
-            Serial.println(rps);
-
-            /*Serial.println(rotaryEncoderValue);
-            Serial.print("diff : ");
-
-            Serial.println(rotaryEncoderValue - prev2);
-            prev2 = rotaryEncoderValue;
-             */
             float_t rps2 = VelocityCalculation::getRotationsPerSecond3(*motors[i]);
             Serial.println(rps2);
-            float speed_command = 70;// getSpeedFromSomewhere();
+            motors[i]->updateSpeedRPS(rps2);
+
+            float speed_command = 60;// getSpeedFromSomewhere();
                //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 30);
                motors[i]->updateSpeedScalar(speed_command);
                motors[i]->setPIDCounterToZero();
@@ -466,4 +510,37 @@ void FOC::testMotors(Motor( &x)) {
     for (int j = 0; j < 1489 ; j+=20 ) { calculateSensorOffset(x,j); }
 
 
+}
+
+
+
+CommandParameters FOC::setVelandSteeringAngleFromSerial() {
+    CommandParameters res;
+    int index=0;
+    byte transmit_buffer[10];
+    while (Serial.available()){
+        transmit_buffer[index] = Serial.read();  // will not be -1
+        index++;
+
+    }
+    if(index != 0){
+        if(transmit_buffer[0] == 'B'){
+            res.direction = Direction::CCW;
+        }
+        else if(transmit_buffer[0] == 'F'){
+            res.direction = Direction::CW;
+
+        }
+        else{
+            res.direction = Direction::STOP;
+        }
+        uint16_t parsedInt = utils::parse3DigitIntFromString(transmit_buffer+1);
+        Serial.println(parsedInt);
+        res.rps = static_cast<float>(parsedInt)/100.f;
+        parsedInt = utils::parse3DigitIntFromString(transmit_buffer+4);
+        res.angle = parsedInt;
+
+    }
+
+    }
 }

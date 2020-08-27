@@ -275,6 +275,7 @@ public:
         //int8_t fieldWeakening = -x.speedScalar; // gives the best results
         //uint16_t base = (x.scaledRotaryEncoderPosition + angleOffset * x.direction + LUTSize) % LUTSize;
         //x.setAngleOffset(-60 + x.speedScalar * x.direction)
+        int32_t localOffset = x.calculateAngleOffsetFromSpeedCommand(x.speedScalar);
         uint16_t base = (x.scaledRotaryEncoderPosition + (angleOffset + x.angleOffset ) * x.direction +  LUTSize) % LUTSize;
         //uint16_t base = (x.scaledRotaryEncoderPosition + ((fieldWeakening + 600+ angleOffset) * x.direction - 20) + LUTSize) % LUTSize;
         /*

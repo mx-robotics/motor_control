@@ -27,18 +27,26 @@ uint16_t RotaryEncoderCommunication::SPITransfer(const Motor &x) {
     delayMicroseconds(1);
     //SPI settings according to sensor datasheet: clock: max. 10MHz | MSB first | SPI Mode 1  | CPOL=0, CPHA= 1
     digitalWriteFast(x.CSPin, LOW); //SPI Mode 1 -> information gest sampled with falling endge
+    //delayMicroseconds(1);
 
     uint16_t rotaryEncoderValue0 = SPI.transfer16(0xFFFF) & 0x3FFFu;
+    //delayMicroseconds(1);
 
 
 
     //command bit15 = 1 (parity) | bit14 = 1 (read) | adresss 0x000 -> B11000000 00000000 = 0xC0000;
 
     digitalWriteFast(x.CSPin, HIGH); //SPI Mode 1 -> receive information with rising edge
+    //delayMicroseconds(1);
+
     digitalWriteFast(x.CSPin, LOW); //SPI Mode 1 -> information gest sampled with falling endge
+    //delayMicroseconds(1);
 
     rotaryEncoderValue0 = SPI.transfer16(0xFFFF) & 0x3FFFu;
+    //delayMicroseconds(1);
+
     digitalWriteFast(x.CSPin, HIGH); //SPI Mode 1 -> receive information with rising edge
+    //delayMicroseconds(1);
 
     SPI.endTransaction();
 

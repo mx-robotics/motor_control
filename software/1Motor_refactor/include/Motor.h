@@ -4,6 +4,7 @@
 
 #ifndef INC_1MOTOR_REFACTOR_MOTOR_H
 #define INC_1MOTOR_REFACTOR_MOTOR_H
+
 #include <Arduino.h>
 #include <array>
 
@@ -36,7 +37,6 @@ struct ServoPins {
 };
 
 
-
 struct ISPins {
     const uint8_t ISPinU;
     const uint8_t ISPinV;
@@ -53,7 +53,6 @@ enum Direction {
 };
 
 
-
 /**
  * Motor class - Encapsulates all motor related attributes and related functionality.
  * @TODO : improve naming
@@ -62,28 +61,34 @@ enum Direction {
 class Motor {
 public:
     Motor(INHPins inhibitPins_, PWMPins initPins_, uint8_t CSPin_, ISPins IsPins_)
-    : inhibitPins(inhibitPins_), initPins(initPins_), CSPin(CSPin_), IsPins(IsPins_){}
+            : inhibitPins(inhibitPins_), initPins(initPins_), CSPin(CSPin_), IsPins(IsPins_) {}
 
     const INHPins inhibitPins;
     const PWMPins initPins;
     const uint8_t CSPin;
     const ISPins IsPins;
-    Direction direction = Direction::CCW;
+    Direction direction = Direction::CW;
     float speedRPS = 0;
     float torque = 0;
-    float speedScalar= 0; // actual speed command 0.. 100
+    float speedScalar = 0; // actual speed command 0.. 100
     uint16_t rotaryEncoderPosition = 0;
     uint16_t previousRotaryEncoderValue = 0; // hold the previous rotaryEncoderValue
     int16_t scaledRotaryEncoderPosition = 0; // accounts for the fieldWeakening
     int32_t encoderCumulativeValue = 0;
     int16_t angleOffset = 0;
     uint16_t PIDCounter = 0;
+    bool rightWheel = false;
 
-    void incrementPIDCounter(){
+    void setAsRightWheel() {
+        rightWheel = true;
+    }
+
+    void incrementPIDCounter() {
         PIDCounter++;
 
     }
-    void setPIDCounterToZero(){
+
+    void setPIDCounterToZero() {
         PIDCounter = 0;
     }
 
@@ -95,62 +100,56 @@ public:
      * @TODO: change naming, field weakening is something else
      */
 
-    void setEncoderCumulativeValueToZero(){
+    void setEncoderCumulativeValueToZero() {
         //Serial.println(encoderCumulativeValue);
         encoderCumulativeValue = 0;
     }
-    void setAngleOffset(int16_t _angleOffset){
+
+    void setAngleOffset(int16_t _angleOffset) {
         angleOffset = _angleOffset;
 
     }
+
+    int32_t calculateAngleOffsetFromSpeedCommand(uint32_t speed_command) {
+        if (rightWheel) {
+            if (direction == CCW) {
+                int32_t res = angleOffset - (100 - speed_command);
+                return res;
+            } else {
+                return angleOffset + (speed_command);
+
+            }
+        } else {
+            if (direction == CW) {
+                return angleOffset + (100 - speed_command);
+            } else {
+                return angleOffset - (speed_command);
+            }
+
+
+        }
+    }
+
     /**
      * This function cumulatively adds the difference between rotary encoder position readings to calculate RPM later on.
      * The encoder values overflow after 16384 so this is taken care of.
      * @TODO : might behave weirdly at abrupt direction changes, needs more testing
      * @param rotPos : raw 14 bit rotary encoder reading from SPI
      */
-     void cumulativeAdd(uint16_t rotPos){
+    void cumulativeAdd(uint16_t rotPos) {
 
         uint16_t diff = abs(rotPos - previousRotaryEncoderValue);
-        if(diff > 16200){
+        if (diff > 16200) {
             diff = 16384 - diff;
         }
 
-         previousRotaryEncoderValue = rotPos;
-         encoderCumulativeValue += diff;
-
-
-
-    }
-
-    void cumulativeAdd2(uint16_t rotaryEncoderMeasurement){
-
-        int16_t diff = rotaryEncoderMeasurement - previousRotaryEncoderValue;
-
-        if(previousRotaryEncoderValue < 2000 && rotaryEncoderMeasurement > 14000){ // OVERFLOW ROT POS INCREASING
-         /*   Serial.println(diff);
-            Serial.println(previousRotaryEncoderValue);
-            Serial.println(rotaryEncoderMeasurement);
-            Serial.print("New diff");
-
-*/
-            diff -= 16384;
-  /*          Serial.println(diff);
-
-            Serial.println("____");
-*/
-        }
-        if(rotaryEncoderMeasurement < 2000 &&  previousRotaryEncoderValue > 14000){ // OVERFLOW ROT POS DECREASING
-            diff += 16384;
-            Serial.println(diff);
-            Serial.println(previousRotaryEncoderValue);
-            Serial.println(rotaryEncoderMeasurement);
-            Serial.println("2____");
-        }
-        previousRotaryEncoderValue = rotaryEncoderMeasurement;
+        previousRotaryEncoderValue = rotPos;
         encoderCumulativeValue += diff;
 
+
     }
+
+
     /**
      * Raw rotary encoder position can not be used to determine the LUT index since it gives the physical position of the
      * rotor, rather then the electrical position (rotor flux position) . First step to get the index is to convert
@@ -163,33 +162,32 @@ public:
      *
      * @param rotPos Raw 14 bit Encoder Value reading
      */
-    void updateRotaryEncoderPosition(uint16_t rotPos){
-        scaledRotaryEncoderPosition = 1489 - (rotPos  % 1489);
+    void updateRotaryEncoderPosition(uint16_t rotPos) {
+        scaledRotaryEncoderPosition = 1489 - (rotPos % 1489);
         rotaryEncoderPosition = rotPos;
 
     }
-    void updatePrevRotaryEncoderPosition(uint16_t rotPos){
+
+    void updatePrevRotaryEncoderPosition(uint16_t rotPos) {
         previousRotaryEncoderValue = rotPos;
 
     }
 
-    void updateSpeedRPS(float_t rps){
-            speedRPS = rps;
+    void updateSpeedRPS(float_t rps) {
+        speedRPS = rps;
     }
+
     /**
      * Motor knows its desired speed value, ranging from 0 to 100.
      * This value, referred as scalar determines the duty cycle
      * @param speed - a value between 0 and 100
      */
-    void updateSpeedScalar(float_t speed){
-        speedScalar=speed;
+    void updateSpeedScalar(float_t speed) {
+        speedScalar = speed;
     };
 
 
-
 };
-
-
 
 
 #endif //INC_1MOTOR_REFACTOR_MOTOR_H
