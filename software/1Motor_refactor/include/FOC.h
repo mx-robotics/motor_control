@@ -12,6 +12,16 @@
 #include "SVPWM.h"
 #include "PID.h"
 #include <ADC.h>
+#include "utils.h"
+
+
+struct CommandParameters{
+    int32_t angle;
+    float rps;
+    Direction direction;
+}
+
+
 class FOC {
 
 public:
@@ -36,12 +46,15 @@ public:
     void initMotorParams(const uint16_t LUTindex);
     static FOC &getInstance();  // Singleton handler
 
+    void speedSweep2();
 
-    uint16_t getSpeedFromSomewhere();
+        uint16_t getSpeedFromSomewhere();
     void doTheMagic2();
 
 
     uint16_t setSpeedFromADC();
+    CommandParameters setVelandSteeringAngleFromSerial();
+
 
     int16_t calculateSensorOffset(Motor &motor,
                                   const uint16_t LUTindex);

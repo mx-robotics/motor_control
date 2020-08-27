@@ -23,6 +23,11 @@ public:
     //Serial.println(target_rps);
     //Serial.println(my_speed);
 }
+    static uint16_t parse3DigitIntFromString(uint8_t * string){
+        return (string[0]-'0')*100 + (string[1]-'0')* 10 + (string[2]-'0');
+
+
+    }
 
 
 };
