@@ -1,1 +1,0 @@
-/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++    -rdynamic CMakeFiles/Z_DUMMY_TARGET.dir/src/Foc.cpp.o CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o  -o Z_DUMMY_TARGET 
