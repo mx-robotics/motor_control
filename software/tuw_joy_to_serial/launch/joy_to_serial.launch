@@ -1,0 +1,14 @@
+<launch>
+<!-- comment -->
+<node pkg="joy" type="joy_node" name="joy_controller">
+  <param name="coalesce_interval" value="0.09" />
+</node>
+
+<node
+    pkg="tuw_joy_to_serial"
+    type="joy_to_serial.py"
+    name="joy_to_serial"
+    output="screen"
+/>
+
+</launch>
