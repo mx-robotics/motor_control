@@ -1,0 +1,1 @@
+### Some attemps to visualize live data, overly complex and coupled atm but can be starting point for future implementations

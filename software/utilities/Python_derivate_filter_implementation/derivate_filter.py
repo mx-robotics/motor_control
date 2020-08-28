@@ -18,7 +18,7 @@ class DiffFilter:
         self.s = 0
         self.s_dot = 0
         self.delta_T = 1
-        self.T_f = 5
+        self.T_f = 5 # only thing to tune 
 
     def filter(self, measurement):
         s_temp = self.s + self.s_dot * self.delta_T # new value, old value + difference (s_dot * delta_T)

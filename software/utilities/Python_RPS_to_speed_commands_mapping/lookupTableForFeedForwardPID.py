@@ -36,7 +36,7 @@ class FFPIDLUTGenerator():
             constant_time_rps_map.append(idx)
         return constant_time_rps_map
 
-    def get_LUT_index(self, rps, list, maxx, minn):
+    def get_LUT_index(self, rps, list, maxx, minn): # given an rps, get the index in the commands array - this function prints (list[res]) rather than the index, which is the actual command to sent to the motor.
         res = int((rps -minn) * 100.0 / (maxx - minn))
         print(list[res])
 
