@@ -168,9 +168,22 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.s"
 	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/motor_control/software/motor_driver/src/SteeringServoController.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.s
 
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj: ../src/Teensy32Drivers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj -c /home/firat/projects/motor_control/software/motor_driver/src/Teensy32Drivers.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.i"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firat/projects/motor_control/software/motor_driver/src/Teensy32Drivers.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.s"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/motor_control/software/motor_driver/src/Teensy32Drivers.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.s
+
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
 	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj -c /home/firat/projects/motor_control/software/motor_driver/src/main.cpp
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.i: cmake_force
@@ -183,7 +196,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj: ../src/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj"
 	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj -c /home/firat/projects/motor_control/software/motor_driver/src/utils.cpp
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.i: cmake_force
@@ -203,6 +216,7 @@ Z_DUMMY_TARGET_OBJECTS = \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj"
 
@@ -216,11 +230,12 @@ Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cp
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/build.make
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Z_DUMMY_TARGET"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Z_DUMMY_TARGET"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Z_DUMMY_TARGET.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -17,72 +17,6 @@ FOC &FOC::getInstance() {
 }
 
 /**
- * Configure Inhibit Pins as Output.
- * Done only once, called at FOC::initHardware
- * @param x - motor
- */
-void FOC::initInhibitPins(Motor &x) {
-    pinMode(x.inhibitPins.InhibitPinW, OUTPUT);
-    pinMode(x.inhibitPins.InhibitPinU, OUTPUT);
-    pinMode(x.inhibitPins.InhibitPinV, OUTPUT);
-
-}
-
-/**
- * Set Inhibit Pins HIGH.
- * Done only once on continuous SVPWM schemes , called at FOC::initHardware
- * @param x - motoor
- */
-void FOC::activateInhibitPins(Motor &x) {
-    digitalWriteFast(x.inhibitPins.InhibitPinW, HIGH);
-    digitalWriteFast(x.inhibitPins.InhibitPinU, HIGH);
-    digitalWriteFast(x.inhibitPins.InhibitPinV, HIGH);
-
-}
-
-/**
- * Updates low level PWM registers with new duty cycle values.
- * Called every interrupt cycle
- * @param x - SVPWM duty cycles struct
- * @param motor - motor
- */
-void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
-
-#if defined(NEW_BOARD)
-    if (motor.initPins.InitPinW == 10 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
-
-        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3pardom
-        FTM0_C0V = x.inDutyCycleV;  // Teency pin 22 (A8) -> FTM0_CH0
-        FTM0_C1V = x.inDutyCycleU;  // Teency pin 23 (A9) -> FTM0_CH1
-
-    } else {
-
-        FTM0_C7V = x.inDutyCycleU; //Teency pin 5 -> FTM0_CH7
-        FTM0_C4V = x.inDutyCycleV; //Teency pin  6 -> FTM0_CH4
-        FTM0_C2V = x.inDutyCycleW; // Teensy pin 9 -> FTM0_CH2
-
-
-    }
-#else
-
-    if (motor.initPins.InitPinW == 21 || motor.initPins.InitPinW == 22 || motor.initPins.InitPinW == 23) {
-
-        FTM0_C6V = x.inDutyCycleW;  // Teency pin 21 -> FTM0_CH6
-        FTM0_C0V = x.inDutyCycleV;  // Teency pin 22 (A8) -> FTM0_CH0
-        FTM0_C1V = x.inDutyCycleU;  // Teency pin 23 (A9) -> FTM0_CH1
-
-    } else {
-        FTM0_C3V = x.inDutyCycleW; //Teency pin 10 -> FTM0_CH3pardom
-        FTM0_C7V = x.inDutyCycleU; //Teency pin 5 -> FTM0_CH7
-        FTM0_C4V = x.inDutyCycleV; //Teency pin  6 -> FTM0_CH4
-
-
-    }
-#endif
-
-}
-
-/**
  * Initializes all low lvl hardware related stuff.
  *  1- PWM Pins
  *  2- SPI
@@ -95,14 +29,14 @@ void FOC::updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor) {
  */
 void FOC::initHardware(uint8_t SPI_CLK) {
 
-    initPWMPins();
+    Teensy32Drivers::initPWMPins();
     RotaryEncoderCommunication::initSPI(SPI_CLK);
     //initADCconversions();
 
 
     for (int i = 0; i < numberOfMotors; ++i) {
-        initInhibitPins(*motors[i]);
-        activateInhibitPins(*motors[i]);
+        Teensy32Drivers::initInhibitPins(*motors[i]);
+        Teensy32Drivers::activateInhibitPins(*motors[i]);
         RotaryEncoderCommunication::initMotorCSPins(*motors[i]);
     }
 
@@ -120,101 +54,6 @@ void FOC::initMotorParams(const uint16_t LUTindex) {
 
 }
 
-/**
- * Low level function for initializing PWM Pins.
- * - Center aligned PWM - Up Down Counter
- * - TOF interrupt
- * @TODO: try other interrupt options to have more time
- */
-void FOC::initPWMPins() {
-    FTM0_SC = 0; // required for other setup
-
-    FTM0_CONF = 0xC0; //set up BDM in 11, FTM Counter functional -> 0000 1101 0000 0000
-    FTM0_FMS = 0x00; //clear the WPEN (Write protection disabled) so that WPDIS is set in FTM0_MODE
-
-
-    //FTM0_MODE|=0x05; // 0000 0101
-    // This register contains the global enable bit for FTM-specific features and the control bits
-    //used to configure:
-    FTM0_MODE = 0b00000110; // 00000111
-
-    //The Modulo register contains the modulo value for the FTM counter. After the FTM
-    //counter reaches the modulo value, the overflow flag (TOF) becomes set at the next clock
-    FTM0_MOD = (F_BUS / PWM_FREQ) / 2;
-    // FTM0_C6SC |= FTM_CSC_CHIE
-
-#if defined(NEW_BOARD)
-    FTM0_C3SC = 0b00101000;
-    FTM0_C3V = 0; //50%
-    PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
-
-    FTM0_C0SC = 0b00101000;
-    FTM0_C0V = 0; //50%
-    PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
-
-    FTM0_C1SC = 0b00101000;
-    FTM0_C1V = 0; //50%
-    PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
-
-    if (numberOfMotors > 1) {
-        FTM0_C7SC = 0b00101000;
-        FTM0_C7V = 0; //50%
-        PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
-
-        FTM0_C4SC = 0b00101000;
-        FTM0_C4V = 0; //50%
-        PORTD_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 6 -> FTM0_CH4
-
-        FTM0_C2SC = 0b00101000;
-        FTM0_C2V = 0;
-        PORTC_PCR3 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 9 -> FTM0_CH2
-    }
-
-#else
-
-        FTM0_C6SC = 0b00101000;
-        FTM0_C6V = 0; //50%
-        PORTD_PCR6 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 21 -> FTM0_CH6
-
-        FTM0_C0SC = 0b00101000;
-        FTM0_C0V = 0; //50%
-        PORTC_PCR1 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 22 (A8) -> FTM0_CH0
-
-        FTM0_C1SC = 0b00101000;
-        FTM0_C1V = 0; //50%
-        PORTC_PCR2 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teency pin 23 (A9) -> FTM0_CH1
-
-        if (numberOfMotors > 1) {
-            FTM0_C7SC = 0b00101000;
-            FTM0_C7V = 0; //50%
-            PORTD_PCR7 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 5 (A8) -> FTM0_CH7
-
-            FTM0_C3SC = 0b00101000;
-            FTM0_C3V = 0; //50%
-            PORTC_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 10 -> FTM0_CH3
-
-            FTM0_C4SC = 0b00101000;
-            FTM0_C4V = 0; //50%
-            PORTD_PCR4 |= PORT_PCR_MUX(4) | PORT_PCR_DSE | PORT_PCR_SRE; //Teensy pin 6 -> FTM0_CH4
-
-        }
-
-#endif
-    FTM0_CNTIN = 0x00;
-
-
-    FTM0_SC = 0b01101000; //CPWM MODE 0x48 EPWM -> 0x68 0110 1000
-
-    FTM0_SC = 0b01101000; //CPWM MODE 0x48 EPWM -> 0x68 0110 1000 -> TOF interrupt disabled
-    //FTM0_SC = 0b00101000; //CPWM MODE 0x48 EPWM -> 0x68 0110 1000
-
-
-}
-
-uint16_t FOC::getSpeedFromSomewhere() {
-    return setSpeedFromADC();
-
-} //@TODO get speed from ADC, serial port etc, interrupt driven maybe
 
 void FOC::speedSweep2() {
     static uint16_t prev = 0;
@@ -267,7 +106,7 @@ void FOC::speedSweep2() {
         }
 
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
-        updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
+        Teensy32Drivers::updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
         motors[i]->incrementPIDCounter();
 
     }
@@ -321,7 +160,7 @@ void FOC::speedSweep() {
     }
     ++ctr;
     SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[1]);
-    updatePWMPinsDutyCycle(dutyCycles, *motors[1]);
+    Teensy32Drivers::updatePWMPinsDutyCycle(dutyCycles, *motors[1]);
 
 
 }
@@ -377,7 +216,7 @@ FASTRUN void FOC::doTheMagic2() {
         }
 
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
-        updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
+        Teensy32Drivers::updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
         motors[i]->incrementPIDCounter();
 
     }
@@ -401,7 +240,7 @@ void FOC::primitiveSpin(uint16_t LUTindex, Motor &motor) {
     uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
     SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU};
-    updatePWMPinsDutyCycle(x, motor);
+    Teensy32Drivers::updatePWMPinsDutyCycle(x, motor);
 
 
 }
@@ -418,36 +257,6 @@ void FOC::registerMotors(Motor *m_ptr) {
 
 }
 
-/**
- * Low level function to activate ADC peripheral
- * called once at FOC::initHardware
- */
-
-void FOC::initADCconversions() {
-
-    pinMode(ADC_PIN, INPUT);
-    adc->adc0->setAveraging(4); // set number of averages
-    adc->adc0->setResolution(12); // set bits of resolution
-    adc->adc0->setConversionSpeed(ADC_CONVERSION_SPEED::VERY_HIGH_SPEED); // change the conversion speed
-    adc->adc0->setSamplingSpeed(ADC_SAMPLING_SPEED::VERY_HIGH_SPEED); // change the sampling speed
-    adc->startContinuous(ADC_PIN);
-
-}
-
-/**
- * Simple function to get speed values from an Potentiometer
- * @return
- */
-uint16_t FOC::setSpeedFromADC() {
-
-    if (adc->adc0->isComplete()) {
-        uint_fast16_t value1 = adc->analogReadContinuous(ADC_PIN);
-        value1 = (value1 / static_cast<float_t > (adc->adc0->getMaxValue())) * 100;
-        return value1;
-    }
-    return 0;
-
-}
 
 int16_t FOC::calculateSensorOffset(Motor &motor,
                                    const uint16_t LUTindex) { //the index is used as a parameter to maybe plot the sensor offset all over the motor range
@@ -456,7 +265,7 @@ int16_t FOC::calculateSensorOffset(Motor &motor,
     uint16_t dutyCycleU = SVPWM::getLUT()[(LUTindex + (LUTSize / 3)) % LUTSize];
     uint16_t dutyCycleV = SVPWM::getLUT()[(LUTindex + (LUTSize / 3) * 2) % LUTSize];
     SPWMDutyCycles x{dutyCycleW, dutyCycleV, dutyCycleU};
-    updatePWMPinsDutyCycle(x, motor);
+    Teensy32Drivers::updatePWMPinsDutyCycle(x, motor);
 
     delay(500);
 

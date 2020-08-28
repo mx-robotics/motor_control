@@ -358,6 +358,33 @@ src/SteeringServoController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.s
 .PHONY : src/SteeringServoController.cpp.s
 
+src/Teensy32Drivers.obj: src/Teensy32Drivers.cpp.obj
+
+.PHONY : src/Teensy32Drivers.obj
+
+# target to build an object file
+src/Teensy32Drivers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj
+.PHONY : src/Teensy32Drivers.cpp.obj
+
+src/Teensy32Drivers.i: src/Teensy32Drivers.cpp.i
+
+.PHONY : src/Teensy32Drivers.i
+
+# target to preprocess a source file
+src/Teensy32Drivers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.i
+.PHONY : src/Teensy32Drivers.cpp.i
+
+src/Teensy32Drivers.s: src/Teensy32Drivers.cpp.s
+
+.PHONY : src/Teensy32Drivers.s
+
+# target to generate assembly for a file
+src/Teensy32Drivers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.s
+.PHONY : src/Teensy32Drivers.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -444,6 +471,9 @@ help:
 	@echo "... src/SteeringServoController.obj"
 	@echo "... src/SteeringServoController.i"
 	@echo "... src/SteeringServoController.s"
+	@echo "... src/Teensy32Drivers.obj"
+	@echo "... src/Teensy32Drivers.i"
+	@echo "... src/Teensy32Drivers.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/firat/projects/motor_control/software/motor_driver/src/SVPWM.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/SVPWM.cpp.obj"
   "/home/firat/projects/motor_control/software/motor_driver/src/SpeedCalculation.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/SpeedCalculation.cpp.obj"
   "/home/firat/projects/motor_control/software/motor_driver/src/SteeringServoController.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/SteeringServoController.cpp.obj"
+  "/home/firat/projects/motor_control/software/motor_driver/src/Teensy32Drivers.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/Teensy32Drivers.cpp.obj"
   "/home/firat/projects/motor_control/software/motor_driver/src/main.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
   "/home/firat/projects/motor_control/software/motor_driver/src/utils.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.obj"
   )

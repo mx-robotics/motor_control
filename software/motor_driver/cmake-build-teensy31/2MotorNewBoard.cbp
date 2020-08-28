@@ -335,6 +335,9 @@
 		<Unit filename="/home/firat/projects/motor_control/software/motor_driver/src/SteeringServoController.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
+		<Unit filename="/home/firat/projects/motor_control/software/motor_driver/src/Teensy32Drivers.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
 		<Unit filename="/home/firat/projects/motor_control/software/motor_driver/src/main.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>

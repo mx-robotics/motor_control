@@ -11,8 +11,8 @@
 #include "RotaryEncoderCommnunication.h"
 #include "SVPWM.h"
 #include "PID.h"
-#include <ADC.h>
 #include "utils.h"
+#include "Teensy32Drivers.h"
 
 
 struct CommandParameters{
@@ -29,30 +29,18 @@ public:
     inline static  uint8_t numberOfMotors = 0;
     Motor * motors[2];
 
-    ADC *adc = new ADC();
-    static constexpr uint16_t PWM_FREQ = 20000;
-    static constexpr uint8_t ADC_PIN = A1;
-
     void registerMotors(Motor *m_ptr);
 
     void run();
-    void initInhibitPins(Motor &x) ;
-    void activateInhibitPins(Motor &x);
-    void updatePWMPinsDutyCycle(const SPWMDutyCycles &x, Motor &motor);
+
     void initHardware(uint8_t SPI_CLK);
-    void initPWMPins();
-    void initADCconversions() ;
+
 
     void initMotorParams(const uint16_t LUTindex);
     static FOC &getInstance();  // Singleton handler
 
     void speedSweep2();
-
-        uint16_t getSpeedFromSomewhere();
     void doTheMagic2();
-
-
-    uint16_t setSpeedFromADC();
     CommandParameters setVelandSteeringAngleFromSerial();
 
 
