@@ -7,7 +7,7 @@
 
 /**
  * Configure Inhibit Pins as Output.
- * Done only once, called at FOC::initHardware
+ * Done only once, called at Controller::initHardware
  * @param x - motor
  */
 
@@ -20,7 +20,7 @@ void Teensy32Drivers::initInhibitPins(Motor &x) {
 
 /**
  * Set Inhibit Pins HIGH.
- * Done only once on continuous SVPWM schemes , called at FOC::initHardware
+ * Done only once on continuous SVPWM schemes , called at Controller::initHardware
  * @param x - motoor
  */
 void Teensy32Drivers::activateInhibitPins(Motor &x) {
@@ -166,7 +166,7 @@ void Teensy32Drivers::initPWMPins() {
 
 /**
  * Low level function to activate ADC peripheral
- * called once at FOC::initHardware
+ * called once at Controller::initHardware
  */
 
 void Teensy32Drivers::initADCconversions() {

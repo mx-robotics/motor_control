@@ -7,7 +7,7 @@
 const SPISettings RotaryEncoderCommunication::spiSettings(10000000, MSBFIRST, SPI_MODE1);
 /**
  * Inits SPI peripheral. This function has to be called before any SPI communication
- * and is called at FOC::initHardware
+ * and is called at Controller::initHardware
  * @param SPI_CLK - The SPI Clock Pin. It is either 13 or 14
  */
 void RotaryEncoderCommunication::initSPI(uint8_t SPI_CLK) {
@@ -56,7 +56,7 @@ uint16_t RotaryEncoderCommunication::SPITransfer(const Motor &x) {
 
 /**
  * Configures CS pin as Output and set it to HIGH (Inactive). Must be called once before any SPI Communication
- * is called at FOC::initHardware for each motor.
+ * is called at Controller::initHardware for each motor.
  * @param x - Motor object to get the corresponding Chip Select Pin
  */
 

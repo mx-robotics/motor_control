@@ -2,7 +2,7 @@
 // Created by firat on 20.01.20.
 //
 #include <array>
-#include "FOC.h"
+#include "Controller.h"
 #include "utils.h"
 #include <arm_math.h>
 
@@ -45,20 +45,20 @@ void ftm0_isr(void) {
 
 void setup() {
 #if defined(NEW_BOARD)
-    FOC::getInstance().registerMotors(&motor0); // 80
+    Controller::getInstance().registerMotors(&motor0); // 80
     motor0.setAngleOffset(-10); // - 10 seems aight for CCW
     motor0.setAsRightWheel();
-    FOC::getInstance().registerMotors(&motor1);
+    Controller::getInstance().registerMotors(&motor1);
     motor1.setAngleOffset(-10); // - 110 is da best for direction, - 10 for the other one
 
 
 #else
-    FOC::getInstance().registerMotors(&x);
+    Controller::getInstance().registerMotors(&x);
 #endif
     Serial.begin(9600);
     while (!Serial);
     delay(1000);
-    FOC::getInstance().initHardware(13);
+    Controller::getInstance().initHardware(13);
 
 #if INT_FIRAT
 
@@ -76,9 +76,9 @@ void setup() {
             //delayMicroseconds(8);
             Serial.print(i);
             Serial.print(" ");
-            //FOC::getInstance().primitiveSpin(i,motor0);
+            //Controller::getInstance().primitiveSpin(i,motor0);
             //Serial.println(RotaryEncoderCommunication::SPITransfer(motor0) % 1489);
-            FOC::getInstance().primitiveSpin(i,motor1);
+            Controller::getInstance().primitiveSpin(i,motor1);
             Serial.println(RotaryEncoderCommunication::SPITransfer(motor1) % 1489);
     }
 }
@@ -87,7 +87,7 @@ void setup() {
 
 #if LOCK_MOTOR
     while(1) {
-        FOC::getInstance().primitiveSpin(410, motor0);
+        Controller::getInstance().primitiveSpin(410, motor0);
         Serial.println(RotaryEncoderCommunication::SPITransfer(motor0) % 1489);
         delay(5000);
     }
@@ -102,9 +102,9 @@ void loop() {
 
         flag = false;
 #if SPEED_SWEEP
-        FOC::getInstance().speedSweep2();
+        Controller::getInstance().speedSweep2();
 #else
-        FOC::getInstance().doTheMagic2();
+        Controller::getInstance().doTheMagic2();
         //uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(motor1);
         //Serial.println(rotaryEncoderValue);
 #endif
@@ -115,7 +115,7 @@ void loop() {
     //@ 3: hardware init contuniuation for multi motor setup
     //@ 4: proper order of U V W and its documentation, drawing
     //@ 6: speed calculation
-    //@ 8 proper FOC class constructor for multi motor setup
+    //@ 8 proper Controller class constructor for multi motor setup
     //@ TODO header - cpp proper placing of functions
     //@ 5: initial spin
     //@7: SetSpeedFromSomewhere implementation 1-ADC
