@@ -4,6 +4,20 @@
 
 #include "utils.h"
 uint16_t SerialHelper::plot_counter=0;
+float DerivateFilter::s = 0;
+float DerivateFilter::s_dot = 0;
+
+
+
+uint32_t DerivateFilter::getFilteredMeasurement(uint32_t measurement){
+    float s_temp = s + s_dot * delta_T; // new value, old value + difference (s_dot * delta_T)
+    float s_dot_temp = s_dot + (-s / (T_f * T_f) - 2 * s_dot / T_f + measurement) * delta_T;
+    s = s_temp;
+    s_dot = s_dot_temp;
+    return static_cast<uint32_t>(s / (T_f * T_f));
+
+
+}
 
 const CommandParameters & SerialHelper::setVelandSteeringAngleFromSerial() {
     int index = 0;
