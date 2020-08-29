@@ -8,9 +8,19 @@
 
 #include <cstdint>
 #include "SVPWM.h"
+#include "Teensy32Drivers.h"
+#include "RotaryEncoderCommnunication.h"
+#include "SpeedCalculation.h"
 
-class utils {
+struct CommandParameters{
+    int32_t angle;
+    float rps;
+    Direction direction;
+};
+
+class SerialHelper {
     static uint16_t plot_counter;
+    static CommandParameters cmd_parameters;
 
 public:
     static void plot_16t(SPWMDutyCycles &x){
@@ -28,8 +38,20 @@ public:
 
 
     }
+    static const CommandParameters & setVelandSteeringAngleFromSerial();
 
 
+
+};
+
+class Diagnostics{
+    public:
+
+    static int16_t calculateSensorOffset(Motor &motor,const uint16_t LUTindex);
+
+    static void testMotors(Motor &x);
+    static void primitiveSpin(uint16_t LUTindex, Motor &motor);
+    static void speedSweep(Motor & motor);
 };
 
 #endif //INC_1MOTOR_REFACTOR_UTILS_H
