@@ -165,11 +165,10 @@ void Diagnostics::speedSweep(Motor & motor) {
 
         motor.updateRotaryEncoderPosition(rotaryEncoderValue);
 
-        if (motor.PIDCounter == 1000) { //20 times a sec
+        if (motor.isTimeForPIDControl()) { //20 times a sec
             float_t rps = VelocityCalculation::getRotationsPerSecond3(motor);
             motor.updateSpeedRPS(rps);
             motor.updateSpeedScalar(speed_command);
-            motor.setPIDCounterToZero();
             if (speed_increase_counter < values_to_add_up) {
                 speed_cumulative_value += rps;
             } else if (speed_increase_counter == values_to_add_up) {
@@ -195,7 +194,7 @@ void Diagnostics::speedSweep(Motor & motor) {
 
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(motor);
         Teensy32Drivers::updatePWMPinsDutyCycle(dutyCycles, motor);
-        motor.incrementPIDCounter();
+
 
     }
 }

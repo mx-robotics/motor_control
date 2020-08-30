@@ -59,7 +59,7 @@ void Controller::initHardware(uint8_t SPI_CLK) {
  * 5- Feed that PWM registers
  * @return
  */
-FASTRUN void Controller::doTheMagic2() {
+FASTRUN void Controller::run() {
 
 
     for (int i = 0; i < 2 /* numberOfMotors */ ; ++i) {
@@ -67,7 +67,7 @@ FASTRUN void Controller::doTheMagic2() {
         uint16_t rotaryEncoderValue0 = RotaryEncoderCommunication::SPITransfer(*motors[i]);
         motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue0);
 
-        if (motors[i]->PIDCounter == 1000) { //every 0.25 sec
+        if (motors[i]->isTimeForPIDControl()) { //every 0.25 sec
 
             float_t rps2 = VelocityCalculation::getRotationsPerSecond3(*motors[i]);
             Serial.println(rps2);
@@ -76,14 +76,12 @@ FASTRUN void Controller::doTheMagic2() {
             float speed_command = 60;
             //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 30);
             motors[i]->updateSpeedScalar(speed_command);
-            motors[i]->setPIDCounterToZero();
-
 
         }
 
         SPWMDutyCycles dutyCycles = SVPWM::calculateDutyCycles(*motors[i]);
         Teensy32Drivers::updatePWMPinsDutyCycle(dutyCycles, *motors[i]);
-        motors[i]->incrementPIDCounter();
+
 
     }
 

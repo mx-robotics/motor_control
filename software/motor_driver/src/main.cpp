@@ -104,7 +104,7 @@ void loop() {
 #if SPEED_SWEEP
         Controller::getInstance().speedSweep2();
 #else
-        Controller::getInstance().doTheMagic2();
+        Controller::getInstance().run();
         //uint16_t rotaryEncoderValue = RotaryEncoderCommunication::SPITransfer(motor1);
         //Serial.println(rotaryEncoderValue);
 #endif

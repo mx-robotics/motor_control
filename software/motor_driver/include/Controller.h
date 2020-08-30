@@ -21,7 +21,7 @@ public:
 
     inline static  uint8_t numberOfMotors = 0;
     Motor * motors[2];
-    void doTheMagic2();
+    void run();
 
     void registerMotors(Motor *m_ptr);
     void initHardware(uint8_t SPI_CLK);

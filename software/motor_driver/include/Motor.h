@@ -83,15 +83,17 @@ public:
         rightWheel = true;
     }
 
-    void incrementPIDCounter() {
-        PIDCounter++;
+    bool isTimeForPIDControl(){
+        if(++PIDCounter == 1000){
+            PIDCounter = 0;
+            return true;
+        }
+        else{
+            return false;
+        }
 
-    }
 
-    void setPIDCounterToZero() {
-        PIDCounter = 0;
-    }
-
+    };
     /**
      * This function is supposed to set the sensor offset at initialization after calculating the sensor offset.
      * @param sensorOffset_ - is the -supposedly- fixed offset between raw rotary encoder readings and
