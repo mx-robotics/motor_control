@@ -15,8 +15,8 @@
 class VelocityCalculation {
     static constexpr float wheelDiameter{4.12f};
     static constexpr float wheelCircumference = wheelDiameter * M_PI * 2;
-    static constexpr float measurementPeriodinMs = 50.0f;
-    static constexpr float rotaryEncoderMaxValue = 16384.0f;
+    static constexpr float measurementsPerSecond = PID_FREQUENCY; // same as PID, compile flag
+    static constexpr float rotaryEncoderMaxValue = ENCODER_RESOLUTION;
     static constexpr uint8_t overflowTreshold = 100;
     static uint32_t encoderCumulativeValue;
 
@@ -57,7 +57,7 @@ public:
      * @return - rotation per sec
      */
     static float getRotationsPerSecond2(Motor & m){
-        float_t retVal =(m.encoderCumulativeValue/rotaryEncoderMaxValue) * 40;
+        float_t retVal =(m.encoderCumulativeValue/rotaryEncoderMaxValue) * PID_FREQUENCY;
         return retVal;
     }
     static float getRotationsPerMinute(Motor &motor) {
@@ -72,18 +72,18 @@ public:
         Serial.println(previousRotaryEncoderValue); */
        if(m.previousRotaryEncoderValue < 5000 &&  m.rotaryEncoderPosition > 10000){ // OVERFLOW ROT POS INCREASING
      //      Serial.print("HOPPP  ");
-            diff -= 16384;
+            diff -= ENCODER_RESOLUTION;
 
         }
 
 
         if(m.rotaryEncoderPosition < 5000 &&  m.previousRotaryEncoderValue > 10000){ // OVERFLOW ROT POS DECREASING
-            diff += 16384;
+            diff += ENCODER_RESOLUTION;
             // Serial.print("HOPPP  ");
 
 
         }
-        float_t retVal = diff/16384.0f * 20.0f;
+        float_t retVal = static_cast<float>(diff) / ENCODER_RESOLUTION * PID_FREQUENCY;
         m.previousRotaryEncoderValue = m.rotaryEncoderPosition;
         return retVal;
     }
@@ -95,8 +95,8 @@ public:
      */
     static float getRotationsPerSecond(Motor &motor) {
 
-        float rotationsPerSecond = calculate_displacement(motor.previousRotaryEncoderValue,motor.rotaryEncoderPosition) * (1000 / measurementPeriodinMs);
-        Serial.println(rotationsPerSecond);
+        float rotationsPerSecond = calculate_displacement(motor.previousRotaryEncoderValue,motor.rotaryEncoderPosition) * measurementsPerSecond ;
+        //Serial.println(rotationsPerSecond);
 
         return rotationsPerSecond;
     }

@@ -84,7 +84,7 @@ public:
     }
 
     bool isTimeForPIDControl(){
-        if(++PIDCounter == 1000){
+        if(++PIDCounter == (SVPWM_FREQUENCY/PID_FREQUENCY)){
             PIDCounter = 0;
             return true;
         }
@@ -142,7 +142,7 @@ public:
 
         uint16_t diff = abs(rotPos - previousRotaryEncoderValue);
         if (diff > 16200) {
-            diff = 16384 - diff;
+            diff = ENCODER_RESOLUTION - diff;
         }
 
         previousRotaryEncoderValue = rotPos;

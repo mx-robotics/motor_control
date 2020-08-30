@@ -19,11 +19,9 @@ struct ModulationIndexScalingParams{
 class LUTGenerator{
 
 public:
-    static constexpr uint16_t maxSensorResolution = 16384;
     static constexpr uint8_t motorPoleCount = 11;
-    static constexpr uint16_t LUTSize = maxSensorResolution / motorPoleCount;
-    static constexpr uint16_t PWM_FREQ = 20000;
-    static constexpr uint16_t MAX_DUTY_CYCLE = (F_BUS / PWM_FREQ) / 2;
+    static constexpr uint16_t LUTSize = ENCODER_RESOLUTION / motorPoleCount;
+    static constexpr uint16_t MAX_DUTY_CYCLE = (F_BUS / SVPWM_FREQUENCY) / 2;
 
     /**
      * Generates the Look Up Table for PWM duty cycles
