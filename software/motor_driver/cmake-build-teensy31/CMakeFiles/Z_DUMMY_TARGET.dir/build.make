@@ -77,18 +77,18 @@ include CMakeFiles/Z_DUMMY_TARGET.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 
-CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
-CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj: ../src/FOC.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj"
-	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj -c /home/firat/projects/motor_control/software/motor_driver/src/FOC.cpp
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj: ../src/Controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj -c /home/firat/projects/motor_control/software/motor_driver/src/Controller.cpp
 
-CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.i"
-	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firat/projects/motor_control/software/motor_driver/src/FOC.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.i
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.i"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firat/projects/motor_control/software/motor_driver/src/Controller.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.i
 
-CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.s"
-	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/motor_control/software/motor_driver/src/FOC.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.s
+CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.s"
+	/home/firat/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firat/projects/motor_control/software/motor_driver/src/Controller.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.s
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.obj: ../src/Motor.cpp
@@ -209,7 +209,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/utils.cpp.s: cmake_force
 
 # Object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_OBJECTS = \
-"CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.obj" \
@@ -223,7 +223,7 @@ Z_DUMMY_TARGET_OBJECTS = \
 # External object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_EXTERNAL_OBJECTS =
 
-Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.obj

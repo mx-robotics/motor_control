@@ -62,7 +62,7 @@ void Controller::initHardware(uint8_t SPI_CLK) {
 FASTRUN void Controller::run() {
 
 
-    for (int i = 0; i < 2 /* numberOfMotors */ ; ++i) {
+    for (int i = 0; i < 1 /* numberOfMotors */ ; ++i) {
 
         uint16_t rotaryEncoderValue0 = RotaryEncoderCommunication::SPITransfer(*motors[i]);
         motors[i]->updateRotaryEncoderPosition(rotaryEncoderValue0);
@@ -70,10 +70,10 @@ FASTRUN void Controller::run() {
         if (motors[i]->isTimeForPIDControl()) { //every 0.25 sec
 
             float_t rps2 = VelocityCalculation::getRotationsPerSecond3(*motors[i]);
-            Serial.println(rps2);
+            //Serial.println(rps2);
             motors[i]->updateSpeedRPS(rps2);
 
-            float speed_command = 60;
+            float speed_command = 80;
             //float speed_command = SpeedPIDController::getSpeedCommand(*motors[i], 30);
             motors[i]->updateSpeedScalar(speed_command);
 

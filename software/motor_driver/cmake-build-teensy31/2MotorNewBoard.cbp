@@ -314,7 +314,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/firat/projects/motor_control/software/motor_driver/src/FOC.cpp">
+		<Unit filename="/home/firat/projects/motor_control/software/motor_driver/src/Controller.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/home/firat/projects/motor_control/software/motor_driver/src/Motor.cpp">

@@ -4,7 +4,6 @@
 
 #ifndef INC_1MOTOR_REFACTOR_FOC_H
 #define INC_1MOTOR_REFACTOR_FOC_H
-#define NEW_BOARD
 
 #include "Motor.h"
 #include "SpeedCalculation.h"

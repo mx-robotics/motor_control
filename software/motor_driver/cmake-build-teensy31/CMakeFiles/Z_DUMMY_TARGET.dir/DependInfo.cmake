@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/firat/projects/motor_control/software/motor_driver/src/FOC.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj"
+  "/home/firat/projects/motor_control/software/motor_driver/src/Controller.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj"
   "/home/firat/projects/motor_control/software/motor_driver/src/Motor.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.obj"
   "/home/firat/projects/motor_control/software/motor_driver/src/PID.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.obj"
   "/home/firat/projects/motor_control/software/motor_driver/src/RotaryEncoderCommnunication.cpp" "/home/firat/projects/motor_control/software/motor_driver/cmake-build-teensy31/CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.obj"

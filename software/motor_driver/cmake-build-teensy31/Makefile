@@ -169,32 +169,32 @@ Z_DUMMY_TARGET/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/build
 .PHONY : Z_DUMMY_TARGET/fast
 
-src/FOC.obj: src/FOC.cpp.obj
+src/Controller.obj: src/Controller.cpp.obj
 
-.PHONY : src/FOC.obj
+.PHONY : src/Controller.obj
 
 # target to build an object file
-src/FOC.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj
-.PHONY : src/FOC.cpp.obj
+src/Controller.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj
+.PHONY : src/Controller.cpp.obj
 
-src/FOC.i: src/FOC.cpp.i
+src/Controller.i: src/Controller.cpp.i
 
-.PHONY : src/FOC.i
+.PHONY : src/Controller.i
 
 # target to preprocess a source file
-src/FOC.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.i
-.PHONY : src/FOC.cpp.i
+src/Controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.i
+.PHONY : src/Controller.cpp.i
 
-src/FOC.s: src/FOC.cpp.s
+src/Controller.s: src/Controller.cpp.s
 
-.PHONY : src/FOC.s
+.PHONY : src/Controller.s
 
 # target to generate assembly for a file
-src/FOC.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.s
-.PHONY : src/FOC.cpp.s
+src/Controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.s
+.PHONY : src/Controller.cpp.s
 
 src/Motor.obj: src/Motor.cpp.obj
 
@@ -450,9 +450,9 @@ help:
 	@echo "... Debug"
 	@echo "... Production"
 	@echo "... Z_DUMMY_TARGET"
-	@echo "... src/FOC.obj"
-	@echo "... src/FOC.i"
-	@echo "... src/FOC.s"
+	@echo "... src/Controller.obj"
+	@echo "... src/Controller.i"
+	@echo "... src/Controller.s"
 	@echo "... src/Motor.obj"
 	@echo "... src/Motor.i"
 	@echo "... src/Motor.s"

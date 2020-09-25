@@ -24,12 +24,13 @@ void RotaryEncoderCommunication::initSPI(uint8_t SPI_CLK) {
  */
 uint16_t RotaryEncoderCommunication::SPITransfer(const Motor &x) {
     SPI.beginTransaction(spiSettings);
-    delayMicroseconds(1);
+    //delayMicroseconds(1);
     //SPI settings according to sensor datasheet: clock: max. 10MHz | MSB first | SPI Mode 1  | CPOL=0, CPHA= 1
     digitalWriteFast(x.CSPin, LOW); //SPI Mode 1 -> information gest sampled with falling endge
     //delayMicroseconds(1);
 
     uint16_t rotaryEncoderValue0 = SPI.transfer16(0xFFFF) & 0x3FFFu;
+    Serial.println(rotaryEncoderValue0);
     //delayMicroseconds(1);
 
 
@@ -49,6 +50,9 @@ uint16_t RotaryEncoderCommunication::SPITransfer(const Motor &x) {
     //delayMicroseconds(1);
 
     SPI.endTransaction();
+    Serial.println(rotaryEncoderValue0);
+
+
 
     return rotaryEncoderValue0;
 

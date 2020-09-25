@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Z_DUMMY_TARGET.dir/src/FOC.cpp.obj"
+  "CMakeFiles/Z_DUMMY_TARGET.dir/src/Controller.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/Motor.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/PID.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/RotaryEncoderCommnunication.cpp.obj"
